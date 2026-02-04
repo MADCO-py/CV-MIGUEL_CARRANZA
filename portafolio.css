@@ -1,0 +1,284 @@
+/* =========================
+   PORTAFOLIO HERO
+========================= */
+.portfolio-hero {
+    height: 100vh;
+    padding: 0 8%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #1a1a1a 100%);
+}
+
+.portfolio-hero::before {
+    content: '';
+    position: absolute;
+    top: 30%;
+    left: -10%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, var(--accent-glow), transparent 70%);
+    border-radius: 50%;
+    animation: float 15s ease-in-out infinite;
+    pointer-events: none;
+}
+
+.portfolio-hero::after {
+    content: '';
+    position: absolute;
+    bottom: 20%;
+    right: -10%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(0, 255, 247, 0.2), transparent 70%);
+    border-radius: 50%;
+    animation: float 20s ease-in-out infinite reverse;
+    pointer-events: none;
+}
+
+.portfolio-hero .hero-text {
+    text-align: center;
+    z-index: 1;
+}
+
+.portfolio-hero h1 {
+    font-size: clamp(3rem, 6vw, 5rem);
+    font-weight: 800;
+    margin-bottom: 20px;
+    background: linear-gradient(135deg, #fff, var(--accent), #00fff7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: fadeInUp 1s ease-out;
+}
+
+.portfolio-hero h2 {
+    font-size: clamp(1.2rem, 2vw, 1.6rem);
+    font-weight: 300;
+    opacity: 0.85;
+    letter-spacing: 2px;
+    animation: fadeInUp 1s ease-out 0.2s backwards;
+}
+
+/* =========================
+   LANGUAGE SECTIONS
+========================= */
+.language-section {
+    min-height: 100vh;
+    padding: 100px 8%;
+    background: linear-gradient(180deg, #2d2d2d 0%, #1a1a1a 100%);
+    position: relative;
+}
+
+.language-section:nth-child(even) {
+    background: linear-gradient(180deg, #1a1a1a 0%, #2d2d2d 100%);
+}
+
+/* Colores específicos para cada lenguaje */
+.language-section.java {
+    --lang-color: #f89820;
+    --lang-glow: rgba(248, 152, 32, 0.3);
+}
+
+.language-section.python {
+    --lang-color: #3776ab;
+    --lang-glow: rgba(55, 118, 171, 0.3);
+}
+
+.language-section.cpp {
+    --lang-color: #00599c;
+    --lang-glow: rgba(0, 89, 156, 0.3);
+}
+
+.language-section.kotlin {
+    --lang-color: #d408fd;
+    --lang-glow: rgba(183, 0, 255, 0.801);
+}
+
+.language-section.csharp {
+    --lang-color: #68217a;
+    --lang-glow: rgba(104, 33, 122, 0.3);
+}
+
+.language-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: start;
+}
+
+/* =========================
+   LANGUAGE TEXT
+========================= */
+.language-text {
+    padding-right: 40px;
+}
+
+.language-text h2 {
+    font-size: clamp(2.5rem, 4vw, 3.5rem);
+    font-weight: 800;
+    margin-bottom: 30px;
+    background: linear-gradient(135deg, #fff, var(--lang-color, var(--accent)));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    position: relative;
+    display: inline-block;
+}
+
+.language-text h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 80px;
+    height: 4px;
+    background: var(--lang-color, var(--accent));
+    border-radius: 2px;
+}
+
+.language-text p {
+    font-size: 1.15rem;
+    line-height: 1.9;
+    margin-bottom: 25px;
+    color: var(--text-secondary);
+    opacity: 0.9;
+}
+
+.language-text p:first-of-type {
+    margin-top: 25px;
+}
+
+/* =========================
+   STICKY IMAGE EFFECT
+========================= */
+.language-image-container {
+    position: sticky;
+    top: 150px;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.language-image {
+    width: 100%;
+    max-width: 600px;
+    border-radius: 25px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 2px solid var(--lang-color, var(--glass-border));
+}
+
+.language-image:hover {
+    transform: scale(1.05) translateY(-10px);
+    box-shadow: 0 30px 80px var(--lang-glow, var(--accent-glow));
+    border-color: var(--lang-color, var(--accent));
+    filter: brightness(1.1);
+}
+
+/* Placeholder para C# (si no hay imagen) */
+.language-placeholder {
+    width: 100%;
+    max-width: 600px;
+    height: 400px;
+    border-radius: 25px;
+    background: linear-gradient(135deg, var(--secondary-dark), var(--primary-dark));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--lang-color, var(--glass-border));
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.language-placeholder span {
+    font-size: 4rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, #fff, var(--lang-color, var(--accent)));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.language-placeholder:hover {
+    transform: scale(1.05) translateY(-10px);
+    box-shadow: 0 30px 80px var(--lang-glow, var(--accent-glow));
+    border-color: var(--lang-color, var(--accent));
+}
+
+/* =========================
+   ANIMACIONES
+========================= */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 1200px) {
+    .language-content {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .language-text {
+        padding-right: 0;
+    }
+
+    .language-image-container {
+        position: relative;
+        top: 0;
+        margin: 0 auto;
+        max-width: 600px;
+    }
+}
+
+@media (max-width: 900px) {
+    .language-section {
+        padding: 80px 6%;
+    }
+
+    .portfolio-hero {
+        padding: 0 6%;
+    }
+}
+
+@media (max-width: 600px) {
+    .language-section {
+        padding: 60px 5%;
+        min-height: auto;
+    }
+
+    .language-text h2 {
+        font-size: 2rem;
+    }
+
+    .language-text p {
+        font-size: 1.05rem;
+    }
+
+    .portfolio-hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .language-placeholder {
+        height: 300px;
+    }
+
+    .language-placeholder span {
+        font-size: 3rem;
+    }
+}
