@@ -95,11 +95,13 @@
 .language-section.kotlin {
     --lang-color: #d408fd;
     --lang-glow: rgba(183, 0, 255, 0.801);
+    
 }
 
 .language-section.csharp {
-    --lang-color: #68217a;
-    --lang-glow: rgba(104, 33, 122, 0.3);
+    --lang-color: #0e63ff;
+    --lang-glow: rgba(255, 255, 255, 0.3);
+    
 }
 
 .language-content {
@@ -167,7 +169,7 @@
 
 .language-image {
     width: 100%;
-    max-width: 600px;
+    max-width: 4100px;
     border-radius: 25px;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
     transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
@@ -181,19 +183,7 @@
     filter: brightness(1.1);
 }
 
-/* Placeholder para C# (si no hay imagen) */
-.language-placeholder {
-    width: 100%;
-    max-width: 600px;
-    height: 400px;
-    border-radius: 25px;
-    background: linear-gradient(135deg, var(--secondary-dark), var(--primary-dark));
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 2px solid var(--lang-color, var(--glass-border));
-    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-}
+
 
 .language-placeholder span {
     font-size: 4rem;
