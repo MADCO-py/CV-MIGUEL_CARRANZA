@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portafolio — Miguel Carranza</title>
+
+  <!-- Fuentes -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Iconos Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Estilos propios (los paths suben un nivel con ../ porque estamos en pages/) -->
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/portfolio.css">
+</head>
+<body>
+
+  <!-- ── CURSOR PERSONALIZADO ── -->
+  <div id="cur"></div>
+  <div id="cur-r"></div>
+
+
+  <!-- ================================================================
+       NAV — link "Portafolio" marcado como activo
+  ================================================================ -->
+  <nav class="nav" id="mainNav">
+    <a class="nav-logo" href="../index.html">Miguel Carranza</a>
+    <div class="nav-links">
+      <a href="../index.html">CV</a>
+      <a href="../index.html#about">Sobre mí</a>
+      <a href="../index.html#stack">Stack</a>
+      <a href="portafolio.html" class="active">Portafolio</a>
+      <a href="../index.html#contact" class="nav-cta">Contacto</a>
+    </div>
+  </nav>
+
+
+  <!-- ================================================================
+       HERO DEL PORTAFOLIO
+  ================================================================ -->
+  <header class="pf-hero">
+    <div class="pf-hero-eyebrow">
+      <i class="fa-solid fa-layer-group"></i> Trabajo
+    </div>
+    <h1>Portafolio</h1>
+    <p class="pf-hero-sub">
+      Proyectos freelance, universitarios y personales.
+      Código real, clientes reales, tecnologías reales.
+    </p>
+  </header>
+
+
+  <!-- ================================================================
+       BARRA DE BÚSQUEDA + FILTROS
+       Sticky bajo la nav — se queda fija al hacer scroll
+  ================================================================ -->
+  <div class="search-bar-wrap">
+
+    <!-- Input de búsqueda -->
+    <div class="search-input-wrap">
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <input
+        type="text"
+        id="searchInput"
+        placeholder="Buscar por nombre, tecnología o cliente…"
+        autocomplete="off"
+        spellcheck="false"
+      >
+    </div>
+
+    <!-- Contador de resultados -->
+    <div class="search-count" id="searchCount">4 proyectos</div>
+
+    <!-- Botones de filtro por categoría (generados por portfolio.js) -->
+    <div class="filter-row" id="filterRow"></div>
+
+  </div>
+
+
+  <!-- ================================================================
+       CONTENIDO PRINCIPAL
+       Las cards se renderizan aquí dinámicamente con portfolio.js
+       Para agregar proyectos: edita el arreglo PROJECTS en js/portfolio.js
+  ================================================================ -->
+  <main class="pf-content">
+    <div id="pfContent">
+      <!-- Las cards se insertan aquí por JavaScript -->
+    </div>
+
+    <!-- Mensaje cuando no hay resultados de búsqueda -->
+    <div class="no-results" id="noResults">
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <p>No se encontraron proyectos que coincidan con tu búsqueda.</p>
+    </div>
+  </main>
+
+
+  <!-- ================================================================
+       NOTA AL PIE DEL PORTAFOLIO
+  ================================================================ -->
+  <div class="pf-footer-note">
+    <p>
+      ¿Tienes un proyecto en mente? Estoy disponible para freelance,
+      colaboraciones y prácticas profesionales.
+    </p>
+    <a href="../index.html#contact">
+      <i class="fa-solid fa-arrow-right"></i> Contactar
+    </a>
+  </div>
+
+
+  <!-- ================================================================
+       FOOTER
+  ================================================================ -->
+  <footer class="footer">
+    <span>&copy; 2026 Miguel Carranza — Software Engineer · Guatemala</span>
+    <div class="footer-right">
+      <a href="https://github.com/MADCO-py" target="_blank">
+        <i class="fa-brands fa-github"></i> GitHub
+      </a>
+      <a href="https://www.linkedin.com/in/miguel-angel-david-co-3585142a2/" target="_blank">
+        <i class="fa-brands fa-linkedin"></i> LinkedIn
+      </a>
+      <a href="mailto:madcarranzaosorio@gmail.com">
+        <i class="fa-solid fa-envelope"></i> Email
+      </a>
+    </div>
+  </footer>
+
+
+  <!-- ================================================================
+       SCRIPTS
+
+       observer.js necesita saber que está en pages/ para re-observar
+       las cards que portfolio.js inserta dinámicamente.
+  ================================================================ -->
+  <script src="../js/cursor.js"></script>
+
+  <!-- portfolio.js renderiza las cards y luego observer.js las anima -->
+  <script src="../js/portfolio.js"></script>
+
+  <script>
+    /* ── Observer adaptado para cards dinámicas ──
+       portfolio.js llama a window.reObserve() después de cada render
+       para que las nuevas cards entren con animación.
+    */
+    (function initDynamicObserver() {
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('on');
+            io.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+
+      /* Exponer función para que portfolio.js la llame */
+      window.reObserve = function () {
+        document.querySelectorAll('.proj-card.reveal:not(.on)').forEach((el) => {
+          io.observe(el);
+        });
+      };
+
+      /* Nav scrolled */
+      const nav = document.getElementById('mainNav');
+      if (nav) {
+        window.addEventListener('scroll', () => {
+          nav.classList.toggle('scrolled', window.scrollY > 40);
+        }, { passive: true });
+      }
+    })();
+  </script>
+
+</body>
+</html>

@@ -1,157 +1,592 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Miguel Carranza — Software Engineer</title>
-    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Miguel Carranza — Software Engineer</title>
+
+  <!-- Fuentes -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Iconos Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Estilos propios (orden importante) -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
 
-<!-- NAV FLOATING -->
-<nav class="nav">
-    <span>Miguel</span>
-    <div>
-        <a href="#about">Sobre mí</a>
-        <a href="portafolio.html">Portafolio</a>
-        <a href="#experience">Experiencia</a>
+  <!-- ── CURSOR PERSONALIZADO ── -->
+  <div id="cur"></div>
+  <div id="cur-r"></div>
+
+  <!-- ================================================================
+       NAV FLOTANTE
+       Para marcar la página activa: agrega class="active" al link
+  ================================================================ -->
+  <nav class="nav" id="mainNav">
+    <a class="nav-logo" href="index.html">Miguel Carranza</a>
+    <div class="nav-links">
+      <a href="#about">Sobre mí</a>
+      <a href="#stack">Stack</a>
+      <a href="#education">Formación</a>
+      <a href="pages/portafolio.html">Portafolio</a>
+      <a href="#contact" class="nav-cta">Contacto</a>
     </div>
-</nav>
+  </nav>
 
-<!-- HERO -->
-<section class="hero">
-    <div class="hero-text">
-        <h1>Ingeniero en Sistemas</h1>
-        <h2>Diseño · Código · Experiencia · Estudiante</h2>
-    </div>
-    <img src="img/perfil.jpg" alt="Miguel Carranza">
-</section>
 
-<!-- SOBRE MI (STICKY) -->
-<section class="sticky-section" id="about">
-    <div class="sticky-text grid-about">
+  <!-- ================================================================
+       HERO — Presentación principal
+  ================================================================ -->
+  <section class="hero" id="hero">
+    <div class="hero-content">
+      <div class="hero-eyebrow">
+        <div class="hero-dot"></div>
+        Disponible · Guatemala
+      </div>
 
-        <!-- COLUMNA 1 -->
-        <div class="about-left">
-            <h3>Sobre mí</h3>
-            <p>
-                Estudiante de Ingeniería en Ciencia de la Computación.
-                Me especializo en crear soluciones limpias, escalables
-                y visualmente atractivas.
-            </p>
-            <div class="languages">
-                <h4>Idiomas</h4>
+      <h1>
+        Miguel
+        <span class="name-accent">Carranza</span>
+      </h1>
 
-                <div class="language-item">
-                    <span>Español</span>
-                    <span class="percent">100%</span>
-                    <div class="lang-bar">
-                        <div class="lang-fill full"></div>
-                    </div>
-                </div>
+      <p class="hero-role">
+        <strong>Full Stack Developer</strong> &amp; Estudiante de Ingeniería
+      </p>
 
-                <div class="language-item">
-                    <span>Inglés</span>
-                    <span class="percent">75%</span>
-                    <div class="lang-bar">
-                        <div class="lang-fill medium"></div>
-                    </div>
-                </div>
-            </div>
+      <p class="hero-desc">
+        Construyo software que funciona — funcional, optimizado y mantenible.
+        Enfocado en desarrollo web, sistemas backend, apps móviles e IoT.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#contact" class="btn btn-dark">
+          <i class="fa-solid fa-arrow-right"></i> Contactar
+        </a>
+        <a href="pages/portafolio.html" class="btn btn-outline">
+          <i class="fa-solid fa-layer-group"></i> Ver portafolio
+        </a>
+      </div>
+
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-n">20</span>
+          <span class="stat-l">Años</span>
         </div>
-
-        <!-- COLUMNA 2 -->
-        <div class="about-card">
-            <h4>Datos personales</h4>
-            <p>
-                Edad: 20 años <br>
-                Nacionalidad: Guatemalteco <br>
-                NIT activo para facturacion <br>
-                Estudiante activo de Ingenieria en sistemas
-            </p>
+        <div class="stat">
+          <span class="stat-n">9+</span>
+          <span class="stat-l">Lenguajes</span>
         </div>
-
-        <!-- COLUMNA 3 -->
-        <div class="about-card">
-            <h4>Contacto</h4>
-            <p>
-               
-                <strong>Email</strong><br>
-                madcarranzaosorio@gmail.com<br><br>
-
-                <strong>Dirección</strong><br>
-                zona 10,<br>
-                Ciudad de Guatemala<br><br>
-
-                <strong>Transporte</strong><br>
-                Vehículo propio
-            </p>
+        <div class="stat">
+          <span class="stat-n">3°</span>
+          <span class="stat-l">Año UVG</span>
         </div>
-
-    </div>
-</section>
-
-<!-- EDUCACIÓN -->
-<section class="education">
-    <h3>Educación</h3>
-
-    <div class="edu-card">
-        <img src="img/LOGOUVG.png" alt="UVG Logo">
-        <div>
-            <h4>Universidad del Valle de Guatemala</h4>
-            <span>2023 – Presente</span>
-            <p>
-                Ingeniería en Ciencia de la Computación y Tecnologías de la Información.
-                Actualmente cursando el tercer año.
-            </p>
-        </div>
+      </div>
     </div>
 
-    <div class="edu-card">
-        <img src="img/DBLOGO.png" alt="Don Bosco Logo">
-        <div>
-            <h4>Colegio Salesiano Don Bosco</h4>
-            <span>2020 – 2022</span>
-            <p>
-                Bachiller en Ciencias y Letras con orientación en Computación.<br>
-                <strong>Graduado CUM LAUDE</strong>
-            </p>
-        </div>
+    <!-- Foto de perfil con badges flotantes -->
+    <div class="hero-visual">
+      <div class="profile-wrap">
+        <!--
+          📸 FOTO DE PERFIL
+          La imagen está en img/perfil.jpg
+          Si no carga muestra las iniciales MC como fallback
+        -->
+        <img
+          src="img/FotoPerfil1.jpeg"
+          alt="Miguel Carranza"
+          onerror="this.parentElement.innerHTML='<div style=\'display:flex;align-items:center;justify-content:center;width:100%;height:100%;background:#f5f5f7;font-size:4rem;font-weight:800;color:#1a1a1a;letter-spacing:-0.04em\'>MC</div>'"
+        >
+      </div>
+      <div class="profile-badge pb-tl">
+        <i class="fa-brands fa-docker" style="color:#2496ed"></i> Full Stack Dev
+      </div>
+      <div class="profile-badge pb-br">
+        <i class="fa-solid fa-graduation-cap"></i> UVG · CUM LAUDE
+      </div>
     </div>
-</section>
+  </section>
 
-<!-- EXPERIENCIA -->
-<section class="experience" id="experience">
-    <h3>Experiencia Profesional</h3>
 
-    <div class="exp-card">
-        <h4>Bershka Oakland Mall</h4>
-        <span>Dependiente de tienda · Nov 2022 – Ene 2023</span>
+  <!-- ================================================================
+       SOBRE MÍ
+  ================================================================ -->
+  <section id="about" style="background: var(--white);">
+    <div class="section-eyebrow">Quién soy</div>
+    <h2 class="section-title">Sobre mí</h2>
+
+    <div class="about-grid">
+      <!-- Texto + barras de idioma -->
+      <div class="about-text reveal">
         <p>
-            Atención al cliente, apoyo en caja durante alta afluencia,
-            control básico de inventario y organización de tienda.
+          Soy estudiante de <strong>Ingeniería en Ciencia de la Computación</strong>
+          en la Universidad del Valle de Guatemala, actualmente en tercer año.
+          Me especializo en crear soluciones limpias, escalables y visualmente atractivas.
         </p>
-    </div>
-
-    <div class="exp-card">
-        <h4>Museo de los Niños de Guatemala</h4>
-        <span>Guía Educativo · Abr 2025 – Oct 2025</span>
         <p>
-            Atención a niños y padres, comunicación efectiva,
-            creación de contenido educativo digital
-            y actividades dinámicas.
+          Mi enfoque es el desarrollo <strong>Full Stack</strong>: desde interfaces modernas
+          hasta sistemas backend robustos, bases de datos relacionales y de grafos,
+          contenedores Docker y programación de microcontroladores.
         </p>
+        <p>
+          Me interesa profundamente la <strong>ciberseguridad</strong>, la inteligencia
+          artificial y la arquitectura de sistemas. Trabajo de forma estructurada en
+          sprints con gestión Jira, priorizando código limpio y mantenible.
+        </p>
+
+        <div class="lang-section">
+          <div class="lang-label-row">
+            <span class="lang-name">Español</span>
+            <span class="lang-pct">100%</span>
+          </div>
+          <div class="lang-track">
+            <div class="lang-bar" data-w="1"></div>
+          </div>
+
+          <div class="lang-label-row">
+            <span class="lang-name">Inglés</span>
+            <span class="lang-pct">80%</span>
+          </div>
+          <div class="lang-track">
+            <div class="lang-bar" data-w="0.80"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Cards de datos personales -->
+      <div class="reveal" style="transition-delay: 0.12s">
+        <div class="about-cards">
+          <div class="about-card"><div class="card-label">Edad</div><div class="card-value">20 años</div></div>
+          <div class="about-card"><div class="card-label">Ubicación</div><div class="card-value">Zona 10, Guatemala</div></div>
+          <div class="about-card"><div class="card-label">Universidad</div><div class="card-value">UVG — Ing. CS</div></div>
+          <div class="about-card"><div class="card-label">Transporte</div><div class="card-value">Vehículo propio</div></div>
+          <div class="about-card"><div class="card-label">Facturación</div><div class="card-value">NIT activo</div></div>
+          <div class="about-card"><div class="card-label">Metodología</div><div class="card-value">Agile · Jira</div></div>
+        </div>
+      </div>
     </div>
-</section>
+  </section>
 
-<!-- FOOTER -->
-<footer>
-    <p>© 2026 Miguel Carranza</p>
-    <p>Software Engineer · Guatemala</p>
-</footer>
 
-<script src="script.js"></script>
+  <!-- ================================================================
+       TECH STACK
+  ================================================================ -->
+  <section id="stack" style="background: var(--gray1);">
+    <div class="section-eyebrow">Herramientas</div>
+    <h2 class="section-title">Tech Stack</h2>
+
+    <div class="tech-grid">
+
+      <div class="tech-cat reveal">
+        <div class="cat-label"><i class="fa-solid fa-display"></i> Frontend</div>
+        <div class="pills">
+          <span class="pill"><i class="fa-brands fa-html5"></i> HTML5</span>
+          <span class="pill"><i class="fa-brands fa-css3-alt"></i> CSS3</span>
+          <span class="pill"><i class="fa-brands fa-js"></i> JavaScript</span>
+          <span class="pill"><i class="fa-solid fa-code"></i> TypeScript</span>
+          <span class="pill"><i class="fa-brands fa-react"></i> React</span>
+        </div>
+      </div>
+
+      <div class="tech-cat reveal" style="transition-delay: 0.08s">
+        <div class="cat-label"><i class="fa-solid fa-server"></i> Backend &amp; Lenguajes</div>
+        <div class="pills">
+          <span class="pill"><i class="fa-brands fa-python"></i> Python</span>
+          <span class="pill"><i class="fa-brands fa-java"></i> Java</span>
+          <span class="pill"><i class="fa-solid fa-k"></i> Kotlin</span>
+          <span class="pill"><i class="fa-solid fa-c"></i> C / C++</span>
+        </div>
+      </div>
+
+      <div class="tech-cat reveal" style="transition-delay: 0.16s">
+        <div class="cat-label"><i class="fa-solid fa-database"></i> Bases de Datos</div>
+        <div class="pills">
+          <span class="pill"><i class="fa-solid fa-elephant"></i> PostgreSQL</span>
+          <span class="pill"><i class="fa-solid fa-circle-nodes"></i> Neo4J</span>
+        </div>
+      </div>
+
+      <div class="tech-cat reveal" style="transition-delay: 0.24s">
+        <div class="cat-label"><i class="fa-solid fa-wrench"></i> DevOps &amp; Herramientas</div>
+        <div class="pills">
+          <span class="pill"><i class="fa-brands fa-docker"></i> Docker</span>
+          <span class="pill"><i class="fa-brands fa-git-alt"></i> Git</span>
+          <span class="pill"><i class="fa-brands fa-linux"></i> Linux</span>
+          <span class="pill"><i class="fa-solid fa-code"></i> VS Code</span>
+          <span class="pill"><i class="fa-brands fa-android"></i> Android Studio</span>
+          <span class="pill"><i class="fa-brands fa-jira"></i> Jira</span>
+        </div>
+      </div>
+
+      <div class="tech-cat reveal" style="transition-delay: 0.30s">
+        <div class="cat-label"><i class="fa-solid fa-microchip"></i> Hardware &amp; IoT</div>
+        <div class="pills">
+          <span class="pill"><i class="fa-solid fa-bolt"></i> Arduino</span>
+          <span class="pill"><i class="fa-solid fa-wifi"></i> ESP32</span>
+          <span class="pill"><i class="fa-solid fa-wave-square"></i> Sensores</span>
+          <span class="pill"><i class="fa-solid fa-memory"></i> Embebidos</span>
+        </div>
+      </div>
+
+      <!-- Spotlight Docker con proyectos -->
+      <div class="docker-highlight reveal" style="transition-delay: 0.36s">
+        <div class="docker-top">
+          <div class="docker-icon-wrap"><i class="fa-brands fa-docker"></i></div>
+          <div>
+            <div class="docker-title">Docker — Proyectos desplegados</div>
+            <div class="docker-sub">Contenedores en producción y desarrollo</div>
+          </div>
+        </div>
+        <div class="docker-projs">
+          <div class="docker-proj">
+            <div class="dp-name">CV-MIGUEL_CARRANZA</div>
+            <div class="dp-desc">Portafolio web containerizado para despliegue consistente</div>
+          </div>
+          <div class="docker-proj">
+            <div class="dp-name">GVU</div>
+            <div class="dp-desc">App web con entorno Docker para desarrollo uniforme</div>
+          </div>
+          <div class="docker-proj">
+            <div class="dp-name">Proyecto Plataformas Móviles</div>
+            <div class="dp-desc">Docker para replicar entornos de equipo de forma exacta</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ================================================================
+       HABILIDADES
+  ================================================================ -->
+  <section id="skills" style="background: var(--white);">
+    <div class="section-eyebrow">Nivel técnico</div>
+    <h2 class="section-title">Habilidades</h2>
+
+    <div class="skills-grid">
+      <div class="reveal">
+        <div class="skill-row">
+          <div class="skill-hdr"><span class="skill-name">Frontend Development</span><span class="skill-pct">75%</span></div>
+          <div class="skill-bg"><div class="skill-fill" data-w="0.75"></div></div>
+        </div>
+        <div class="skill-row">
+          <div class="skill-hdr"><span class="skill-name">Backend Development</span><span class="skill-pct">50%</span></div>
+          <div class="skill-bg"><div class="skill-fill" data-w="0.50"></div></div>
+        </div>
+        <div class="skill-row">
+          <div class="skill-hdr"><span class="skill-name">Mobile — Android / Kotlin</span><span class="skill-pct">55%</span></div>
+          <div class="skill-bg"><div class="skill-fill" data-w="0.55"></div></div>
+        </div>
+      </div>
+      <div class="reveal" style="transition-delay: 0.12s">
+        <div class="skill-row">
+          <div class="skill-hdr"><span class="skill-name">Bases de Datos</span><span class="skill-pct">60%</span></div>
+          <div class="skill-bg"><div class="skill-fill" data-w="0.60"></div></div>
+        </div>
+        <div class="skill-row">
+          <div class="skill-hdr"><span class="skill-name">DevOps / Docker</span><span class="skill-pct">55%</span></div>
+          <div class="skill-bg"><div class="skill-fill" data-w="0.55"></div></div>
+        </div>
+        <div class="skill-row">
+          <div class="skill-hdr"><span class="skill-name">Hardware / IoT</span><span class="skill-pct">65%</span></div>
+          <div class="skill-bg"><div class="skill-fill" data-w="0.65"></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ================================================================
+       EDUCACIÓN
+  ================================================================ -->
+  <section id="education" style="background: var(--gray1);">
+    <div class="section-eyebrow">Formación</div>
+    <h2 class="section-title">Educación</h2>
+
+    <div class="edu-grid">
+
+      <div class="edu-card reveal">
+        <img src="img/LOGOUVG.png" class="edu-logo" alt="UVG"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="edu-logo-ph" style="display:none"><i class="fa-solid fa-graduation-cap"></i></div>
+        <div class="edu-name">Universidad del Valle de Guatemala</div>
+        <div class="edu-degree">Ingeniería en Ciencia de la Computación y TI</div>
+        <div class="edu-date"><i class="fa-regular fa-calendar"></i> 2023 – Presente</div>
+        <div class="edu-desc">Actualmente en tercer año. Algoritmos, estructuras de datos, bases de datos, sistemas operativos y desarrollo de software.</div>
+      </div>
+
+      <div class="edu-card reveal" style="transition-delay: 0.1s">
+        <img src="img/DBLOGO.png" class="edu-logo" alt="Don Bosco"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="edu-logo-ph" style="display:none"><i class="fa-solid fa-school"></i></div>
+        <div class="edu-name">Colegio Salesiano Don Bosco</div>
+        <div class="edu-degree">Bachiller en Ciencias y Letras — Computación</div>
+        <div class="edu-date"><i class="fa-regular fa-calendar"></i> 2020 – 2022</div>
+        <div class="edu-desc">Fundamentos de computación e introducción a la programación.</div>
+        <div class="edu-badge"><i class="fa-solid fa-star"></i> Graduado CUM LAUDE</div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ================================================================
+       EXPERIENCIA
+  ================================================================ -->
+  <section id="experience" style="background: var(--white);">
+    <div class="section-eyebrow">Trayectoria</div>
+    <h2 class="section-title">Experiencia Profesional</h2>
+
+    <div class="timeline">
+
+      <div class="t-item">
+        <div class="t-dot"></div>
+        <div class="t-card">
+          <div class="t-header">
+            <div class="t-title">Museo de los Niños de Guatemala</div>
+            <div class="t-date">Abr 2025 – Oct 2025</div>
+          </div>
+          <div class="t-role">Guía Educativo</div>
+          <div class="t-desc">
+            Atención a niños y padres, comunicación efectiva, creación de contenido
+            educativo digital y actividades dinámicas. Desarrollo de habilidades de
+            presentación y pedagogía.
+          </div>
+          <div class="t-tags">
+            <span class="ttag">Comunicación</span>
+            <span class="ttag">Contenido Digital</span>
+            <span class="ttag">Educación</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="t-item">
+        <div class="t-dot"></div>
+        <div class="t-card">
+          <div class="t-header">
+            <div class="t-title">Bershka — Oakland Mall</div>
+            <div class="t-date">Nov 2022 – Ene 2023</div>
+          </div>
+          <div class="t-role">Dependiente de Tienda</div>
+          <div class="t-desc">
+            Atención al cliente, apoyo en caja durante alta afluencia, control
+            básico de inventario y organización de tienda.
+          </div>
+          <div class="t-tags">
+            <span class="ttag">Atención al cliente</span>
+            <span class="ttag">Inventario</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ================================================================
+       CERTIFICACIONES
+  ================================================================ -->
+  <section id="certs" style="background: var(--gray1);">
+    <div class="section-eyebrow">Certificaciones</div>
+    <h2 class="section-title">Cursos &amp; Certificados</h2>
+
+    <div class="certs-grid">
+
+      <!-- Certificado UVG Ética -->
+      <div class="cert-card reveal">
+        <img src="img/LOGOUVG.png" class="cert-icon" alt="UVG"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="cert-icon-ph" style="display:none"><i class="fa-solid fa-book-open"></i></div>
+        <div>
+          <div class="cert-name">Ética en Investigación con Sujetos Humanos</div>
+          <div class="cert-issuer">Universidad del Valle de Guatemala — CCSS</div>
+          <div class="cert-date">
+            <i class="fa-regular fa-calendar"></i>
+            7 de mayo de 2026 · Cód. CECCSSS 0343
+          </div>
+          <div class="cert-desc">
+            Curso en línea de 8 horas organizado por el Comité de Ética de Investigación
+            de la Facultad de Ciencias Sociales.
+          </div>
+        </div>
+        <div class="cert-tags">
+          <span class="cert-tag">8 horas</span>
+          <span class="cert-tag">UVG</span>
+          <span class="cert-tag">Ética</span>
+        </div>
+      </div>
+
+      <!-- Certificado HCI -->
+      <div class="cert-card reveal" style="transition-delay: 0.1s">
+        <img src="img/LOGOUVG.png" class="cert-icon" alt="UVG"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="cert-icon-ph" style="display:none"><i class="fa-solid fa-computer-mouse"></i></div>
+        <div>
+          <div class="cert-name">HCI — Interacción Humano-Computadora</div>
+          <div class="cert-issuer">Universidad del Valle de Guatemala</div>
+          <div class="cert-date">
+            <i class="fa-solid fa-building-columns"></i>
+            UVG · Curso universitario
+          </div>
+          <div class="cert-desc">
+            Principios de usabilidad, diseño centrado en el usuario, evaluación de
+            interfaces y prototipado de experiencias digitales.
+          </div>
+        </div>
+        <div class="cert-tags">
+          <span class="cert-tag">UX/UI</span>
+          <span class="cert-tag">Usabilidad</span>
+          <span class="cert-tag">Diseño</span>
+        </div>
+      </div>
+
+      <!-- INTECAP -->
+      <div class="cert-card reveal" style="transition-delay: 0.2s">
+        <img src="img/intecap.png" class="cert-icon" alt="UVG"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div>
+          <div class="cert-name">Creación de Páginas Web — HTML, CSS, JavaScript</div>
+          <div class="cert-issuer">INTECAP — Nivel Intermedio</div>
+          <div class="cert-date">
+            <i class="fa-solid fa-certificate"></i>
+            Certificación oficial
+          </div>
+          <div class="cert-desc">
+            Certificación tras completar satisfactoriamente el programa de formación
+            en desarrollo web. Aplicada en este portafolio.
+          </div>
+        </div>
+        <div class="cert-tags">
+          <span class="cert-tag">HTML5</span>
+          <span class="cert-tag">CSS3</span>
+          <span class="cert-tag">JavaScript</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ================================================================
+       INTERESES
+  ================================================================ -->
+  <section id="interests" style="background: var(--white);">
+    <div class="section-eyebrow">Dirección</div>
+    <h2 class="section-title">Áreas de interés</h2>
+
+    <div class="int-grid">
+      <div class="int-card reveal">
+        <div class="int-icon"><i class="fa-solid fa-shield-halved"></i></div>
+        <div class="int-title">Ciberseguridad</div>
+        <div class="int-desc">Seguridad ofensiva y defensiva, análisis de vulnerabilidades</div>
+      </div>
+      <div class="int-card reveal" style="transition-delay: 0.07s">
+        <div class="int-icon"><i class="fa-solid fa-brain"></i></div>
+        <div class="int-title">Inteligencia Artificial</div>
+        <div class="int-desc">Machine learning, modelos de lenguaje, automatización</div>
+      </div>
+      <div class="int-card reveal" style="transition-delay: 0.14s">
+        <div class="int-icon"><i class="fa-solid fa-globe"></i></div>
+        <div class="int-title">Desarrollo Web</div>
+        <div class="int-desc">Full stack moderno, APIs robustas, alta performance</div>
+      </div>
+      <div class="int-card reveal" style="transition-delay: 0.21s">
+        <div class="int-icon"><i class="fa-brands fa-android"></i></div>
+        <div class="int-title">Apps Móviles</div>
+        <div class="int-desc">Android nativo con Kotlin, Jetpack Compose, MVVM</div>
+      </div>
+      <div class="int-card reveal" style="transition-delay: 0.28s">
+        <div class="int-icon"><i class="fa-solid fa-microchip"></i></div>
+        <div class="int-title">Sistemas &amp; Hardware</div>
+        <div class="int-desc">Arduino, ESP32, IoT, C/C++ de bajo nivel</div>
+      </div>
+      <div class="int-card reveal" style="transition-delay: 0.35s">
+        <div class="int-icon"><i class="fa-solid fa-server"></i></div>
+        <div class="int-title">Backend &amp; APIs</div>
+        <div class="int-desc">Arquitectura de sistemas, REST, bases de datos</div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ================================================================
+       CONTACTO
+  ================================================================ -->
+  <section class="contact-section" id="contact">
+    <div class="contact-inner">
+      <div class="section-eyebrow">Hablemos</div>
+      <h2 class="section-title">Contacto</h2>
+      <p class="contact-subtitle">
+        Disponible para proyectos freelance, colaboraciones académicas o prácticas
+        profesionales. Escríbeme.
+      </p>
+
+      <div class="contact-links">
+        <a href="https://github.com/MADCO-py" class="c-link" target="_blank">
+          <i class="fa-brands fa-github"></i>
+          <div>
+            <span>GitHub</span>
+            <span class="c-link-sub">MADCO-py</span>
+          </div>
+        </a>
+        <a href="https://www.linkedin.com/in/miguel-angel-david-co-3585142a2/" class="c-link" target="_blank">
+          <i class="fa-brands fa-linkedin"></i>
+          <div>
+            <span>LinkedIn</span>
+            <span class="c-link-sub">Miguel Ángel David Co</span>
+          </div>
+        </a>
+        <a href="mailto:madcarranzaosorio@gmail.com" class="c-link">
+          <i class="fa-solid fa-envelope"></i>
+          <div>
+            <span>Email</span>
+            <span class="c-link-sub">madcarranzaosorio@gmail.com</span>
+          </div>
+        </a>
+        <a href="pages/portafolio.html" class="c-link">
+          <i class="fa-solid fa-layer-group"></i>
+          <div>
+            <span>Portafolio</span>
+            <span class="c-link-sub">Ver proyectos</span>
+          </div>
+        </a>
+      </div>
+
+      <div class="philosophy">
+        "Write code that works today and makes sense tomorrow."
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ================================================================
+       FOOTER
+  ================================================================ -->
+  <footer class="footer">
+    <span>&copy; 2026 Miguel Carranza — Software Engineer · Guatemala</span>
+    <div class="footer-right">
+      <a href="https://github.com/MADCO-py" target="_blank">
+        <i class="fa-brands fa-github"></i> GitHub
+      </a>
+      <a href="https://www.linkedin.com/in/miguel-angel-david-co-3585142a2/" target="_blank">
+        <i class="fa-brands fa-linkedin"></i> LinkedIn
+      </a>
+      <a href="mailto:madcarranzaosorio@gmail.com">
+        <i class="fa-solid fa-envelope"></i> Email
+      </a>
+    </div>
+  </footer>
+
+
+  <!-- ================================================================
+       SCRIPTS (al final para no bloquear el render)
+  ================================================================ -->
+  <script src="js/cursor.js"></script>
+  <script src="js/observer.js"></script>
 
 </body>
 </html>

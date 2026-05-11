@@ -1,0 +1,273 @@
+/* ============================================================
+   COMPONENTS.CSS — Componentes reutilizables
+   Nav, botones, pills, cursor, reveal animation, footer.
+   Usados en index.html Y portafolio.html
+   ============================================================ */
+
+
+/* ── CURSOR PERSONALIZADO ── */
+#cur {
+  position: fixed;
+  width: 8px;
+  height: 8px;
+  background: var(--black);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transition: transform 0.15s ease, background 0.2s ease;
+}
+
+#cur-r {
+  position: fixed;
+  width: 32px;
+  height: 32px;
+  border: 1.5px solid rgba(0, 0, 0, 0.25);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9998;
+  transition: transform 0.08s ease;
+}
+
+/* Cursor se expande sobre links */
+body:has(a:hover) #cur,
+body:has(button:hover) #cur {
+  transform: scale(0);
+}
+body:has(a:hover) #cur-r,
+body:has(button:hover) #cur-r {
+  transform: scale(2.2);
+  border-color: rgba(0, 113, 227, 0.4);
+}
+
+
+/* ── NAV FLOTANTE ── */
+.nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 200;
+  height: 52px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+  transition: background var(--duration) var(--ease);
+}
+
+/* Logo / nombre en la nav */
+.nav-logo {
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--black);
+}
+
+/* Links de la nav */
+.nav-links {
+  display: flex;
+  gap: 28px;
+  align-items: center;
+}
+
+.nav-links a {
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: var(--gray5);
+  letter-spacing: 0.01em;
+  transition: color 0.2s ease;
+  position: relative;
+}
+
+.nav-links a:hover {
+  color: var(--black);
+}
+
+/* Link activo (página actual) */
+.nav-links a.active {
+  color: var(--black);
+  font-weight: 500;
+}
+
+/* CTA especial en nav */
+.nav-cta {
+  font-size: 0.8rem !important;
+  font-weight: 500 !important;
+  color: var(--accent) !important;
+}
+.nav-cta:hover {
+  text-decoration: underline !important;
+}
+
+/* Nav densa al hacer scroll — activada por JS */
+.nav.scrolled {
+  background: rgba(255, 255, 255, 0.95);
+}
+
+
+/* ── BOTONES ── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 24px;
+  border-radius: 980px;
+  font-size: 0.88rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  cursor: pointer;
+  border: none;
+  transition: all 0.25s var(--ease);
+}
+
+/* Botón negro principal */
+.btn-dark {
+  background: var(--black);
+  color: var(--white);
+}
+.btn-dark:hover {
+  background: var(--black2);
+  transform: scale(1.02);
+  box-shadow: var(--shadow-md);
+}
+
+/* Botón outline */
+.btn-outline {
+  background: var(--white);
+  color: var(--black);
+  border: 1px solid var(--border-dark);
+  box-shadow: var(--shadow-sm);
+}
+.btn-outline:hover {
+  box-shadow: var(--shadow-md);
+  transform: scale(1.02);
+}
+
+/* Botón pequeño (usado en cards) */
+.btn-sm {
+  padding: 7px 16px;
+  font-size: 0.78rem;
+}
+
+
+/* ── PILLS / TAGS ── */
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 11px;
+  border-radius: 980px;
+  font-size: 0.76rem;
+  font-weight: 500;
+  border: 1px solid var(--gray2);
+  background: var(--gray1);
+  color: var(--black3);
+  cursor: default;
+  transition: all 0.2s ease;
+}
+.pill:hover {
+  background: var(--black);
+  color: var(--white);
+  border-color: var(--black);
+  transform: scale(1.05);
+}
+.pill i {
+  font-size: 0.75rem;
+  color: var(--gray4);
+  transition: color 0.2s ease;
+}
+.pill:hover i {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+
+/* ── SECTION EYEBROW (etiqueta pequeña sobre el título) ── */
+.section-eyebrow {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gray4);
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.section-eyebrow::before {
+  content: '';
+  width: 20px;
+  height: 1px;
+  background: var(--gray3);
+}
+
+/* Título de sección grande */
+.section-title {
+  font-size: clamp(2.2rem, 3.5vw, 3rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  margin-bottom: 56px;
+  color: var(--black);
+}
+
+
+/* ── SCROLL REVEAL ──
+   Las clases .reveal y .on son activadas por observer.js
+   ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
+}
+.reveal.on {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* ── FOOTER ── */
+.footer {
+  padding: 28px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid var(--border);
+  font-size: 0.78rem;
+  color: var(--gray4);
+  flex-wrap: wrap;
+  gap: 10px;
+  background: var(--white);
+}
+
+.footer-right {
+  display: flex;
+  gap: 20px;
+}
+
+.footer-right a {
+  color: var(--gray4);
+  transition: color 0.2s ease;
+}
+.footer-right a:hover {
+  color: var(--black);
+}
+
+
+/* ── RESPONSIVE: NAV ── */
+@media (max-width: 960px) {
+  .nav {
+    padding: 0 20px;
+  }
+  .nav-links {
+    gap: 16px;
+  }
+}
+
+@media (max-width: 640px) {
+  /* Ocultar links en mobile, dejar solo CTA */
+  .nav-links a:not(.nav-cta) {
+    display: none;
+  }
+}

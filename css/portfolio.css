@@ -1,0 +1,451 @@
+/* ============================================================
+   PORTFOLIO.CSS — Estilos exclusivos de portafolio.html
+   Importa variables.css y components.css antes de este archivo
+   ============================================================ */
+
+
+/* ── HERO DEL PORTAFOLIO ── */
+.pf-hero {
+  min-height: 60vh;
+  padding: 130px 8% 80px;
+  background: var(--black);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Cuadrícula decorativa de fondo */
+.pf-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 48px 48px;
+  pointer-events: none;
+}
+
+.pf-hero-eyebrow {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.4);
+  margin-bottom: 16px;
+  display: flex; align-items: center; gap: 10px;
+  position: relative; z-index: 1;
+}
+.pf-hero-eyebrow::before {
+  content: '';
+  width: 20px; height: 1px;
+  background: rgba(255,255,255,0.2);
+}
+
+.pf-hero h1 {
+  font-size: clamp(3rem, 6vw, 6rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1.0;
+  color: var(--white);
+  margin-bottom: 20px;
+  position: relative; z-index: 1;
+}
+
+.pf-hero-sub {
+  font-size: 1.1rem;
+  color: rgba(255,255,255,0.5);
+  max-width: 500px;
+  line-height: 1.7;
+  position: relative; z-index: 1;
+}
+
+
+/* ── BARRA DE BÚSQUEDA + FILTROS ── */
+.search-bar-wrap {
+  padding: 40px 8% 0;
+  background: var(--black);
+  position: sticky;
+  top: 52px; /* altura de la nav */
+  z-index: 100;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+  padding-bottom: 24px;
+}
+
+.search-input-wrap {
+  position: relative;
+  max-width: 540px;
+  margin-bottom: 20px;
+}
+
+.search-input-wrap i {
+  position: absolute;
+  left: 18px; top: 50%;
+  transform: translateY(-50%);
+  color: rgba(255,255,255,0.35);
+  font-size: 0.9rem;
+  pointer-events: none;
+}
+
+/* Input de búsqueda */
+#searchInput {
+  width: 100%;
+  padding: 14px 18px 14px 46px;
+  border-radius: 980px;
+  border: 1px solid rgba(255,255,255,0.1);
+  background: rgba(255,255,255,0.07);
+  color: var(--white);
+  font-size: 0.9rem;
+  font-family: var(--font-main);
+  outline: none;
+  transition: all 0.3s ease;
+  -webkit-appearance: none;
+}
+#searchInput::placeholder {
+  color: rgba(255,255,255,0.3);
+}
+#searchInput:focus {
+  border-color: rgba(255,255,255,0.25);
+  background: rgba(255,255,255,0.1);
+}
+
+/* Contador de resultados */
+.search-count {
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.3);
+  font-family: var(--font-mono);
+  margin-top: 8px;
+  padding-left: 4px;
+}
+
+/* Filtros por categoría */
+.filter-row {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  padding: 7px 18px;
+  border-radius: 980px;
+  border: 1px solid rgba(255,255,255,0.12);
+  background: transparent;
+  color: rgba(255,255,255,0.5);
+  font-size: 0.78rem;
+  font-weight: 500;
+  font-family: var(--font-main);
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+.filter-btn:hover {
+  border-color: rgba(255,255,255,0.3);
+  color: var(--white);
+}
+/* Estado activo del filtro */
+.filter-btn.active {
+  background: var(--white);
+  color: var(--black);
+  border-color: var(--white);
+}
+
+/* Número de proyectos en cada filtro */
+.filter-count {
+  font-size: 0.68rem;
+  opacity: 0.6;
+  margin-left: 4px;
+  font-family: var(--font-mono);
+}
+
+
+/* ── CONTENIDO DEL PORTAFOLIO ── */
+.pf-content {
+  background: var(--gray1);
+  padding: 60px 8% 100px;
+  min-height: 60vh;
+}
+
+/* Categoría con su título */
+.category-section {
+  margin-bottom: 72px;
+}
+
+.category-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.category-icon {
+  width: 40px; height: 40px;
+  border-radius: var(--radius-sm);
+  background: var(--black);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.9rem; color: var(--white);
+}
+
+.category-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--black);
+}
+
+.category-count {
+  font-size: 0.75rem;
+  color: var(--gray4);
+  font-family: var(--font-mono);
+}
+
+/* Grid de project cards */
+.proj-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 20px;
+}
+
+
+/* ── PROJECT CARD ── */
+.proj-card {
+  background: var(--white);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--border);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.4s var(--ease);
+  cursor: pointer;
+  position: relative;
+}
+.proj-card:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-8px);
+  border-color: var(--border-dark);
+}
+
+/* Área de imagen del proyecto */
+.proj-image {
+  width: 100%;
+  height: 200px;
+  background: var(--gray1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  border-bottom: 1px solid var(--border);
+}
+
+.proj-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s var(--ease);
+}
+.proj-card:hover .proj-image img {
+  transform: scale(1.06);
+}
+
+/* Placeholder cuando no hay imagen */
+.proj-image-ph {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: var(--gray1);
+  color: var(--gray3);
+}
+.proj-image-ph i   { font-size: 2.5rem; }
+.proj-image-ph span {
+  font-size: 0.72rem;
+  font-family: var(--font-mono);
+  color: var(--gray4);
+  letter-spacing: 0.05em;
+}
+
+/* Badge de categoría sobre la imagen */
+.proj-cat-badge {
+  position: absolute;
+  top: 14px; left: 14px;
+  padding: 5px 12px;
+  border-radius: 980px;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  background: var(--white);
+  color: var(--black);
+  border: 1px solid var(--gray2);
+}
+
+/* Badge de "vendido" / cliente real */
+.proj-sold-badge {
+  position: absolute;
+  top: 14px; right: 14px;
+  padding: 5px 12px;
+  border-radius: 980px;
+  font-size: 0.68rem;
+  font-weight: 700;
+  background: var(--black);
+  color: var(--white);
+}
+
+/* Cuerpo de la card */
+.proj-body {
+  padding: 22px 24px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.proj-name {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--black);
+  margin-bottom: 8px;
+  letter-spacing: -0.02em;
+}
+
+.proj-client {
+  font-size: 0.75rem;
+  color: var(--gray4);
+  font-family: var(--font-mono);
+  margin-bottom: 10px;
+  display: flex; align-items: center; gap: 5px;
+}
+
+.proj-desc {
+  font-size: 0.86rem;
+  color: var(--gray5);
+  line-height: 1.7;
+  flex: 1;
+  margin-bottom: 18px;
+}
+
+/* Tecnologías usadas */
+.proj-techs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 18px;
+}
+.ptag {
+  font-size: 0.69rem;
+  padding: 3px 9px;
+  border-radius: 980px;
+  background: var(--gray1);
+  color: var(--gray5);
+  border: 1px solid var(--gray2);
+  transition: all 0.2s ease;
+}
+.proj-card:hover .ptag {
+  border-color: var(--gray3);
+}
+
+/* Footer de la card con links */
+.proj-footer {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  border-top: 1px solid var(--gray2);
+  padding-top: 16px;
+}
+
+.proj-link {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 0.76rem; font-weight: 500;
+  color: var(--black);
+  padding: 7px 14px; border-radius: 980px;
+  border: 1px solid var(--gray2);
+  background: var(--gray1);
+  transition: all 0.25s ease;
+}
+.proj-link:hover {
+  background: var(--black); color: var(--white);
+  border-color: var(--black);
+}
+.proj-link i { font-size: 0.75rem; }
+
+/* Link de acento azul (demo / live) */
+.proj-link-accent {
+  background: var(--accent-light);
+  color: var(--accent);
+  border-color: transparent;
+}
+.proj-link-accent:hover {
+  background: var(--accent);
+  color: var(--white);
+  border-color: var(--accent);
+}
+
+
+/* ── MENSAJE "SIN RESULTADOS" ── */
+.no-results {
+  display: none;
+  text-align: center;
+  padding: 80px 20px;
+  color: var(--gray4);
+}
+.no-results i {
+  font-size: 2.5rem;
+  margin-bottom: 16px;
+  opacity: 0.4;
+  display: block;
+}
+.no-results p {
+  font-size: 0.95rem;
+}
+.no-results.visible {
+  display: block;
+}
+
+
+/* ── SECCIÓN "SOBRE EL PORTAFOLIO" (pie) ── */
+.pf-footer-note {
+  background: var(--white);
+  padding: 60px 8%;
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.pf-footer-note p {
+  font-size: 0.88rem;
+  color: var(--gray4);
+  max-width: 400px;
+  line-height: 1.7;
+}
+.pf-footer-note a {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 0.85rem; font-weight: 500;
+  color: var(--accent);
+  border: 1px solid rgba(0,113,227,0.2);
+  padding: 10px 20px; border-radius: 980px;
+  transition: all 0.25s ease;
+  background: var(--accent-light);
+}
+.pf-footer-note a:hover {
+  background: var(--accent); color: var(--white);
+}
+
+
+/* ── RESPONSIVE ── */
+@media (max-width: 960px) {
+  .pf-hero           { padding: 110px 6% 60px; }
+  .search-bar-wrap   { padding: 24px 6%; top: 52px; }
+  .pf-content        { padding: 48px 6% 80px; }
+  .pf-footer-note    { padding: 48px 6%; }
+}
+
+@media (max-width: 640px) {
+  .pf-hero h1        { font-size: 3rem; }
+  .proj-grid         { grid-template-columns: 1fr; }
+  .filter-btn span.filter-count { display: none; }
+}

@@ -1,0 +1,86 @@
+/* ============================================================
+   VARIABLES.CSS — Design tokens globales
+   Modifica aquí para cambiar colores, tipografía y espaciado
+   en todo el sitio de una sola vez.
+   ============================================================ */
+
+:root {
+  /* --- Paleta principal (Apple / iShop style) --- */
+  --black:        #0a0a0a;
+  --black2:       #1a1a1a;
+  --black3:       #2d2d2d;
+  --white:        #ffffff;
+
+  /* --- Escala de grises --- */
+  --gray1:        #f5f5f7;   /* fondo de secciones */
+  --gray2:        #e8e8ed;   /* bordes suaves */
+  --gray3:        #d2d2d7;   /* bordes emphasis */
+  --gray4:        #86868b;   /* texto secundario */
+  --gray5:        #515154;   /* texto cuerpo */
+
+  /* --- Acento único (azul Apple) --- */
+  --accent:       #0071e3;
+  --accent-light: #e8f0fb;
+
+  /* --- Bordes --- */
+  --border:       rgba(0, 0, 0, 0.08);
+  --border-dark:  rgba(0, 0, 0, 0.16);
+
+  /* --- Sombras --- */
+  --shadow-sm:    0 2px 8px rgba(0, 0, 0, 0.06);
+  --shadow-md:    0 8px 28px rgba(0, 0, 0, 0.10);
+  --shadow-lg:    0 20px 60px rgba(0, 0, 0, 0.12);
+  --shadow-hover: 0 28px 80px rgba(0, 0, 0, 0.16);
+
+  /* --- Border radius --- */
+  --radius-sm:    8px;
+  --radius-md:    14px;
+  --radius-lg:    20px;
+  --radius-xl:    28px;
+
+  /* --- Tipografía --- */
+  --font-main:    'Inter', sans-serif;
+  --font-mono:    'JetBrains Mono', monospace;
+
+  /* --- Transiciones --- */
+  --ease:         cubic-bezier(0.4, 0, 0.2, 1);
+  --duration:     0.35s;
+}
+
+
+/* ============================================================
+   RESET BASE
+   ============================================================ */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-main);
+  background: var(--white);
+  color: var(--black);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  cursor: none; /* cursor personalizado activo en cursor.js */
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul, ol {
+  list-style: none;
+}
