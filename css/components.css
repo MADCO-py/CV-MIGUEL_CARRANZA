@@ -271,3 +271,9 @@ body:has(button:hover) #cur-r {
     display: none;
   }
 }
+
+/* Sin cursor personalizado en pantallas táctiles */
+@media (pointer: coarse) {
+  #cur, #cur-r { display: none; }
+  body { cursor: auto; }
+}

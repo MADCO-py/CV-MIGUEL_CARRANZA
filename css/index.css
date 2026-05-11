@@ -275,14 +275,23 @@ section {
   height: 100%;
   background: var(--black);
   border-radius: 10px;
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 1.2s var(--ease);
+  width: 0%;
+  transition: width 1.2s var(--ease);
 }
 .lang-bar.on {
-  transform: scaleX(1);
+  width: var(--w, 0%);
 }
 
+.skill-fill {
+  height: 100%;
+  background: var(--black);
+  border-radius: 10px;
+  width: 0%;
+  transition: width 1.3s var(--ease);
+}
+.skill-fill.on {
+  width: var(--w, 0%);
+}
 
 /* ── TECH STACK ── */
 .tech-grid {
@@ -407,12 +416,11 @@ section {
 .skill-pct  { font-size: 0.75rem; font-family: var(--font-mono); color: var(--gray4); }
 .skill-bg   { height: 4px; background: var(--gray2); border-radius: 10px; overflow: hidden; }
 .skill-fill {
-  height: 100%;
-  background: var(--black);
-  border-radius: 10px;
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 1.3s var(--ease);
+  width: 0%;
+  transition: width 1.3s var(--ease);
+}
+.skill-fill.on {
+  width: var(--w, 0%);
 }
 .skill-fill.on {
   transform: scaleX(1);
