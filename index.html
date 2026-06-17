@@ -1,9 +1,12 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Miguel Carranza — Software Engineer</title>
+
+  <!-- Anti-FOUC: apply saved theme before CSS renders to avoid flash -->
+  <script>(function(){var t=localStorage.getItem('theme')||'light',l=localStorage.getItem('lang')||'en';document.documentElement.setAttribute('data-theme',t);document.documentElement.setAttribute('data-lang',l);document.documentElement.lang=l})()</script>
 
   <!-- Fuentes -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -24,16 +27,28 @@
 
   <!-- ================================================================
        NAV FLOTANTE
-       Para marcar la página activa: agrega class="active" al link
   ================================================================ -->
   <nav class="nav" id="mainNav">
     <a class="nav-logo" href="index.html">Miguel Carranza</a>
     <div class="nav-links">
-      <a href="#about">Sobre mí</a>
-      <a href="#stack">Stack</a>
-      <a href="#education">Formación</a>
-      <a href="pages/portafolio.html">Portafolio</a>
-      <a href="#contact" class="nav-cta">Contacto</a>
+      <a href="#about"                   data-i18n="nav.about">About</a>
+      <a href="#stack"                   data-i18n="nav.stack">Stack</a>
+      <a href="#education"               data-i18n="nav.education">Education</a>
+      <a href="pages/portafolio.html"    data-i18n="nav.portfolio">Portfolio</a>
+      <a href="#contact" class="nav-cta" data-i18n="nav.contact">Contact</a>
+    </div>
+
+    <!-- Language + Theme controls -->
+    <div class="nav-controls">
+      <div class="lang-toggle" id="langToggle" role="button" aria-label="Toggle language" tabindex="0">
+        <span class="lang-opt en active">EN</span>
+        <span class="lang-opt es">ES</span>
+        <span class="lang-slider" id="langSlider"></span>
+      </div>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+        <i class="fa-solid fa-sun  theme-icon sun"></i>
+        <i class="fa-solid fa-moon theme-icon moon"></i>
+      </button>
     </div>
   </nav>
 
@@ -45,7 +60,7 @@
     <div class="hero-content">
       <div class="hero-eyebrow">
         <div class="hero-dot"></div>
-        Disponible · Guatemala
+        <span data-i18n="hero.eyebrow">Available · Guatemala</span>
       </div>
 
       <h1>
@@ -54,35 +69,35 @@
       </h1>
 
       <p class="hero-role">
-        <strong>Full Stack Developer</strong> &amp; Estudiante de Ingeniería
+        <strong>Full Stack Developer</strong> &amp; <span data-i18n="hero.role.suffix">Engineering Student</span>
       </p>
 
-      <p class="hero-desc">
-        Construyo software funcional, optimizado y mantenible.
-        Enfocado en desarrollo web, sistemas backend, apps móviles e IoT.
+      <p class="hero-desc" data-i18n="hero.desc">
+        I build functional, optimized and maintainable software.
+        Focused on web development, backend systems, mobile apps and IoT.
       </p>
 
       <div class="hero-actions">
         <a href="#contact" class="btn btn-dark">
-          <i class="fa-solid fa-arrow-right"></i> Contactar
+          <i class="fa-solid fa-arrow-right"></i> <span data-i18n="hero.cta.contact">Contact</span>
         </a>
         <a href="pages/portafolio.html" class="btn btn-outline">
-          <i class="fa-solid fa-layer-group"></i> Ver portafolio
+          <i class="fa-solid fa-layer-group"></i> <span data-i18n="hero.cta.portfolio">View portfolio</span>
         </a>
       </div>
 
       <div class="hero-stats">
         <div class="stat">
           <span class="stat-n">20</span>
-          <span class="stat-l">Años</span>
+          <span class="stat-l" data-i18n="hero.stat.age">Years</span>
         </div>
         <div class="stat">
           <span class="stat-n">9+</span>
-          <span class="stat-l">Lenguajes</span>
+          <span class="stat-l" data-i18n="hero.stat.langs">Languages</span>
         </div>
         <div class="stat">
           <span class="stat-n">3°</span>
-          <span class="stat-l">Año UVG</span>
+          <span class="stat-l" data-i18n="hero.stat.year">Year @ UVG</span>
         </div>
       </div>
     </div>
@@ -90,11 +105,6 @@
     <!-- Foto de perfil con badges flotantes -->
     <div class="hero-visual">
       <div class="profile-wrap">
-        <!--
-          📸 FOTO DE PERFIL
-          La imagen está en img/perfil.jpg
-          Si no carga muestra las iniciales MC como fallback
-        -->
         <img
           src="img/ingefoto.jpeg"
           alt="Miguel Carranza"
@@ -112,34 +122,22 @@
 
 
   <!-- ================================================================
-       SOBRE MÍ
+       SOBRE MÍ / ABOUT
   ================================================================ -->
   <section id="about" style="background: var(--white);">
-    <div class="section-eyebrow">Quién soy</div>
-    <h2 class="section-title">Sobre mí</h2>
+    <div class="section-eyebrow" data-i18n="about.eyebrow">Who I am</div>
+    <h2 class="section-title" data-i18n="about.title">About Me</h2>
 
     <div class="about-grid">
       <!-- Texto + barras de idioma -->
       <div class="about-text reveal">
-        <p>
-          Soy estudiante de <strong>Ingeniería en Ciencia de la Computación</strong>
-          en la Universidad del Valle de Guatemala, actualmente en tercer año.
-          Me especializo en crear soluciones limpias, escalables y visualmente atractivas.
-        </p>
-        <p>
-          Mi enfoque es el desarrollo <strong>Full Stack</strong>: desde interfaces modernas
-          hasta sistemas backend robustos, bases de datos relacionales y de grafos,
-          contenedores Docker y programación de microcontroladores.
-        </p>
-        <p>
-          Me interesa profundamente la <strong>ciberseguridad</strong>, la inteligencia
-          artificial y la arquitectura de sistemas. Trabajo de forma estructurada en
-          sprints con gestión Jira, priorizando código limpio y mantenible.
-        </p>
+        <p data-i18n="about.p1">I am a <strong>Computer Science Engineering</strong> student at Universidad del Valle de Guatemala, currently in my third year. I specialize in creating clean, scalable and visually appealing solutions.</p>
+        <p data-i18n="about.p2">My focus is <strong>Full Stack</strong> development: from modern interfaces to robust backend systems, relational and graph databases, Docker containers and microcontroller programming.</p>
+        <p data-i18n="about.p3">I am deeply interested in <strong>cybersecurity</strong>, artificial intelligence and systems architecture. I work in a structured way using sprints and Jira management, prioritizing clean and maintainable code.</p>
 
         <div class="lang-section">
           <div class="lang-label-row">
-            <span class="lang-name">Español</span>
+            <span class="lang-name" data-i18n="about.lang.es">Spanish</span>
             <span class="lang-pct">100%</span>
           </div>
           <div class="lang-track">
@@ -147,8 +145,7 @@
           </div>
 
           <div class="lang-label-row">
-            <span class="lang-name">Inglés</span>
-            
+            <span class="lang-name" data-i18n="about.lang.en">English</span>
             <span class="lang-pct">80%</span>
           </div>
           <div class="lang-track">
@@ -160,12 +157,30 @@
       <!-- Cards de datos personales -->
       <div class="reveal" style="transition-delay: 0.12s">
         <div class="about-cards">
-          <div class="about-card"><div class="card-label">Edad</div><div class="card-value">20 años</div></div>
-          <div class="about-card"><div class="card-label">Ubicación</div><div class="card-value">Zona 10, Guatemala</div></div>
-          <div class="about-card"><div class="card-label">Universidad</div><div class="card-value">UVG — Ing. CS</div></div>
-          <div class="about-card"><div class="card-label">Transporte</div><div class="card-value">Vehículo propio</div></div>
-          <div class="about-card"><div class="card-label">Facturación</div><div class="card-value">NIT activo</div></div>
-          <div class="about-card"><div class="card-label">Metodología</div><div class="card-value">Agile · Jira</div></div>
+          <div class="about-card">
+            <div class="card-label" data-i18n="about.card.age.label">Age</div>
+            <div class="card-value" data-i18n="about.card.age.value">20 years</div>
+          </div>
+          <div class="about-card">
+            <div class="card-label" data-i18n="about.card.location.label">Location</div>
+            <div class="card-value" data-i18n="about.card.location.value">Zone 10, Guatemala</div>
+          </div>
+          <div class="about-card">
+            <div class="card-label" data-i18n="about.card.university.label">University</div>
+            <div class="card-value" data-i18n="about.card.university.value">UVG — CS Eng.</div>
+          </div>
+          <div class="about-card">
+            <div class="card-label" data-i18n="about.card.transport.label">Transport</div>
+            <div class="card-value" data-i18n="about.card.transport.value">Own vehicle</div>
+          </div>
+          <div class="about-card">
+            <div class="card-label" data-i18n="about.card.billing.label">Billing</div>
+            <div class="card-value" data-i18n="about.card.billing.value">Active NIT</div>
+          </div>
+          <div class="about-card">
+            <div class="card-label" data-i18n="about.card.method.label">Methodology</div>
+            <div class="card-value" data-i18n="about.card.method.value">Agile · Jira</div>
+          </div>
         </div>
       </div>
     </div>
@@ -176,13 +191,13 @@
        TECH STACK
   ================================================================ -->
   <section id="stack" style="background: var(--gray1);">
-    <div class="section-eyebrow">Herramientas</div>
-    <h2 class="section-title">Tech Stack</h2>
+    <div class="section-eyebrow" data-i18n="stack.eyebrow">Tools</div>
+    <h2 class="section-title" data-i18n="stack.title">Tech Stack</h2>
 
     <div class="tech-grid">
 
       <div class="tech-cat reveal">
-        <div class="cat-label"><i class="fa-solid fa-display"></i> Frontend</div>
+        <div class="cat-label"><i class="fa-solid fa-display"></i> <span data-i18n="stack.cat.frontend">Frontend</span></div>
         <div class="pills">
           <span class="pill"><i class="fa-brands fa-html5"></i> HTML5</span>
           <span class="pill"><i class="fa-brands fa-css3-alt"></i> CSS3</span>
@@ -193,7 +208,7 @@
       </div>
 
       <div class="tech-cat reveal" style="transition-delay: 0.08s">
-        <div class="cat-label"><i class="fa-solid fa-server"></i> Backend &amp; Lenguajes</div>
+        <div class="cat-label"><i class="fa-solid fa-server"></i> <span data-i18n="stack.cat.backend">Backend &amp; Languages</span></div>
         <div class="pills">
           <span class="pill"><i class="fa-brands fa-python"></i> Python</span>
           <span class="pill"><i class="fa-brands fa-java"></i> Java</span>
@@ -203,7 +218,7 @@
       </div>
 
       <div class="tech-cat reveal" style="transition-delay: 0.16s">
-        <div class="cat-label"><i class="fa-solid fa-database"></i> Bases de Datos</div>
+        <div class="cat-label"><i class="fa-solid fa-database"></i> <span data-i18n="stack.cat.db">Databases</span></div>
         <div class="pills">
           <span class="pill"><i class="fa-solid fa-elephant"></i> PostgreSQL</span>
           <span class="pill"><i class="fa-solid fa-circle-nodes"></i> Neo4J</span>
@@ -211,7 +226,7 @@
       </div>
 
       <div class="tech-cat reveal" style="transition-delay: 0.24s">
-        <div class="cat-label"><i class="fa-solid fa-wrench"></i> DevOps &amp; Herramientas</div>
+        <div class="cat-label"><i class="fa-solid fa-wrench"></i> <span data-i18n="stack.cat.devops">DevOps &amp; Tools</span></div>
         <div class="pills">
           <span class="pill"><i class="fa-brands fa-docker"></i> Docker</span>
           <span class="pill"><i class="fa-brands fa-git-alt"></i> Git</span>
@@ -223,7 +238,7 @@
       </div>
 
       <div class="tech-cat reveal" style="transition-delay: 0.30s">
-        <div class="cat-label"><i class="fa-solid fa-microchip"></i> Hardware &amp; IoT</div>
+        <div class="cat-label"><i class="fa-solid fa-microchip"></i> <span data-i18n="stack.cat.iot">Hardware &amp; IoT</span></div>
         <div class="pills">
           <span class="pill"><i class="fa-solid fa-bolt"></i> Arduino</span>
           <span class="pill"><i class="fa-solid fa-wifi"></i> ESP32</span>
@@ -237,22 +252,22 @@
         <div class="docker-top">
           <div class="docker-icon-wrap"><i class="fa-brands fa-docker"></i></div>
           <div>
-            <div class="docker-title">Docker — Proyectos desplegados</div>
-            <div class="docker-sub">Contenedores en producción y desarrollo</div>
+            <div class="docker-title" data-i18n="stack.docker.title">Docker — Deployed Projects</div>
+            <div class="docker-sub"   data-i18n="stack.docker.sub">Containers in production and development</div>
           </div>
         </div>
         <div class="docker-projs">
           <div class="docker-proj">
             <div class="dp-name">CV-MIGUEL_CARRANZA</div>
-            <div class="dp-desc">Portafolio web containerizado para despliegue consistente</div>
+            <div class="dp-desc" data-i18n="stack.docker.proj1.desc">Containerized web portfolio for consistent deployment</div>
           </div>
           <div class="docker-proj">
             <div class="dp-name">GVU</div>
-            <div class="dp-desc">App web con entorno Docker para desarrollo uniforme</div>
+            <div class="dp-desc" data-i18n="stack.docker.proj2.desc">Web app with Docker environment for uniform development</div>
           </div>
           <div class="docker-proj">
             <div class="dp-name">Proyecto Plataformas Móviles</div>
-            <div class="dp-desc">Docker para replicar entornos de equipo de forma exacta</div>
+            <div class="dp-desc" data-i18n="stack.docker.proj3.desc">Docker to replicate team environments exactly</div>
           </div>
         </div>
       </div>
@@ -262,50 +277,51 @@
 
 
   <!-- ================================================================
-       HABILIDADES
+       HABILIDADES / SKILLS
   ================================================================ -->
   <section id="skills" style="background: var(--white);">
-    <div class="section-eyebrow">Nivel técnico</div>
-    <h2 class="section-title">Habilidades</h2>
+    <div class="section-eyebrow" data-i18n="skills.eyebrow">Technical Level</div>
+    <h2 class="section-title" data-i18n="skills.title">Skills</h2>
 
-<div class="skills-grid">
-  <div class="reveal">
-    <div class="skill-row">
-      <div class="skill-hdr"><span class="skill-name">Frontend Development</span><span class="skill-pct">75%</span></div>
-      <div class="skill-bg"><div class="skill-fill" style="--w: 75%"></div></div>
+    <div class="skills-grid">
+      <div class="reveal">
+        <div class="skill-row">
+          <div class="skill-hdr"><span class="skill-name">Frontend Development</span><span class="skill-pct">75%</span></div>
+          <div class="skill-bg"><div class="skill-fill" style="--w: 75%"></div></div>
+        </div>
+        <div class="skill-row">
+          <div class="skill-hdr"><span class="skill-name">Backend Development</span><span class="skill-pct">50%</span></div>
+          <div class="skill-bg"><div class="skill-fill" style="--w: 50%"></div></div>
+        </div>
+        <div class="skill-row">
+          <div class="skill-hdr"><span class="skill-name">Mobile — Android / Kotlin</span><span class="skill-pct">55%</span></div>
+          <div class="skill-bg"><div class="skill-fill" style="--w: 55%"></div></div>
+        </div>
+      </div>
+      <div class="reveal" style="transition-delay: 0.12s">
+        <div class="skill-row">
+          <div class="skill-hdr"><span class="skill-name" data-i18n="skills.db">Databases</span><span class="skill-pct">60%</span></div>
+          <div class="skill-bg"><div class="skill-fill" style="--w: 60%"></div></div>
+        </div>
+        <div class="skill-row">
+          <div class="skill-hdr"><span class="skill-name">DevOps / Docker</span><span class="skill-pct">55%</span></div>
+          <div class="skill-bg"><div class="skill-fill" style="--w: 55%"></div></div>
+        </div>
+        <div class="skill-row">
+          <div class="skill-hdr"><span class="skill-name">Hardware / IoT</span><span class="skill-pct">65%</span></div>
+          <div class="skill-bg"><div class="skill-fill" style="--w: 65%"></div></div>
+        </div>
+      </div>
     </div>
-    <div class="skill-row">
-      <div class="skill-hdr"><span class="skill-name">Backend Development</span><span class="skill-pct">50%</span></div>
-      <div class="skill-bg"><div class="skill-fill" style="--w: 50%"></div></div>
-    </div>
-    <div class="skill-row">
-      <div class="skill-hdr"><span class="skill-name">Mobile — Android / Kotlin</span><span class="skill-pct">55%</span></div>
-      <div class="skill-bg"><div class="skill-fill" style="--w: 55%"></div></div>
-    </div>
-  </div>
-  <div class="reveal" style="transition-delay: 0.12s">
-    <div class="skill-row">
-      <div class="skill-hdr"><span class="skill-name">Bases de Datos</span><span class="skill-pct">60%</span></div>
-      <div class="skill-bg"><div class="skill-fill" style="--w: 60%"></div></div>
-    </div>
-    <div class="skill-row">
-      <div class="skill-hdr"><span class="skill-name">DevOps / Docker</span><span class="skill-pct">55%</span></div>
-      <div class="skill-bg"><div class="skill-fill" style="--w: 55%"></div></div>
-    </div>
-    <div class="skill-row">
-      <div class="skill-hdr"><span class="skill-name">Hardware / IoT</span><span class="skill-pct">65%</span></div>
-      <div class="skill-bg"><div class="skill-fill" style="--w: 65%"></div></div>
-    </div>
-  </div>
-</div>
+  </section>
 
 
   <!-- ================================================================
-       EDUCACIÓN
+       EDUCACIÓN / EDUCATION
   ================================================================ -->
   <section id="education" style="background: var(--gray1);">
-    <div class="section-eyebrow">Formación</div>
-    <h2 class="section-title">Educación</h2>
+    <div class="section-eyebrow" data-i18n="edu.eyebrow">Training</div>
+    <h2 class="section-title" data-i18n="edu.title">Education</h2>
 
     <div class="edu-grid">
 
@@ -314,9 +330,9 @@
              onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
         <div class="edu-logo-ph" style="display:none"><i class="fa-solid fa-graduation-cap"></i></div>
         <div class="edu-name">Universidad del Valle de Guatemala</div>
-        <div class="edu-degree">Ingeniería en Ciencia de la Computación y TI</div>
-        <div class="edu-date"><i class="fa-regular fa-calendar"></i> 2023 – Presente</div>
-        <div class="edu-desc">Actualmente en tercer año. Algoritmos, estructuras de datos, bases de datos, sistemas operativos y desarrollo de software.</div>
+        <div class="edu-degree" data-i18n="edu.uvg.degree">Computer Science and IT Engineering</div>
+        <div class="edu-date"><i class="fa-regular fa-calendar"></i> <span data-i18n="edu.uvg.date">2023 – Present</span></div>
+        <div class="edu-desc" data-i18n="edu.uvg.desc">Currently in third year. Algorithms, data structures, databases, operating systems and software development.</div>
       </div>
 
       <div class="edu-card reveal" style="transition-delay: 0.1s">
@@ -324,10 +340,10 @@
              onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
         <div class="edu-logo-ph" style="display:none"><i class="fa-solid fa-school"></i></div>
         <div class="edu-name">Colegio Salesiano Don Bosco</div>
-        <div class="edu-degree">Bachiller en Ciencias y Letras — Computación</div>
+        <div class="edu-degree" data-i18n="edu.db.degree">Bachelor in Sciences and Letters — Computing</div>
         <div class="edu-date"><i class="fa-regular fa-calendar"></i> 2020 – 2022</div>
-        <div class="edu-desc">Fundamentos de computación e introducción a la programación.</div>
-        <div class="edu-badge"><i class="fa-solid fa-star"></i> Graduado CUM LAUDE</div>
+        <div class="edu-desc" data-i18n="edu.db.desc">Computer fundamentals and introduction to programming.</div>
+        <div class="edu-badge"><i class="fa-solid fa-star"></i> <span data-i18n="edu.db.badge">Graduated CUM LAUDE</span></div>
       </div>
 
     </div>
@@ -335,11 +351,11 @@
 
 
   <!-- ================================================================
-       EXPERIENCIA
+       EXPERIENCIA / EXPERIENCE
   ================================================================ -->
   <section id="experience" style="background: var(--white);">
-    <div class="section-eyebrow">Trayectoria</div>
-    <h2 class="section-title">Experiencia Profesional</h2>
+    <div class="section-eyebrow" data-i18n="exp.eyebrow">Background</div>
+    <h2 class="section-title" data-i18n="exp.title">Professional Experience</h2>
 
     <div class="timeline">
 
@@ -348,18 +364,16 @@
         <div class="t-card">
           <div class="t-header">
             <div class="t-title">Museo de los Niños de Guatemala</div>
-            <div class="t-date">Abr 2025 – Oct 2025</div>
+            <div class="t-date" data-i18n="exp.museo.date">Apr 2025 – Oct 2025</div>
           </div>
-          <div class="t-role">Guía Educativo</div>
-          <div class="t-desc">
-            Atención a niños y padres, comunicación efectiva, creación de contenido
-            educativo digital y actividades dinámicas. Desarrollo de habilidades de
-            presentación y pedagogía.
+          <div class="t-role" data-i18n="exp.museo.role">Educational Guide</div>
+          <div class="t-desc" data-i18n="exp.museo.desc">
+            Attention to children and parents, effective communication, creation of digital educational content and dynamic activities. Development of presentation and pedagogy skills.
           </div>
           <div class="t-tags">
-            <span class="ttag">Comunicación</span>
-            <span class="ttag">Contenido Digital</span>
-            <span class="ttag">Educación</span>
+            <span class="ttag" data-i18n="exp.museo.tag1">Communication</span>
+            <span class="ttag" data-i18n="exp.museo.tag2">Digital Content</span>
+            <span class="ttag" data-i18n="exp.museo.tag3">Education</span>
           </div>
         </div>
       </div>
@@ -369,16 +383,15 @@
         <div class="t-card">
           <div class="t-header">
             <div class="t-title">Bershka — Oakland Mall</div>
-            <div class="t-date">Nov 2022 – Ene 2023</div>
+            <div class="t-date" data-i18n="exp.bershka.date">Nov 2022 – Jan 2023</div>
           </div>
-          <div class="t-role">Dependiente de Tienda</div>
-          <div class="t-desc">
-            Atención al cliente, apoyo en caja durante alta afluencia, control
-            básico de inventario y organización de tienda.
+          <div class="t-role" data-i18n="exp.bershka.role">Store Clerk</div>
+          <div class="t-desc" data-i18n="exp.bershka.desc">
+            Customer service, cashier support during high traffic, basic inventory control and store organization.
           </div>
           <div class="t-tags">
-            <span class="ttag">Atención al cliente</span>
-            <span class="ttag">Inventario</span>
+            <span class="ttag" data-i18n="exp.bershka.tag1">Customer Service</span>
+            <span class="ttag" data-i18n="exp.bershka.tag2">Inventory</span>
           </div>
         </div>
       </div>
@@ -388,11 +401,11 @@
 
 
   <!-- ================================================================
-       CERTIFICACIONES
+       CERTIFICACIONES / CERTIFICATIONS
   ================================================================ -->
   <section id="certs" style="background: var(--gray1);">
-    <div class="section-eyebrow">Certificaciones</div>
-    <h2 class="section-title">Cursos &amp; Certificados</h2>
+    <div class="section-eyebrow" data-i18n="certs.eyebrow">Certifications</div>
+    <h2 class="section-title" data-i18n="certs.title">Courses &amp; Certificates</h2>
 
     <div class="certs-grid">
 
@@ -402,21 +415,20 @@
              onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
         <div class="cert-icon-ph" style="display:none"><i class="fa-solid fa-book-open"></i></div>
         <div>
-          <div class="cert-name">Ética en Investigación con Sujetos Humanos</div>
-          <div class="cert-issuer">Universidad del Valle de Guatemala — CCSS</div>
+          <div class="cert-name"   data-i18n="cert1.name">Ethics in Research with Human Subjects</div>
+          <div class="cert-issuer" data-i18n="cert1.issuer">Universidad del Valle de Guatemala — CCSS</div>
           <div class="cert-date">
             <i class="fa-regular fa-calendar"></i>
-            7 de mayo de 2026 · Cód. CECCSSS 0343
+            <span data-i18n="cert1.date">May 7, 2026 · Code CECCSSS 0343</span>
           </div>
-          <div class="cert-desc">
-            Curso en línea de 8 horas organizado por el Comité de Ética de Investigación
-            de la Facultad de Ciencias Sociales.
+          <div class="cert-desc" data-i18n="cert1.desc">
+            8-hour online course organized by the Research Ethics Committee of the Faculty of Social Sciences.
           </div>
         </div>
         <div class="cert-tags">
-          <span class="cert-tag">8 horas</span>
+          <span class="cert-tag">8h</span>
           <span class="cert-tag">UVG</span>
-          <span class="cert-tag">Ética</span>
+          <span class="cert-tag">Ethics</span>
         </div>
       </div>
 
@@ -426,38 +438,37 @@
              onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
         <div class="cert-icon-ph" style="display:none"><i class="fa-solid fa-computer-mouse"></i></div>
         <div>
-          <div class="cert-name">HCI — Interacción Humano-Computadora</div>
+          <div class="cert-name"   data-i18n="cert2.name">HCI — Human-Computer Interaction</div>
           <div class="cert-issuer">Universidad del Valle de Guatemala</div>
           <div class="cert-date">
             <i class="fa-solid fa-building-columns"></i>
-            UVG · Curso universitario
+            <span data-i18n="cert2.date">UVG · University course</span>
           </div>
-          <div class="cert-desc">
-            Principios de usabilidad, diseño centrado en el usuario, evaluación de
-            interfaces y prototipado de experiencias digitales.
+          <div class="cert-desc" data-i18n="cert2.desc">
+            Usability principles, user-centered design, interface evaluation and digital experience prototyping.
           </div>
         </div>
         <div class="cert-tags">
           <span class="cert-tag">UX/UI</span>
-          <span class="cert-tag">Usabilidad</span>
-          <span class="cert-tag">Diseño</span>
+          <span class="cert-tag">Usability</span>
+          <span class="cert-tag">Design</span>
         </div>
       </div>
 
       <!-- INTECAP -->
       <div class="cert-card reveal" style="transition-delay: 0.2s">
-        <img src="img/intecap.png" class="cert-icon" alt="UVG"
+        <img src="img/intecap.png" class="cert-icon" alt="INTECAP"
              onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="cert-icon-ph" style="display:none"><i class="fa-solid fa-certificate"></i></div>
         <div>
-          <div class="cert-name">Creación de Páginas Web — HTML, CSS, JavaScript</div>
-          <div class="cert-issuer">INTECAP — Nivel Intermedio</div>
+          <div class="cert-name"   data-i18n="cert3.name">Web Page Creation — HTML, CSS, JavaScript</div>
+          <div class="cert-issuer" data-i18n="cert3.issuer">INTECAP — Intermediate Level</div>
           <div class="cert-date">
             <i class="fa-solid fa-certificate"></i>
-            Certificación oficial
+            <span data-i18n="cert3.date">Official certification</span>
           </div>
-          <div class="cert-desc">
-            Certificación tras completar satisfactoriamente el programa de formación
-            en desarrollo web. Aplicada en este portafolio.
+          <div class="cert-desc" data-i18n="cert3.desc">
+            Certification after successfully completing the web development training program. Applied in this portfolio.
           </div>
         </div>
         <div class="cert-tags">
@@ -472,57 +483,56 @@
 
 
   <!-- ================================================================
-       INTERESES
+       INTERESES / INTERESTS
   ================================================================ -->
   <section id="interests" style="background: var(--white);">
-    <div class="section-eyebrow">Dirección</div>
-    <h2 class="section-title">Áreas de interés</h2>
+    <div class="section-eyebrow" data-i18n="int.eyebrow">Direction</div>
+    <h2 class="section-title" data-i18n="int.title">Areas of Interest</h2>
 
     <div class="int-grid">
       <div class="int-card reveal">
         <div class="int-icon"><i class="fa-solid fa-shield-halved"></i></div>
-        <div class="int-title">Ciberseguridad</div>
-        <div class="int-desc">Seguridad ofensiva y defensiva, análisis de vulnerabilidades</div>
+        <div class="int-title" data-i18n="int.cyber.title">Cybersecurity</div>
+        <div class="int-desc"  data-i18n="int.cyber.desc">Offensive and defensive security, vulnerability analysis</div>
       </div>
       <div class="int-card reveal" style="transition-delay: 0.07s">
         <div class="int-icon"><i class="fa-solid fa-brain"></i></div>
-        <div class="int-title">Inteligencia Artificial</div>
-        <div class="int-desc">Machine learning, modelos de lenguaje, automatización</div>
+        <div class="int-title" data-i18n="int.ai.title">Artificial Intelligence</div>
+        <div class="int-desc"  data-i18n="int.ai.desc">Machine learning, language models, automation</div>
       </div>
       <div class="int-card reveal" style="transition-delay: 0.14s">
         <div class="int-icon"><i class="fa-solid fa-globe"></i></div>
-        <div class="int-title">Desarrollo Web</div>
-        <div class="int-desc">Full stack moderno, APIs robustas, alta performance</div>
+        <div class="int-title" data-i18n="int.web.title">Web Development</div>
+        <div class="int-desc"  data-i18n="int.web.desc">Modern full stack, robust APIs, high performance</div>
       </div>
       <div class="int-card reveal" style="transition-delay: 0.21s">
         <div class="int-icon"><i class="fa-brands fa-android"></i></div>
-        <div class="int-title">Apps Móviles</div>
-        <div class="int-desc">Android nativo con Kotlin, Jetpack Compose, MVVM</div>
+        <div class="int-title" data-i18n="int.mobile.title">Mobile Apps</div>
+        <div class="int-desc"  data-i18n="int.mobile.desc">Native Android with Kotlin, Jetpack Compose, MVVM</div>
       </div>
       <div class="int-card reveal" style="transition-delay: 0.28s">
         <div class="int-icon"><i class="fa-solid fa-microchip"></i></div>
-        <div class="int-title">Sistemas &amp; Hardware</div>
-        <div class="int-desc">Arduino, ESP32, IoT, C/C++ de bajo nivel</div>
+        <div class="int-title" data-i18n="int.hw.title">Systems &amp; Hardware</div>
+        <div class="int-desc"  data-i18n="int.hw.desc">Arduino, ESP32, IoT, C/C++ low level</div>
       </div>
       <div class="int-card reveal" style="transition-delay: 0.35s">
         <div class="int-icon"><i class="fa-solid fa-server"></i></div>
-        <div class="int-title">Backend &amp; APIs</div>
-        <div class="int-desc">Arquitectura de sistemas, REST, bases de datos</div>
+        <div class="int-title" data-i18n="int.backend.title">Backend &amp; APIs</div>
+        <div class="int-desc"  data-i18n="int.backend.desc">Systems architecture, REST, databases</div>
       </div>
     </div>
   </section>
 
 
   <!-- ================================================================
-       CONTACTO
+       CONTACTO / CONTACT
   ================================================================ -->
   <section class="contact-section" id="contact">
     <div class="contact-inner">
-      <div class="section-eyebrow">Hablemos</div>
-      <h2 class="section-title">Contacto</h2>
-      <p class="contact-subtitle">
-        Disponible para proyectos freelance, colaboraciones académicas o prácticas
-        profesionales. Escríbeme.
+      <div class="section-eyebrow" data-i18n="contact.eyebrow">Let's Talk</div>
+      <h2 class="section-title" data-i18n="contact.title">Contact</h2>
+      <p class="contact-subtitle" data-i18n="contact.subtitle">
+        Available for freelance projects, academic collaborations or professional internships. Write to me.
       </p>
 
       <div class="contact-links">
@@ -550,8 +560,8 @@
         <a href="pages/portafolio.html" class="c-link">
           <i class="fa-solid fa-layer-group"></i>
           <div>
-            <span>Portafolio</span>
-            <span class="c-link-sub">Ver proyectos</span>
+            <span data-i18n="nav.portfolio">Portfolio</span>
+            <span class="c-link-sub" data-i18n="contact.portfolio">View projects</span>
           </div>
         </a>
       </div>
@@ -587,6 +597,7 @@
   ================================================================ -->
   <script src="js/cursor.js"></script>
   <script src="js/observer.js"></script>
+  <script src="js/controls.js"></script>
 
 </body>
 </html>

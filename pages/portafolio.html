@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portafolio — Miguel Carranza</title>
 
+  <!-- Anti-FOUC: apply saved theme/lang before CSS renders -->
+  <script>(function(){var t=localStorage.getItem('theme')||'light',l=localStorage.getItem('lang')||'en';document.documentElement.setAttribute('data-theme',t);document.documentElement.setAttribute('data-lang',l);document.documentElement.lang=l})()</script>
+
   <!-- Fuentes -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
@@ -30,10 +33,23 @@
     <a class="nav-logo" href="../index.html">Miguel Carranza</a>
     <div class="nav-links">
       <a href="../index.html">CV</a>
-      <a href="../index.html#about">Sobre mí</a>
-      <a href="../index.html#stack">Stack</a>
-      <a href="portafolio.html" class="active">Portafolio</a>
-      <a href="../index.html#contact" class="nav-cta">Contacto</a>
+      <a href="../index.html#about"    data-i18n="nav.about">Sobre mí</a>
+      <a href="../index.html#stack"    data-i18n="nav.stack">Stack</a>
+      <a href="portafolio.html" class="active" data-i18n="nav.portfolio">Portafolio</a>
+      <a href="../index.html#contact"  class="nav-cta" data-i18n="nav.contact">Contacto</a>
+    </div>
+
+    <!-- Language + Theme controls -->
+    <div class="nav-controls">
+      <div class="lang-toggle" id="langToggle" role="button" aria-label="Toggle language" tabindex="0">
+        <span class="lang-opt en">EN</span>
+        <span class="lang-opt es active">ES</span>
+        <span class="lang-slider" id="langSlider"></span>
+      </div>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+        <i class="fa-solid fa-sun  theme-icon sun"></i>
+        <i class="fa-solid fa-moon theme-icon moon"></i>
+      </button>
     </div>
   </nav>
 
@@ -43,10 +59,10 @@
   ================================================================ -->
   <header class="pf-hero">
     <div class="pf-hero-eyebrow">
-      <i class="fa-solid fa-layer-group"></i> Trabajo
+      <i class="fa-solid fa-layer-group"></i> <span data-i18n="pf.eyebrow">Trabajo</span>
     </div>
-    <h1>Portafolio</h1>
-    <p class="pf-hero-sub">
+    <h1 data-i18n="pf.title">Portafolio</h1>
+    <p class="pf-hero-sub" data-i18n="pf.sub">
       Proyectos freelance, universitarios y personales.
       Código real, clientes reales, tecnologías reales.
     </p>
@@ -72,7 +88,7 @@
     </div>
 
     <!-- Contador de resultados -->
-    <div class="search-count" id="searchCount">4 proyectos</div>
+    <div class="search-count" id="searchCount">5 proyectos</div>
 
     <!-- Botones de filtro por categoría (generados por portfolio.js) -->
     <div class="filter-row" id="filterRow"></div>
@@ -102,12 +118,12 @@
        NOTA AL PIE DEL PORTAFOLIO
   ================================================================ -->
   <div class="pf-footer-note">
-    <p>
+    <p data-i18n="pf.footer.note">
       ¿Tienes un proyecto en mente? Estoy disponible para freelance,
       colaboraciones y prácticas profesionales.
     </p>
     <a href="../index.html#contact">
-      <i class="fa-solid fa-arrow-right"></i> Contactar
+      <i class="fa-solid fa-arrow-right"></i> <span data-i18n="pf.footer.cta">Contactar</span>
     </a>
   </div>
 
@@ -138,6 +154,7 @@
        las cards que portfolio.js inserta dinámicamente.
   ================================================================ -->
   <script src="../js/cursor.js"></script>
+  <script src="../js/controls.js"></script>
 
   <!-- portfolio.js renderiza las cards y luego observer.js las anima -->
   <script src="../js/portfolio.js"></script>

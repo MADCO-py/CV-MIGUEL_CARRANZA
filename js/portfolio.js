@@ -70,6 +70,18 @@ const PROJECTS = [
 
   /* ── PERSONAL ───────────────────────────────────────── */
   {
+    id:       "mentorhub",
+    name:     "MentorHub",
+    category: "personal",
+    client:   "",
+    desc:     "Plataforma web que conecta estudiantes que quieren dar tutorías con padres de familia que buscan apoyo académico para sus hijos. Pensada para ser compartida en colegios.",
+    tech:     ["HTML", "CSS", "JavaScript"],
+    image:    "../img/MentorHub.png",
+    github:   "",
+    demo:     "https://madco-py.github.io/MentorHub/",
+    sold:     false,
+  },
+  {
     id:       "gvu",
     name:     "GVU",
     category: "personal",
@@ -141,13 +153,16 @@ function renderCard(project) {
        </a>`
     : "";
 
+  const cardLink = project.demo || '';
+
   return `
-    <div class="proj-card reveal"
+    <div class="proj-card reveal${cardLink ? ' proj-card-clickable' : ''}"
          data-id="${project.id}"
          data-category="${project.category}"
          data-name="${project.name.toLowerCase()}"
          data-tech="${project.tech.join(" ").toLowerCase()}"
-         data-desc="${project.desc.toLowerCase()}">
+         data-desc="${project.desc.toLowerCase()}"
+         ${cardLink ? `data-link="${cardLink}"` : ''}>
       <div class="proj-image">
         ${imgHTML}
         <span class="proj-cat-badge"><i class="${cat.icon}"></i> ${cat.label}</span>
@@ -303,4 +318,12 @@ document.addEventListener('DOMContentLoaded', () => {
   initFilters();
   initSearch();
   renderAll();
+
+  /* Card-wide click: navigate to demo URL if card has data-link */
+  document.addEventListener('click', (e) => {
+    const card = e.target.closest('.proj-card[data-link]');
+    if (!card) return;
+    if (e.target.closest('a')) return;
+    window.open(card.dataset.link, '_blank');
+  });
 });
