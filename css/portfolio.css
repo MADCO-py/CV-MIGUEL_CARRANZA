@@ -436,6 +436,31 @@
 }
 
 
+/* ── DARK MODE OVERRIDES
+   El hero y la barra de búsqueda usan var(--black) de fondo, que en dark mode
+   invierte a un tono claro. Se fijan en oscuro para que el texto blanco
+   hardcodeado siga siendo legible.
+   ── */
+[data-theme="dark"] .pf-hero {
+  background: #0a0a0a;
+}
+[data-theme="dark"] .pf-hero h1 {
+  color: #f5f5f7;
+}
+[data-theme="dark"] .search-bar-wrap {
+  background: #0a0a0a;
+  border-bottom-color: rgba(255, 255, 255, 0.07);
+}
+[data-theme="dark"] #searchInput {
+  color: #f5f5f7;
+}
+[data-theme="dark"] .filter-btn.active {
+  background: rgba(255, 255, 255, 0.14);
+  color: #f5f5f7;
+  border-color: rgba(255, 255, 255, 0.28);
+}
+
+
 /* ── RESPONSIVE ── */
 @media (max-width: 960px) {
   .pf-hero           { padding: 110px 6% 60px; }

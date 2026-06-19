@@ -93,6 +93,18 @@ const PROJECTS = [
     demo:     "",
     sold:     false,
   },
+  {
+    id:       "mad-gains",
+    name:     "MAD Gains",
+    category: "personal",
+    client:   "",
+    desc:     "Aplicación web para seguimiento de entrenamiento y nutrición. Permite registrar rutinas de gym, ver historial de ejercicios y llevar control de alimentación diaria.",
+    tech:     ["HTML", "CSS", "JavaScript"],
+    image:    "../img/mad_gains.png", /* COLOCA TU IMAGEN AQUÍ */
+    github:   "",
+    demo:     "https://madco-py.github.io/mad-gains/",
+    sold:     false,
+  },
 
 ];
 
