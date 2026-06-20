@@ -25,9 +25,9 @@
       'hero.desc':          'I build functional, optimized and maintainable software. Focused on web development, backend systems, mobile apps and IoT.',
       'hero.cta.contact':   'Contact',
       'hero.cta.portfolio': 'View portfolio',
-      'hero.stat.age':      'Years',
-      'hero.stat.langs':    'Languages',
-      'hero.stat.year':     'Year @ UVG',
+      'hero.stat.clients':  'Freelance Client',
+      'hero.stat.projects': 'Projects',
+      'hero.stat.impact':   'People Reached',
 
       // About
       'about.eyebrow': 'Who I am',
@@ -93,6 +93,10 @@
       'exp.bershka.desc': 'Customer service, cashier support during high traffic, basic inventory control and store organization.',
       'exp.bershka.tag1': 'Customer Service',
       'exp.bershka.tag2': 'Inventory',
+      'exp.fleet.date':   'Apr 1–15, 2026 · 30h',
+      'exp.fleet.role':   'Freelance Software Developer',
+      'exp.fleet.desc':   'Developed and delivered a full web system for truck fleet management. The system solves the problem of identifying which driver received a traffic fine on a given day. Drivers log in via username/password and access records through a QR-linked web interface. Includes photo evidence and maintenance history per vehicle.',
+      'exp.fleet.sold':   'Sold · Delivered',
 
       // Certifications
       'certs.eyebrow': 'Certifications',
@@ -153,9 +157,9 @@
       'hero.desc':          'Construyo software funcional, optimizado y mantenible. Enfocado en desarrollo web, sistemas backend, apps móviles e IoT.',
       'hero.cta.contact':   'Contactar',
       'hero.cta.portfolio': 'Ver portafolio',
-      'hero.stat.age':      'Años',
-      'hero.stat.langs':    'Lenguajes',
-      'hero.stat.year':     'Año UVG',
+      'hero.stat.clients':  'Cliente Freelance',
+      'hero.stat.projects': 'Proyectos',
+      'hero.stat.impact':   'Personas Impactadas',
 
       // About
       'about.eyebrow': 'Quién soy',
@@ -221,6 +225,10 @@
       'exp.bershka.desc': 'Atención al cliente, apoyo en caja durante alta afluencia, control básico de inventario y organización de tienda.',
       'exp.bershka.tag1': 'Atención al cliente',
       'exp.bershka.tag2': 'Inventario',
+      'exp.fleet.date':   '1–15 abr 2026 · 30h',
+      'exp.fleet.role':   'Desarrollador de Software Freelance',
+      'exp.fleet.desc':   'Desarrollo y entrega de un sistema web completo para el control de flota de camiones. El sistema resuelve el problema de identificar qué piloto fue multado en determinado día. Los pilotos acceden mediante usuario y contraseña, con registro vinculado por QR. Incluye evidencia fotográfica e historial de mantenimiento por vehículo.',
+      'exp.fleet.sold':   'Vendido · Entregado',
 
       // Certifications
       'certs.eyebrow': 'Certificaciones',

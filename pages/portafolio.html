@@ -190,6 +190,22 @@
         }, { passive: true });
       }
     })();
+
+    /* ── Ocultar barra de búsqueda al bajar, mostrar al subir ── */
+    (function () {
+      var bar = document.querySelector('.search-bar-wrap');
+      if (!bar) return;
+      var lastY = 0;
+      window.addEventListener('scroll', function () {
+        var y = window.scrollY;
+        if (y > lastY + 8 && y > 120) {
+          bar.classList.add('bar-hidden');
+        } else if (y < lastY - 8) {
+          bar.classList.remove('bar-hidden');
+        }
+        lastY = y;
+      }, { passive: true });
+    })();
   </script>
 
 </body>

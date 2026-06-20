@@ -89,16 +89,16 @@
 
       <div class="hero-stats">
         <div class="stat">
-          <span class="stat-n">20</span>
-          <span class="stat-l" data-i18n="hero.stat.age">Years</span>
+          <span class="stat-n">1</span>
+          <span class="stat-l" data-i18n="hero.stat.clients">Freelance Client</span>
         </div>
         <div class="stat">
-          <span class="stat-n">9+</span>
-          <span class="stat-l" data-i18n="hero.stat.langs">Languages</span>
+          <span class="stat-n">6</span>
+          <span class="stat-l" data-i18n="hero.stat.projects">Projects</span>
         </div>
         <div class="stat">
-          <span class="stat-n">3°</span>
-          <span class="stat-l" data-i18n="hero.stat.year">Year @ UVG</span>
+          <span class="stat-n">27</span>
+          <span class="stat-l" data-i18n="hero.stat.impact">People Reached</span>
         </div>
       </div>
     </div>
@@ -170,11 +170,11 @@
             <div class="card-label" data-i18n="about.card.university.label">University</div>
             <div class="card-value" data-i18n="about.card.university.value">UVG — CS Eng.</div>
           </div>
-          <div class="about-card">
+          <div class="about-card about-card--transport">
             <div class="card-label" data-i18n="about.card.transport.label">Transport</div>
             <div class="card-value" data-i18n="about.card.transport.value">Own vehicle</div>
           </div>
-          <div class="about-card">
+          <div class="about-card about-card--billing">
             <div class="card-label" data-i18n="about.card.billing.label">Billing</div>
             <div class="card-value" data-i18n="about.card.billing.value">Active NIT</div>
           </div>
@@ -280,39 +280,13 @@
   <!-- ================================================================
        HABILIDADES / SKILLS
   ================================================================ -->
-  <section id="skills" style="background: var(--white);">
+  <section id="skills" class="skills-wheel-section">
     <div class="section-eyebrow" data-i18n="skills.eyebrow">Technical Level</div>
     <h2 class="section-title" data-i18n="skills.title">Skills</h2>
-
-    <div class="skills-grid">
-      <div class="reveal">
-        <div class="skill-row">
-          <div class="skill-hdr"><span class="skill-name">Frontend Development</span><span class="skill-pct">75%</span></div>
-          <div class="skill-bg"><div class="skill-fill" style="--w: 75%"></div></div>
-        </div>
-        <div class="skill-row">
-          <div class="skill-hdr"><span class="skill-name">Backend Development</span><span class="skill-pct">50%</span></div>
-          <div class="skill-bg"><div class="skill-fill" style="--w: 50%"></div></div>
-        </div>
-        <div class="skill-row">
-          <div class="skill-hdr"><span class="skill-name">Mobile — Android / Kotlin</span><span class="skill-pct">55%</span></div>
-          <div class="skill-bg"><div class="skill-fill" style="--w: 55%"></div></div>
-        </div>
-      </div>
-      <div class="reveal" style="transition-delay: 0.12s">
-        <div class="skill-row">
-          <div class="skill-hdr"><span class="skill-name" data-i18n="skills.db">Databases</span><span class="skill-pct">60%</span></div>
-          <div class="skill-bg"><div class="skill-fill" style="--w: 60%"></div></div>
-        </div>
-        <div class="skill-row">
-          <div class="skill-hdr"><span class="skill-name">DevOps / Docker</span><span class="skill-pct">55%</span></div>
-          <div class="skill-bg"><div class="skill-fill" style="--w: 55%"></div></div>
-        </div>
-        <div class="skill-row">
-          <div class="skill-hdr"><span class="skill-name">Hardware / IoT</span><span class="skill-pct">65%</span></div>
-          <div class="skill-bg"><div class="skill-fill" style="--w: 65%"></div></div>
-        </div>
-      </div>
+    <div class="cflow-scene" id="cflowScene"></div>
+    <div class="cflow-label">
+      <i class="cflow-label-icon" id="cflowLabelIcon"></i>
+      <span class="cflow-label-name" id="cflowLabelName"></span>
     </div>
   </section>
 
@@ -359,6 +333,31 @@
     <h2 class="section-title" data-i18n="exp.title">Professional Experience</h2>
 
     <div class="timeline">
+
+      <div class="t-item">
+        <div class="t-dot"></div>
+        <div class="t-card">
+          <div class="t-header">
+            <div class="t-title">Llantas Ávila</div>
+            <div class="t-date" data-i18n="exp.fleet.date">Apr 1–15, 2026 · 30h</div>
+          </div>
+          <div class="t-role" data-i18n="exp.fleet.role">Freelance Software Developer</div>
+          <div class="t-desc" data-i18n="exp.fleet.desc">
+            Developed and delivered a full web system for truck fleet management. The system solves the problem of identifying which driver received a traffic fine on a given day. Drivers log in via username/password and access records through a QR-linked web interface. Includes photo evidence and maintenance history per vehicle.
+          </div>
+          <div class="t-tags">
+            <span class="ttag">Python</span>
+            <span class="ttag">PostgreSQL</span>
+            <span class="ttag">Docker</span>
+            <span class="ttag">JavaScript</span>
+            <span class="ttag">QR Integration</span>
+          </div>
+          <div class="t-sold-tag">
+            <i class="fa-solid fa-circle-check"></i>
+            <span data-i18n="exp.fleet.sold">Sold · Delivered</span>
+          </div>
+        </div>
+      </div>
 
       <div class="t-item">
         <div class="t-dot"></div>
@@ -599,6 +598,7 @@
   <script src="js/cursor.js"></script>
   <script src="js/observer.js"></script>
   <script src="js/controls.js"></script>
+  <script src="js/skills-wheel.js"></script>
 
 </body>
 </html>

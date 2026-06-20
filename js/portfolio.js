@@ -26,19 +26,14 @@ const PROJECTS = [
   /* ── FREELANCE ─────────────────────────────────────── */
   {
     id:       "llantas-avila",
-    name:     "Sistema de Control de Camiones — Llantas Ávila",
+    name:     "FleetControl — Llantas Ávila",
     category: "freelance",
     client:   "Llantas Ávila",
-    desc:     "Sistema web para registro y control de la flota de camiones. Permite llevar historial de mantenimiento, fechas de revisión y alertas automáticas para evitar multas por documentación vencida.",
-    tech:     ["JavaScript", "HTML", "CSS", "PostgreSQL", "Node.js"],
-    /* 📸 COLOCA TU IMAGEN AQUÍ:
-       Copia la imagen del proyecto a la carpeta img/
-       y escribe el nombre del archivo abajo.
-       Ejemplo: "img/llantas-avila-screenshot.png"
-    */
+    desc:     "Resuelve el caos de identificar qué piloto fue multado en un día dado. 9 pilotos registrados con foto, fecha e historial de mantenimiento por vehículo. Acceso por usuario/contraseña con registro vinculado por QR.",
+    tech:     ["Python", "PostgreSQL", "Docker", "JavaScript", "QR"],
     image:    "../img/FleetControl.png",
-    github:   "",         /* privado — dejar vacío */
-    demo:     "",
+    github:   "",
+    demo:     "#",
     sold:     true,
   },
 
@@ -74,10 +69,10 @@ const PROJECTS = [
     name:     "MentorHub",
     category: "personal",
     client:   "",
-    desc:     "Plataforma web que conecta estudiantes que quieren dar tutorías con padres de familia que buscan apoyo académico para sus hijos. Pensada para ser compartida en colegios.",
+    desc:     "Conecta 7 tutores universitarios con 20 estudiantes que buscan apoyo académico. Plataforma web completa para gestión de tutorías entre colegios y familias.",
     tech:     ["HTML", "CSS", "JavaScript"],
     image:    "../img/MentorHub.png",
-    github:   "",
+    github:   "#",
     demo:     "https://madco-py.github.io/MentorHub/",
     sold:     false,
   },
@@ -86,7 +81,7 @@ const PROJECTS = [
     name:     "GVU",
     category: "personal",
     client:   "",
-    desc:     "Aplicación web en JavaScript enfocada en interfaces dinámicas y manejo de lógica frontend. Proyecto activo que demuestra práctica constante en desarrollo web moderno.",
+    desc:     "Intento de red social universitaria construida en JavaScript. Enfocada en interfaces dinámicas y lógica frontend moderna. Proyecto de exploración técnica sin usuarios activos.",
     tech:     ["JavaScript", "HTML", "CSS", "Docker"],
     image:    "../img/GVU.png",
     github:   "https://github.com/MADCO-py/GVU",
@@ -100,9 +95,23 @@ const PROJECTS = [
     client:   "",
     desc:     "Aplicación web para seguimiento de entrenamiento y nutrición. Permite registrar rutinas de gym, ver historial de ejercicios y llevar control de alimentación diaria.",
     tech:     ["HTML", "CSS", "JavaScript"],
-    image:    "../img/mad_gains.png", /* COLOCA TU IMAGEN AQUÍ */
-    github:   "",
+    image:    "../img/mad_gains.png",
+    github:   "#",
     demo:     "https://madco-py.github.io/mad-gains/",
+    sold:     false,
+  },
+
+  /* ── UNIVERSITARIO ──────────────────────────────────── */
+  {
+    id:       "securegate",
+    name:     "SecureGate",
+    category: "university",
+    client:   "",
+    desc:     "Sistema de control de acceso para garita universitaria. Registra y gestiona quién entra y sale en tiempo real. 5 participantes activos durante su implementación, actualmente en fase de escalado.",
+    tech:     ["TypeScript", "CSS"],
+    image:    "",
+    github:   "#",
+    demo:     "",
     sold:     false,
   },
 
