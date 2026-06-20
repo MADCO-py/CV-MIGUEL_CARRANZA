@@ -66,14 +66,16 @@
      · V_RISE     — factor de cuánto suben los ítems hacia la parte trasera
   ─────────────────────────────────────────────────────────── */
   function updatePositions() {
-    var vw       = window.innerWidth;
-    var isMobile = vw < 640;
+    var vw         = window.innerWidth;
+    var isMobile   = vw < 640;
+    /* Ancho real de la columna donde vive el carrusel */
+    var containerW = (scene.parentElement && scene.parentElement.offsetWidth) || vw;
 
     /* Radio vertical (controla el "alzado" de los ítems traseros) */
-    var R  = isMobile ? 185 : 295;
+    var R  = isMobile ? 175 : Math.min(Math.round(containerW * 0.54), 260);
 
-    /* Radio horizontal: anillo más ancho que alto, limitado por el viewport */
-    var RH = Math.min(R * 1.45, vw * 0.40);
+    /* Radio horizontal: anillo más ancho que alto, limitado por la columna */
+    var RH = Math.min(R * 1.45, containerW * 0.42);
 
     var V_OFFSET = isMobile ? 55 : 75;   /* px que baja el frente */
     var V_RISE   = 0.28;                  /* cuánto suben los traseros */
@@ -153,7 +155,7 @@
   var animating = false;
   var lastEvMs  = 0;       /* timestamp del último evento de rueda   */
 
-  var sec = document.getElementById('skills');
+  var sec = document.getElementById('cflowAnchor');
 
   if (sec) {
     new IntersectionObserver(function (entries) {

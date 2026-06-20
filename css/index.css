@@ -746,6 +746,8 @@ section {
   .about-grid         { grid-template-columns: 1fr; }
   .skills-grid        { grid-template-columns: 1fr; }
   section             { padding: 80px 6%; }
+  .stack-layout       { grid-template-columns: 1fr; gap: 48px; }
+  .stack-right        { order: 2; }
 }
 
 @media (max-width: 640px) {
@@ -763,44 +765,19 @@ section {
    · @supports fallback para navegadores sin backdrop-filter
    ══════════════════════════════════════════════════════════════ */
 
-/* ── Sección ── */
-.skills-wheel-section {
-  padding: 100px 0 110px;
-  overflow: hidden;
-  transition: background 0.4s ease;
-  /* Light mode: fondo claro suave */
-  background: linear-gradient(160deg, #eeeef0 0%, #f5f5f7 50%, #eeeef0 100%);
-}
-[data-theme="dark"] .skills-wheel-section {
-  background: linear-gradient(160deg, #0a0a0a 0%, #1a1a1a 45%, #0a0a0a 100%);
+/* ── Stack + Carousel — layout dos columnas ── */
+.stack-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
 }
 
-/* Eyebrow */
-.skills-wheel-section .section-eyebrow {
-  padding: 0 8%;
-  color: rgba(0, 0, 0, 0.40);
-  transition: color 0.4s ease;
-}
-.skills-wheel-section .section-eyebrow::before {
-  background: rgba(0, 0, 0, 0.18);
-  transition: background 0.4s ease;
-}
-[data-theme="dark"] .skills-wheel-section .section-eyebrow {
-  color: rgba(255, 255, 255, 0.35);
-}
-[data-theme="dark"] .skills-wheel-section .section-eyebrow::before {
-  background: rgba(255, 255, 255, 0.18);
-}
-
-/* Título */
-.skills-wheel-section .section-title {
-  padding: 0 8%;
-  color: #0a0a0a;
-  margin-bottom: 72px;
-  transition: color 0.4s ease;
-}
-[data-theme="dark"] .skills-wheel-section .section-title {
-  color: #f5f5f7;
+.stack-right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: clip;   /* recorta el anillo que sobresalga de la columna */
 }
 
 /* ── Escena 3D ── */

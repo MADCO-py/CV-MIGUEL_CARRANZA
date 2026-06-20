@@ -192,102 +192,104 @@
        TECH STACK
   ================================================================ -->
   <section id="stack" style="background: var(--gray1);">
-    <div class="section-eyebrow" data-i18n="stack.eyebrow">Tools</div>
-    <h2 class="section-title" data-i18n="stack.title">Tech Stack</h2>
+    <div class="stack-layout">
 
-    <div class="tech-grid">
+      <!-- ── Columna izquierda: pills del stack ── -->
+      <div class="stack-left">
+        <div class="section-eyebrow" data-i18n="stack.eyebrow">Tools</div>
+        <h2 class="section-title" data-i18n="stack.title">Tech Stack</h2>
 
-      <div class="tech-cat reveal">
-        <div class="cat-label"><i class="fa-solid fa-display"></i> <span data-i18n="stack.cat.frontend">Frontend</span></div>
-        <div class="pills">
-          <span class="pill"><i class="fa-brands fa-html5"></i> HTML5</span>
-          <span class="pill"><i class="fa-brands fa-css3-alt"></i> CSS3</span>
-          <span class="pill"><i class="fa-brands fa-js"></i> JavaScript</span>
-          <span class="pill"><i class="fa-solid fa-code"></i> TypeScript</span>
-          <span class="pill"><i class="fa-brands fa-react"></i> React</span>
-        </div>
-      </div>
+        <div class="tech-grid">
 
-      <div class="tech-cat reveal" style="transition-delay: 0.08s">
-        <div class="cat-label"><i class="fa-solid fa-server"></i> <span data-i18n="stack.cat.backend">Backend &amp; Languages</span></div>
-        <div class="pills">
-          <span class="pill"><i class="fa-brands fa-python"></i> Python</span>
-          <span class="pill"><i class="fa-brands fa-java"></i> Java</span>
-          <span class="pill"><i class="fa-solid fa-k"></i> Kotlin</span>
-          <span class="pill"><i class="fa-solid fa-c"></i> C / C++</span>
-        </div>
-      </div>
-
-      <div class="tech-cat reveal" style="transition-delay: 0.16s">
-        <div class="cat-label"><i class="fa-solid fa-database"></i> <span data-i18n="stack.cat.db">Databases</span></div>
-        <div class="pills">
-          <span class="pill"><i class="fa-solid fa-elephant"></i> PostgreSQL</span>
-          <span class="pill"><i class="fa-solid fa-circle-nodes"></i> Neo4J</span>
-        </div>
-      </div>
-
-      <div class="tech-cat reveal" style="transition-delay: 0.24s">
-        <div class="cat-label"><i class="fa-solid fa-wrench"></i> <span data-i18n="stack.cat.devops">DevOps &amp; Tools</span></div>
-        <div class="pills">
-          <span class="pill"><i class="fa-brands fa-docker"></i> Docker</span>
-          <span class="pill"><i class="fa-brands fa-git-alt"></i> Git</span>
-          <span class="pill"><i class="fa-brands fa-linux"></i> Linux</span>
-          <span class="pill"><i class="fa-solid fa-code"></i> VS Code</span>
-          <span class="pill"><i class="fa-brands fa-android"></i> Android Studio</span>
-          <span class="pill"><i class="fa-brands fa-jira"></i> Jira</span>
-        </div>
-      </div>
-
-      <div class="tech-cat reveal" style="transition-delay: 0.30s">
-        <div class="cat-label"><i class="fa-solid fa-microchip"></i> <span data-i18n="stack.cat.iot">Hardware &amp; IoT</span></div>
-        <div class="pills">
-          <span class="pill"><i class="fa-solid fa-bolt"></i> Arduino</span>
-          <span class="pill"><i class="fa-solid fa-wifi"></i> ESP32</span>
-          <span class="pill"><i class="fa-solid fa-wave-square"></i> Sensores</span>
-          <span class="pill"><i class="fa-solid fa-memory"></i> Embebidos</span>
-        </div>
-      </div>
-
-      <!-- Spotlight Docker con proyectos -->
-      <div class="docker-highlight reveal" style="transition-delay: 0.36s">
-        <div class="docker-top">
-          <div class="docker-icon-wrap"><i class="fa-brands fa-docker"></i></div>
-          <div>
-            <div class="docker-title" data-i18n="stack.docker.title">Docker — Deployed Projects</div>
-            <div class="docker-sub"   data-i18n="stack.docker.sub">Containers in production and development</div>
+          <div class="tech-cat reveal">
+            <div class="cat-label"><i class="fa-solid fa-display"></i> <span data-i18n="stack.cat.frontend">Frontend</span></div>
+            <div class="pills">
+              <span class="pill"><i class="fa-brands fa-html5"></i> HTML5</span>
+              <span class="pill"><i class="fa-brands fa-css3-alt"></i> CSS3</span>
+              <span class="pill"><i class="fa-brands fa-js"></i> JavaScript</span>
+              <span class="pill"><i class="fa-solid fa-code"></i> TypeScript</span>
+              <span class="pill"><i class="fa-brands fa-react"></i> React</span>
+            </div>
           </div>
+
+          <div class="tech-cat reveal" style="transition-delay: 0.08s">
+            <div class="cat-label"><i class="fa-solid fa-server"></i> <span data-i18n="stack.cat.backend">Backend &amp; Languages</span></div>
+            <div class="pills">
+              <span class="pill"><i class="fa-brands fa-python"></i> Python</span>
+              <span class="pill"><i class="fa-brands fa-java"></i> Java</span>
+              <span class="pill"><i class="fa-solid fa-k"></i> Kotlin</span>
+              <span class="pill"><i class="fa-solid fa-c"></i> C / C++</span>
+            </div>
+          </div>
+
+          <div class="tech-cat reveal" style="transition-delay: 0.16s">
+            <div class="cat-label"><i class="fa-solid fa-database"></i> <span data-i18n="stack.cat.db">Databases</span></div>
+            <div class="pills">
+              <span class="pill"><i class="fa-solid fa-elephant"></i> PostgreSQL</span>
+              <span class="pill"><i class="fa-solid fa-circle-nodes"></i> Neo4J</span>
+            </div>
+          </div>
+
+          <div class="tech-cat reveal" style="transition-delay: 0.24s">
+            <div class="cat-label"><i class="fa-solid fa-wrench"></i> <span data-i18n="stack.cat.devops">DevOps &amp; Tools</span></div>
+            <div class="pills">
+              <span class="pill"><i class="fa-brands fa-docker"></i> Docker</span>
+              <span class="pill"><i class="fa-brands fa-git-alt"></i> Git</span>
+              <span class="pill"><i class="fa-brands fa-linux"></i> Linux</span>
+              <span class="pill"><i class="fa-solid fa-code"></i> VS Code</span>
+              <span class="pill"><i class="fa-brands fa-android"></i> Android Studio</span>
+              <span class="pill"><i class="fa-brands fa-jira"></i> Jira</span>
+            </div>
+          </div>
+
+          <div class="tech-cat reveal" style="transition-delay: 0.30s">
+            <div class="cat-label"><i class="fa-solid fa-microchip"></i> <span data-i18n="stack.cat.iot">Hardware &amp; IoT</span></div>
+            <div class="pills">
+              <span class="pill"><i class="fa-solid fa-bolt"></i> Arduino</span>
+              <span class="pill"><i class="fa-solid fa-wifi"></i> ESP32</span>
+              <span class="pill"><i class="fa-solid fa-wave-square"></i> Sensores</span>
+              <span class="pill"><i class="fa-solid fa-memory"></i> Embebidos</span>
+            </div>
+          </div>
+
+          <!-- Spotlight Docker con proyectos -->
+          <div class="docker-highlight reveal" style="transition-delay: 0.36s">
+            <div class="docker-top">
+              <div class="docker-icon-wrap"><i class="fa-brands fa-docker"></i></div>
+              <div>
+                <div class="docker-title" data-i18n="stack.docker.title">Docker — Deployed Projects</div>
+                <div class="docker-sub"   data-i18n="stack.docker.sub">Containers in production and development</div>
+              </div>
+            </div>
+            <div class="docker-projs">
+              <div class="docker-proj">
+                <div class="dp-name">CV-MIGUEL_CARRANZA</div>
+                <div class="dp-desc" data-i18n="stack.docker.proj1.desc">Containerized web portfolio for consistent deployment</div>
+              </div>
+              <div class="docker-proj">
+                <div class="dp-name">GVU</div>
+                <div class="dp-desc" data-i18n="stack.docker.proj2.desc">Web app with Docker environment for uniform development</div>
+              </div>
+              <div class="docker-proj">
+                <div class="dp-name">Proyecto Plataformas Móviles</div>
+                <div class="dp-desc" data-i18n="stack.docker.proj3.desc">Docker to replicate team environments exactly</div>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- /.tech-grid -->
+      </div><!-- /.stack-left -->
+
+      <!-- ── Columna derecha: carrusel (sin título ni eyebrow) ── -->
+      <div class="stack-right" id="cflowAnchor">
+        <div class="cflow-scene" id="cflowScene"></div>
+        <div class="cflow-label">
+          <i class="cflow-label-icon" id="cflowLabelIcon"></i>
+          <span class="cflow-label-name" id="cflowLabelName"></span>
         </div>
-        <div class="docker-projs">
-          <div class="docker-proj">
-            <div class="dp-name">CV-MIGUEL_CARRANZA</div>
-            <div class="dp-desc" data-i18n="stack.docker.proj1.desc">Containerized web portfolio for consistent deployment</div>
-          </div>
-          <div class="docker-proj">
-            <div class="dp-name">GVU</div>
-            <div class="dp-desc" data-i18n="stack.docker.proj2.desc">Web app with Docker environment for uniform development</div>
-          </div>
-          <div class="docker-proj">
-            <div class="dp-name">Proyecto Plataformas Móviles</div>
-            <div class="dp-desc" data-i18n="stack.docker.proj3.desc">Docker to replicate team environments exactly</div>
-          </div>
-        </div>
-      </div>
+      </div><!-- /.stack-right -->
 
-    </div>
-  </section>
-
-
-  <!-- ================================================================
-       HABILIDADES / SKILLS
-  ================================================================ -->
-  <section id="skills" class="skills-wheel-section">
-    <div class="section-eyebrow" data-i18n="skills.eyebrow">Technical Level</div>
-    <h2 class="section-title" data-i18n="skills.title">Skills</h2>
-    <div class="cflow-scene" id="cflowScene"></div>
-    <div class="cflow-label">
-      <i class="cflow-label-icon" id="cflowLabelIcon"></i>
-      <span class="cflow-label-name" id="cflowLabelName"></span>
-    </div>
+    </div><!-- /.stack-layout -->
   </section>
 
 
