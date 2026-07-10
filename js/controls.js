@@ -135,7 +135,7 @@
       'contact.title':     'Contact',
       'contact.subtitle':  'Available for freelance projects, academic collaborations or professional internships. Write to me.',
       'contact.portfolio': 'View projects',
-      'contact.phone':     'Phone',
+      'contact.primary.label': 'Fastest way to reach me',
 
       // Portfolio page
       'pf.eyebrow':     'Work',
@@ -269,7 +269,7 @@
       'contact.title':     'Contacto',
       'contact.subtitle':  'Disponible para proyectos freelance, colaboraciones académicas o prácticas profesionales. Escríbeme.',
       'contact.portfolio': 'Ver proyectos',
-      'contact.phone':     'Teléfono',
+      'contact.primary.label': 'La forma más rápida de contactarme',
 
       // Portfolio page
       'pf.eyebrow':     'Trabajo',

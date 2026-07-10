@@ -74,6 +74,7 @@ const PROJECTS = [
     desc:     "Conecta 7 tutores universitarios con 20 estudiantes que buscan apoyo académico. Plataforma web completa para gestión de tutorías entre colegios y familias.",
     tech:     ["HTML", "CSS", "JavaScript"],
     image:    "../img/MentorHub.png",
+    video:    "../img/VIDEOS/MENTORHUB.mp4",
     github:   "#",
     demo:     "https://madco-py.github.io/MentorHub/",
     sold:     false,
