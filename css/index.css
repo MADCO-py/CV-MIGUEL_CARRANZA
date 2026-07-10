@@ -94,7 +94,33 @@
   display: flex;
   gap: 12px;
   flex-wrap: wrap;
-  margin-bottom: 56px;
+  margin-bottom: 28px;
+}
+
+/* Línea de contacto directo — teléfono y correo visibles de inmediato */
+.hero-contact-quick {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 28px;
+}
+.quick-contact-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--gray5);
+  font-family: var(--font-mono);
+  letter-spacing: -0.01em;
+  transition: color 0.2s ease;
+}
+.quick-contact-item i {
+  font-size: 0.9rem;
+  color: var(--accent);
+}
+.quick-contact-item:hover {
+  color: var(--black);
 }
 
 /* Stats numéricos bajo los botones */

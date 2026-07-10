@@ -23,6 +23,7 @@
       'hero.eyebrow':       'Available · Guatemala',
       'hero.role.suffix':   'Engineering Student',
       'hero.desc':          'I build functional, optimized and maintainable software. Focused on web development, backend systems, mobile apps and IoT.',
+      'hero.cta.whatsapp':  'WhatsApp',
       'hero.cta.contact':   'Contact',
       'hero.cta.portfolio': 'View portfolio',
       'hero.stat.clients':  'Freelance Client',
@@ -134,6 +135,7 @@
       'contact.title':     'Contact',
       'contact.subtitle':  'Available for freelance projects, academic collaborations or professional internships. Write to me.',
       'contact.portfolio': 'View projects',
+      'contact.phone':     'Phone',
 
       // Portfolio page
       'pf.eyebrow':     'Work',
@@ -155,6 +157,7 @@
       'hero.eyebrow':       'Disponible · Guatemala',
       'hero.role.suffix':   'Estudiante de Ingeniería',
       'hero.desc':          'Construyo software funcional, optimizado y mantenible. Enfocado en desarrollo web, sistemas backend, apps móviles e IoT.',
+      'hero.cta.whatsapp':  'WhatsApp',
       'hero.cta.contact':   'Contactar',
       'hero.cta.portfolio': 'Ver portafolio',
       'hero.stat.clients':  'Cliente Freelance',
@@ -266,6 +269,7 @@
       'contact.title':     'Contacto',
       'contact.subtitle':  'Disponible para proyectos freelance, colaboraciones académicas o prácticas profesionales. Escríbeme.',
       'contact.portfolio': 'Ver proyectos',
+      'contact.phone':     'Teléfono',
 
       // Portfolio page
       'pf.eyebrow':     'Trabajo',

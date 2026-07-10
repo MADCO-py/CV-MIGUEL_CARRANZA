@@ -17,6 +17,8 @@
      desc      — descripción corta (~2 líneas)
      tech      — arreglo de tecnologías usadas
      image     — ruta a imagen en img/ (dejar "" para placeholder)
+     video     — ruta a video en img/ (opcional, tiene prioridad sobre image;
+                 se reproduce en loop, muteado y autoplay como preview)
      github    — URL del repositorio (dejar "" si es privado)
      demo      — URL de demo live (dejar "" si no existe)
      sold      — true si fue un proyecto vendido a cliente real
@@ -100,6 +102,19 @@ const PROJECTS = [
     demo:     "https://madco-py.github.io/mad-gains/",
     sold:     false,
   },
+  {
+    id:       "awa",
+    name:     "AwA",
+    category: "personal",
+    client:   "",
+    desc:     "Aplicación web para el seguimiento de hidratación diaria. Gamifica el consumo de agua con racha de días consecutivos, promedio semanal, historial acumulado y registro por botella.",
+    tech:     ["JavaScript", "HTML", "CSS"],
+    image:    "",
+    video:    "../img/VIDEOS/AWAVIDEO.mp4",
+    github:   "https://github.com/MADCO-py/AwA",
+    demo:     "https://madco-py.github.io/AwA/",
+    sold:     false,
+  },
 
   /* ── UNIVERSITARIO ──────────────────────────────────── */
   {
@@ -141,7 +156,9 @@ let currentSearch = "";
    ============================================================ */
 function renderCard(project) {
   const cat     = CATEGORIES[project.category] || CATEGORIES.all;
-  const imgHTML = project.image
+  const imgHTML = project.video
+    ? `<video src="${project.video}" ${project.image ? `poster="${project.image}"` : ''} autoplay muted loop playsinline></video>`
+    : project.image
     ? `<img src="${project.image}" alt="${project.name}" loading="lazy">`
     : `<div class="proj-image-ph">
          <i class="fa-regular fa-image"></i>
