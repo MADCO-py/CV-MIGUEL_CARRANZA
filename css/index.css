@@ -267,14 +267,14 @@ section {
 .lang-track {
   height: 4px;
   background: var(--gray2);
-  border-radius: 10px;
+  border-radius: var(--radius-md);
   overflow: hidden;
   margin-bottom: 16px;
 }
 .lang-bar {
   height: 100%;
   background: var(--black);
-  border-radius: 10px;
+  border-radius: var(--radius-md);
   width: 0%;
   transition: width 1.2s var(--ease);
 }
@@ -285,7 +285,7 @@ section {
 .skill-fill {
   height: 100%;
   background: var(--black);
-  border-radius: 10px;
+  border-radius: var(--radius-md);
   width: 0%;
   transition: width 1.3s var(--ease);
 }
@@ -414,7 +414,7 @@ section {
 }
 .skill-name { font-size: 0.88rem; font-weight: 500; color: var(--black); }
 .skill-pct  { font-size: 0.75rem; font-family: var(--font-mono); color: var(--gray4); }
-.skill-bg   { height: 4px; background: var(--gray2); border-radius: 10px; overflow: hidden; }
+.skill-bg   { height: 4px; background: var(--gray2); border-radius: var(--radius-md); overflow: hidden; }
 .skill-fill {
   width: 0%;
   transition: width 1.3s var(--ease);
@@ -491,7 +491,7 @@ section {
 .edu-badge {
   display: inline-flex; align-items: center; gap: 5px;
   margin-top: 12px;
-  padding: 4px 10px; border-radius: 980px;
+  padding: 4px 10px; border-radius: var(--radius-pill);
   background: var(--gray1); font-size: 0.7rem; font-weight: 600;
   color: var(--black); border: 1px solid var(--gray2);
   width: fit-content;
@@ -555,13 +555,13 @@ section {
 .t-title { font-size: 0.98rem; font-weight: 600; color: var(--black); }
 .t-date  {
   font-size: 0.72rem; font-family: var(--font-mono); color: var(--gray4);
-  background: var(--gray2); padding: 3px 10px; border-radius: 980px; white-space: nowrap;
+  background: var(--gray2); padding: 3px 10px; border-radius: var(--radius-pill); white-space: nowrap;
 }
 .t-role  { font-size: 0.82rem; color: var(--gray4); margin-bottom: 10px; font-weight: 500; }
 .t-desc  { font-size: 0.88rem; color: var(--gray5); line-height: 1.7; }
 .t-tags  { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
 .ttag {
-  font-size: 0.7rem; padding: 3px 9px; border-radius: 980px;
+  font-size: 0.7rem; padding: 3px 9px; border-radius: var(--radius-pill);
   background: var(--white); color: var(--gray4);
   border: 1px solid var(--gray2); font-family: var(--font-mono);
   transition: all 0.2s ease;
@@ -626,7 +626,7 @@ section {
 .cert-desc  { font-size: 0.82rem; color: var(--gray4); line-height: 1.6; }
 .cert-tags  { display: flex; gap: 7px; flex-wrap: wrap; }
 .cert-tag {
-  font-size: 0.7rem; padding: 3px 9px; border-radius: 980px;
+  font-size: 0.7rem; padding: 3px 9px; border-radius: var(--radius-pill);
   background: var(--gray1); color: var(--black3);
   border: 1px solid var(--gray2);
   transition: all 0.25s ease;
@@ -852,7 +852,7 @@ section {
   gap: 6px;
   margin-top: 12px;
   padding: 4px 12px;
-  border-radius: 980px;
+  border-radius: var(--radius-pill);
   background: var(--black);
   color: var(--white);
   font-size: 0.7rem;

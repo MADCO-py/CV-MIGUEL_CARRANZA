@@ -97,7 +97,7 @@
 #searchInput {
   width: 100%;
   padding: 14px 18px 14px 46px;
-  border-radius: 980px;
+  border-radius: var(--radius-pill);
   border: 1px solid rgba(255,255,255,0.1);
   background: rgba(255,255,255,0.07);
   color: var(--white);
@@ -133,7 +133,7 @@
 
 .filter-btn {
   padding: 7px 18px;
-  border-radius: 980px;
+  border-radius: var(--radius-pill);
   border: 1px solid rgba(255,255,255,0.12);
   background: transparent;
   color: rgba(255,255,255,0.5);
@@ -279,7 +279,7 @@
   position: absolute;
   top: 14px; left: 14px;
   padding: 5px 12px;
-  border-radius: 980px;
+  border-radius: var(--radius-pill);
   font-size: 0.68rem;
   font-weight: 700;
   letter-spacing: 0.07em;
@@ -294,7 +294,7 @@
   position: absolute;
   top: 14px; right: 14px;
   padding: 5px 12px;
-  border-radius: 980px;
+  border-radius: var(--radius-pill);
   font-size: 0.68rem;
   font-weight: 700;
   background: var(--black);
@@ -343,7 +343,7 @@
 .ptag {
   font-size: 0.69rem;
   padding: 3px 9px;
-  border-radius: 980px;
+  border-radius: var(--radius-pill);
   background: var(--gray1);
   color: var(--gray5);
   border: 1px solid var(--gray2);
@@ -366,7 +366,7 @@
   display: inline-flex; align-items: center; gap: 6px;
   font-size: 0.76rem; font-weight: 500;
   color: var(--black);
-  padding: 7px 14px; border-radius: 980px;
+  padding: 7px 14px; border-radius: var(--radius-pill);
   border: 1px solid var(--gray2);
   background: var(--gray1);
   transition: all 0.25s ease;
@@ -433,7 +433,7 @@
   font-size: 0.85rem; font-weight: 500;
   color: var(--accent);
   border: 1px solid rgba(0,113,227,0.2);
-  padding: 10px 20px; border-radius: 980px;
+  padding: 10px 20px; border-radius: var(--radius-pill);
   transition: all 0.25s ease;
   background: var(--accent-light);
 }
@@ -525,3 +525,7 @@
   .proj-body { padding: 18px; }
   .proj-footer { flex-wrap: wrap; }
 }
+
+/* "Ver sitio" más grande y visible */
+.proj-link-accent { padding: 11px 20px !important; font-size: 0.86rem !important; font-weight: 600; background: var(--black) !important; color: var(--white) !important; }
+.proj-link-accent:hover { opacity: 0.85; }

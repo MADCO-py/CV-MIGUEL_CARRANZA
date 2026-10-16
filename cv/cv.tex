@@ -90,9 +90,9 @@
 \contact{\faFile*}{NIT activo}
 
 \sidetitle{Habilidades técnicas}
+\skillgroup{Datos y análisis}{SQL (PostgreSQL), Neo4J, Python, dashboards (Recharts), reportes en Excel}
 \skillgroup{Frontend}{HTML5, CSS3, JavaScript, TypeScript, React, Vite}
-\skillgroup{Backend y lenguajes}{Node.js, Express, Python, Java, Kotlin, C / C++}
-\skillgroup{Bases de datos}{PostgreSQL, Neo4J}
+\skillgroup{Backend y lenguajes}{Node.js, Express, Java, Kotlin, C / C++}
 \skillgroup{Nube y despliegue}{Docker, Railway, Cloudflare R2, GitHub Pages}
 \skillgroup{Herramientas}{Git, Linux, VS Code, Android Studio, Jetpack Compose, Jira}
 \skillgroup{Hardware e IoT}{Arduino, ESP32, sensores, sistemas embebidos}
@@ -105,7 +105,7 @@
 {\fontsize{8.5}{11}\selectfont Trabajo ágil por sprints con gestión en Jira; código limpio y mantenible.}\par
 
 \sidetitle{Áreas de interés}
-{\fontsize{8.5}{11}\selectfont Ciberseguridad · Inteligencia artificial · Desarrollo web · Apps móviles · Sistemas y hardware · Backend y APIs}\par
+{\fontsize{8.5}{11}\selectfont Análisis de datos · Inteligencia artificial · Ciberseguridad · Desarrollo web · Backend y APIs · Sistemas y hardware}\par
 \end{minipage}%
 \hspace*{18pt}\hspace*{24pt}%
 % ============================================================
@@ -116,17 +116,25 @@
 
 {\color{ink}\fontsize{30}{32}\selectfont\bfseries Miguel Carranza}\par
 \vspace{5pt}
-{\color{accent}\fontsize{11.5}{14}\selectfont\bfseries Desarrollador Full Stack}%
-{\color{muted}\fontsize{11.5}{14}\selectfont\ \ ·\ \ Estudiante de Ingeniería en Computación}\par
+{\color{accent}\fontsize{11.5}{14}\selectfont\bfseries Analista de Datos}%
+{\color{muted}\fontsize{11.5}{14}\selectfont\ \ ·\ \ Desarrollador Full Stack\ \ ·\ \ Estudiante de Ingeniería}\par
 \vspace{8pt}
-Construyo software funcional, optimizado y mantenible: desde interfaces modernas hasta sistemas backend con bases de datos relacionales y de grafos, contenedores Docker y programación de microcontroladores. Estudiante de tercer año en la Universidad del Valle de Guatemala, con proyectos vendidos y en producción para clientes reales.\par
+Convierto datos en decisiones: diseño bases de datos SQL, recolecto y resumo datos de forma automática y los presento en dashboards y reportes. Estudiante de tercer año de Ingeniería en Ciencias de la Computación en la Universidad del Valle de Guatemala, con sistemas vendidos y en producción para clientes reales.\par
+
+\maintitle{Experiencia en análisis de datos}
+\job{Los Skeepers — plataforma de fans con analítica}{Freelance · \href{https://www.losskeepers.com/}{losskeepers.com}}{Proyecto vendido}
+\begin{itemize}
+  \item Diseñé un dashboard de analítica: KPIs de visitas (activos, día, semana, mes), mapa de calor día × hora de 90 días, embudos de conversión, tiempo por sección y uso por dispositivo; \textbf{11 gráficas} sobre \textbf{35 consultas SQL} (COUNT, AVG, GROUP BY, date\_trunc).
+  \item Modelé \textbf{18 tablas} en PostgreSQL y un proceso ETL diario (cron) que resume eventos crudos en totales diarios y purga el detalle de más de 90 días; reportes exportables a Excel.
+  \item Privacidad por diseño: IDs anónimos, sin guardar la IP, ubicación aproximada agrupada por país, región y ciudad.
+\end{itemize}
 
 \maintitle{Experiencia}
 \job{Desarrollador de software freelance}{Llantas Ávila — FleetControl}{Abr. 2026 · 30 h}
 \begin{itemize}
   \item Desarrollé y entregué un sistema web de gestión de flota de camiones que resuelve un problema real: identificar qué piloto recibió una multa en un día determinado.
   \item 9 pilotos registrados con foto, fecha e historial de mantenimiento por vehículo; acceso con usuario y contraseña y registro vinculado por código QR.
-  \item React, Node.js + Express y PostgreSQL; en producción en Railway con Docker y fotos en Cloudflare R2.
+  \item Base de datos PostgreSQL con pilotos, vehículos y registros; React y Node.js + Express, en producción en Railway con Docker.
 \end{itemize}
 \vspace{5pt}
 \job{Guía educativo}{Museo de los Niños de Guatemala}{Abr. 2025 – Oct. 2025}
@@ -139,22 +147,10 @@ Construyo software funcional, optimizado y mantenible: desde interfaces modernas
   \item Servicio al cliente, apoyo en caja en horas de alta afluencia, control básico de inventario y organización de tienda.
 \end{itemize}
 
-\maintitle{Proyectos freelance vendidos}
-\job{Los Skeepers — sitio oficial de banda}{\href{https://www.losskeepers.com/}{losskeepers.com} · dominio propio}{}
-\begin{itemize}
-  \item Interacción con fans y recolección de datos: analíticas anónimas, juegos con ranking mensual y validación anti-trampa, suscriptores y contenido editable desde un panel.
-  \item Panel de administración privado con login (bcrypt, sesiones, límite de intentos) hecho en React + Vite + Recharts.
-  \item Node.js + Express, PostgreSQL, Docker y Railway; exportación a Excel y tareas automáticas diarias.
-\end{itemize}
-\vspace{5pt}
-\job{The Sunset Sessions — sitio de evento}{\href{https://madco-py.github.io/The-Sunset-Sessions/}{madco-py.github.io/The-Sunset-Sessions}}{}
-\begin{itemize}
-  \item Venta de entradas por WhatsApp, artistas por revelar, cuenta regresiva y marcas aliadas; React + htm sin compilación, en GitHub Pages.
-\end{itemize}
-
 \maintitle{Otros proyectos}
 \begin{itemize}
-  \item \textbf{\color{ink}SecureGate} — control de accesos con lectura de DPI y placas (Google Cloud Vision), React, Node.js, PostgreSQL y Docker.
+  \item \textbf{\color{ink}The Sunset Sessions} (vendido) — sitio de evento con venta de entradas por WhatsApp; React, GitHub Pages.
+  \item \textbf{\color{ink}SecureGate} — control de accesos con registro de cada ingreso en PostgreSQL y lectura de DPI y placas (Google Cloud Vision).
   \item \textbf{\color{ink}MentorHub} — conecta 7 tutores universitarios con 20 estudiantes; React + Vite.
   \item \textbf{\color{ink}Sitios para emprendedores y artistas} — Walter Mazariegos, Nalú Korean Food, March Jewelry y Marce Juárez.
 \end{itemize}
@@ -170,7 +166,7 @@ Construyo software funcional, optimizado y mantenible: desde interfaces modernas
 \begin{itemize}
   \item \textbf{\color{ink}Creación de Páginas Web — HTML, CSS, JavaScript} · INTECAP, nivel intermedio.
   \item \textbf{\color{ink}HCI — Interacción Humano-Computadora} · Universidad del Valle de Guatemala.
-  \item \textbf{\color{ink}Ética en Investigación con Sujetos Humanos} · UVG — CCSS, 8 h · 7 de mayo de 2026.
+  \item \textbf{\color{ink}Ética en Investigación con Sujetos Humanos} · UVG — CCSS, 8 h · 7 de mayo de 2026 (manejo ético de datos de personas).
 \end{itemize}
 \end{minipage}
 

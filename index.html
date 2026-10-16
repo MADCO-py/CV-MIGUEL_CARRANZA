@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Miguel Carranza — Software Engineer</title>
+  <title>Miguel Carranza — Data Analyst &amp; Full Stack Developer</title>
+  <meta name="description" content="Miguel Carranza — Data Analyst and Full Stack Developer in Guatemala. SQL, PostgreSQL, dashboards and data-driven web systems.">
   <link rel="icon" type="image/png" href="img/Icono.png">
 
   <!-- Anti-FOUC: apply saved theme before CSS renders to avoid flash -->
@@ -34,6 +35,7 @@
     <a class="nav-logo" href="index.html">Miguel Carranza</a>
     <div class="nav-links" id="mainNavLinks">
       <a href="#about"                   data-i18n="nav.about">About</a>
+      <a href="#data"                    data-i18n="nav.data">Data</a>
       <a href="#stack"                   data-i18n="nav.stack">Stack</a>
       <a href="#featured"                data-i18n="nav.featured">Projects</a>
       <a href="#education"               data-i18n="nav.education">Education</a>
@@ -78,12 +80,12 @@
       </h1>
 
       <p class="hero-role">
-        <strong>Full Stack Developer</strong> &amp; <span data-i18n="hero.role.suffix">Engineering Student</span>
+        <strong data-i18n="hero.role.main">Data Analyst</strong> · <span data-i18n="hero.role.suffix">Full Stack Developer &amp; Engineering Student</span>
       </p>
 
       <p class="hero-desc" data-i18n="hero.desc">
-        I build functional, optimized and maintainable software.
-        Focused on web development, backend systems, mobile apps and IoT.
+        I turn data into decisions: I design SQL databases, collect and summarize data automatically,
+        and present it in dashboards and reports. Systems in production for real clients.
       </p>
 
       <div class="hero-actions">
@@ -127,7 +129,7 @@
         >
       </div>
       <div class="profile-badge pb-tl">
-        <i class="fa-brands fa-docker" style="color:#2496ed"></i> Full Stack Dev
+        <i class="fa-solid fa-chart-line" style="color:#0071e3"></i> <span data-i18n="hero.badge">Data · SQL · Dashboards</span>
       </div>
       <div class="profile-badge pb-br">
         <i class="fa-solid fa-graduation-cap"></i> UVG · CUM LAUDE
@@ -203,6 +205,56 @@
 
 
   <!-- ================================================================
+       EXPERIENCIA CON DATOS — evidencia para Analista de Datos
+  ================================================================ -->
+  <section id="data" class="data-section">
+    <div class="section-eyebrow" data-i18n="data.eyebrow">Data Analyst</div>
+    <h2 class="section-title" data-i18n="data.title">Data Experience</h2>
+    <p class="section-lead" data-i18n="data.lead">Real evidence from a system in production: the Los Skeepers admin panel, which I designed and built end to end.</p>
+
+    <div class="data-stats reveal">
+      <div class="data-stat"><span class="data-stat-n">35</span><span class="data-stat-l" data-i18n="data.stat.queries">SQL queries with COUNT, AVG, GROUP BY and date_trunc</span></div>
+      <div class="data-stat"><span class="data-stat-n">18</span><span class="data-stat-l" data-i18n="data.stat.tables">tables modeled in PostgreSQL</span></div>
+      <div class="data-stat"><span class="data-stat-n">11</span><span class="data-stat-l" data-i18n="data.stat.charts">dashboard charts + a day × hour heatmap</span></div>
+      <div class="data-stat"><span class="data-stat-n">90</span><span class="data-stat-l" data-i18n="data.stat.days">days of raw events, rolled up into daily totals</span></div>
+    </div>
+
+    <div class="data-grid">
+      <article class="data-card reveal">
+        <div class="data-card-icon"><i class="fa-solid fa-database"></i></div>
+        <h3 data-i18n="data.c1.title">Modeling &amp; SQL</h3>
+        <p data-i18n="data.c1.desc">Relational database design in PostgreSQL for three systems (Los Skeepers, FleetControl, SecureGate) and graph databases with Neo4J at university.</p>
+      </article>
+      <article class="data-card reveal" style="transition-delay: 0.06s">
+        <div class="data-card-icon"><i class="fa-solid fa-filter"></i></div>
+        <h3 data-i18n="data.c2.title">Collection &amp; processing</h3>
+        <p data-i18n="data.c2.desc">Anonymous event tracking (visits, clicks, time per section) and an automatic daily job that summarizes raw data and purges old detail — a small ETL pipeline.</p>
+      </article>
+      <article class="data-card reveal" style="transition-delay: 0.12s">
+        <div class="data-card-icon"><i class="fa-solid fa-chart-column"></i></div>
+        <h3 data-i18n="data.c3.title">Dashboards &amp; KPIs</h3>
+        <p data-i18n="data.c3.desc">Active visitors and visits per day, week and month, conversion funnels, most-clicked elements, device and browser breakdown, and location grouping by country, region and city.</p>
+      </article>
+      <article class="data-card reveal" style="transition-delay: 0.18s">
+        <div class="data-card-icon"><i class="fa-solid fa-file-excel"></i></div>
+        <h3 data-i18n="data.c4.title">Reports</h3>
+        <p data-i18n="data.c4.desc">Excel exports generated from the database so the client can analyze and share the data without technical knowledge.</p>
+      </article>
+      <article class="data-card reveal" style="transition-delay: 0.24s">
+        <div class="data-card-icon"><i class="fa-solid fa-user-shield"></i></div>
+        <h3 data-i18n="data.c5.title">Data ethics &amp; privacy</h3>
+        <p data-i18n="data.c5.desc">Anonymous IDs, IP never stored, approximate location only. Certified in Ethics in Research with Human Subjects (UVG).</p>
+      </article>
+      <article class="data-card reveal" style="transition-delay: 0.30s">
+        <div class="data-card-icon"><i class="fa-solid fa-people-group"></i></div>
+        <h3 data-i18n="data.c6.title">Communicating results</h3>
+        <p data-i18n="data.c6.desc">Experience explaining to non-technical people (clients, children and parents at the museum) and agile work with Jira.</p>
+      </article>
+    </div>
+  </section>
+
+
+  <!-- ================================================================
        TECH STACK
   ================================================================ -->
   <section id="stack" style="background: var(--gray1);">
@@ -215,6 +267,18 @@
         <p class="section-lead" data-i18n="stack.lead">Each technology is backed by real projects. Pick one to see the evidence.</p>
 
         <div class="tech-grid">
+
+          <div class="tech-cat tech-cat--data reveal">
+            <div class="cat-label"><i class="fa-solid fa-chart-line"></i> <span data-i18n="stack.cat.data">Data &amp; Analysis</span></div>
+            <div class="pills">
+              <button type="button" class="pill skill" data-skill="SQL"><i class="fa-solid fa-table"></i> SQL</button>
+              <button type="button" class="pill skill" data-skill="PostgreSQL"><i class="fa-solid fa-database"></i> PostgreSQL</button>
+              <button type="button" class="pill skill" data-skill="Neo4J"><i class="fa-solid fa-circle-nodes"></i> Neo4J</button>
+              <button type="button" class="pill skill" data-skill="Python"><i class="fa-brands fa-python"></i> Python</button>
+              <button type="button" class="pill skill" data-skill="Recharts"><i class="fa-solid fa-chart-pie"></i> Recharts</button>
+              <button type="button" class="pill skill" data-skill="Excel"><i class="fa-solid fa-file-excel"></i> Excel</button>
+            </div>
+          </div>
 
           <div class="tech-cat reveal">
             <div class="cat-label"><i class="fa-solid fa-display"></i> <span data-i18n="stack.cat.frontend">Frontend</span></div>
@@ -233,18 +297,9 @@
             <div class="pills">
               <button type="button" class="pill skill" data-skill="Node.js"><i class="fa-brands fa-node-js"></i> Node.js</button>
               <button type="button" class="pill skill" data-skill="Express"><i class="fa-solid fa-route"></i> Express</button>
-              <button type="button" class="pill skill" data-skill="Python"><i class="fa-brands fa-python"></i> Python</button>
               <button type="button" class="pill skill" data-skill="Java"><i class="fa-brands fa-java"></i> Java</button>
               <button type="button" class="pill skill" data-skill="Kotlin"><i class="fa-solid fa-k"></i> Kotlin</button>
               <button type="button" class="pill skill" data-skill="C / C++"><i class="fa-solid fa-c"></i> C / C++</button>
-            </div>
-          </div>
-
-          <div class="tech-cat reveal" style="transition-delay: 0.12s">
-            <div class="cat-label"><i class="fa-solid fa-database"></i> <span data-i18n="stack.cat.db">Databases</span></div>
-            <div class="pills">
-              <button type="button" class="pill skill" data-skill="PostgreSQL"><i class="fa-solid fa-database"></i> PostgreSQL</button>
-              <button type="button" class="pill skill" data-skill="Neo4J"><i class="fa-solid fa-circle-nodes"></i> Neo4J</button>
             </div>
           </div>
 
@@ -295,8 +350,8 @@
                 <div class="dp-desc" data-i18n="stack.docker.proj1.desc">Containerized web portfolio for consistent deployment</div>
               </div>
               <div class="docker-proj">
-                <div class="dp-name">GVU</div>
-                <div class="dp-desc" data-i18n="stack.docker.proj2.desc">Web app with Docker environment for uniform development</div>
+                <div class="dp-name">Los Skeepers</div>
+                <div class="dp-desc" data-i18n="stack.docker.proj2.desc">Node.js + PostgreSQL in production on Railway</div>
               </div>
               <div class="docker-proj">
                 <div class="dp-name">Proyecto Plataformas Móviles</div>
@@ -436,7 +491,7 @@
   <section id="featured" style="background: var(--gray1);">
     <div class="section-eyebrow" data-i18n="featured.eyebrow">Delivered to clients</div>
     <h2 class="section-title" data-i18n="featured.title">Featured Projects</h2>
-    <p class="section-lead" data-i18n="featured.lead">Three projects sold and in use. Each one explains how it is built: data, access, hosting and libraries.</p>
+    <p class="section-lead" data-i18n="featured.lead">Three projects sold and in use. Each one explains how it is built: data, analysis, access, hosting and libraries.</p>
     <div class="featured-list" id="featuredList"></div>
     <a href="pages/portafolio.html" class="btn btn-dark featured-more">
       <i class="fa-solid fa-layer-group"></i> <span data-i18n="featured.more">See all projects</span>
@@ -534,6 +589,11 @@
     <h2 class="section-title" data-i18n="int.title">Areas of Interest</h2>
 
     <div class="int-grid">
+      <div class="int-card int-card--data reveal">
+        <div class="int-icon"><i class="fa-solid fa-chart-line"></i></div>
+        <div class="int-title" data-i18n="int.data.title">Data Analysis</div>
+        <div class="int-desc"  data-i18n="int.data.desc">SQL, dashboards, KPIs and data-driven decisions</div>
+      </div>
       <div class="int-card reveal">
         <div class="int-icon"><i class="fa-solid fa-shield-halved"></i></div>
         <div class="int-title" data-i18n="int.cyber.title">Cybersecurity</div>

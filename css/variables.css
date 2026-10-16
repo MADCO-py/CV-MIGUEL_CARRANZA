@@ -37,10 +37,11 @@
   --shadow-hover: 0 28px 80px rgba(0, 0, 0, 0.16);
 
   /* --- Border radius --- */
-  --radius-sm:    8px;
-  --radius-md:    14px;
-  --radius-lg:    20px;
-  --radius-xl:    28px;
+  --radius-sm:    2px;
+  --radius-md:    3px;
+  --radius-lg:    4px;
+  --radius-xl:    4px;
+  --radius-pill:  2px;   /* botones y etiquetas: casi rectos */
 
   /* --- Tipografía --- */
   --font-main:    'Inter', sans-serif;

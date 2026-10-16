@@ -25,29 +25,6 @@ const PROJECTS = [
 
   /* ── FREELANCE (vendidos) ───────────────────────────── */
   {
-    id: "fleetcontrol",
-    name: "FleetControl",
-    cat: "freelance",
-    sold: true,
-    featured: true,
-    client: { es: "Llantas Ávila", en: "Llantas Ávila" },
-    desc: {
-      es: "Sistema web de gestión de flota entregado a Llantas Ávila. Resuelve un problema real: saber qué piloto manejaba cada camión el día de una multa. 9 pilotos registrados con foto, fecha e historial de mantenimiento por vehículo.",
-      en: "Fleet management web system delivered to Llantas Ávila. It solves a real problem: knowing which driver had each truck on the day of a traffic fine. 9 registered drivers with photo, date and maintenance history per vehicle.",
-    },
-    tech: ["React", "Node.js", "Express", "PostgreSQL", "Docker", "Railway", "Cloudflare R2"],
-    img: "img/FleetControl.png",
-    demo: "",
-    github: "",
-    build: [
-      ["purpose", { es: "Control de flota: qué piloto tenía qué camión y cuándo, con evidencia fotográfica e historial de mantenimiento.", en: "Fleet control: which driver had which truck and when, with photo evidence and maintenance history." }],
-      ["data",    { es: "Base de datos PostgreSQL con pilotos, vehículos, registros y mantenimientos. Las fotos se guardan en Cloudflare R2.", en: "PostgreSQL database with drivers, vehicles, logs and maintenance. Photos are stored on Cloudflare R2." }],
-      ["access",  { es: "Login con usuario y contraseña para cada piloto; registro vinculado por código QR.", en: "Username and password login for each driver; QR-linked registration." }],
-      ["hosting", { es: "En producción en Railway, empaquetado con Docker, con hosting anual activo.", en: "In production on Railway, packaged with Docker, with active yearly hosting." }],
-      ["libs",    { es: "React (interfaz) · Node.js + Express (API).", en: "React (interface) · Node.js + Express (API)." }],
-    ],
-  },
-  {
     id: "los-skeepers",
     name: "Los Skeepers",
     cat: "freelance",
@@ -58,18 +35,42 @@ const PROJECTS = [
       es: "Sitio oficial de la primera boy band de Guatemala: música, shows, merch, juegos con ranking mensual y un panel privado de administración con analíticas.",
       en: "Official website of Guatemala's first boy band: music, shows, merch, games with a monthly leaderboard and a private admin panel with analytics.",
     },
-    tech: ["JavaScript", "HTML5", "CSS3", "Node.js", "Express", "PostgreSQL", "React", "Vite", "Docker", "Railway"],
+    tech: ["SQL", "PostgreSQL", "Recharts", "Excel", "Node.js", "Express", "React", "Vite", "JavaScript", "HTML5", "CSS3", "Docker", "Railway"],
     img: "img/proyectos/los-skeepers.jpg",
     video: "img/proyectos/los-skeepers.mp4",
     demo: "https://www.losskeepers.com/",
     github: "",
     build: [
       ["purpose", { es: "Interacción con los fans y recolección de datos: analíticas anónimas de visitas, puntajes de juegos, suscriptores y contenido editable sin tocar código.", en: "Fan interaction and data collection: anonymous visit analytics, game scores, subscribers and content editable without touching code." }],
-      ["data",    { es: "Base de datos PostgreSQL: visitantes, eventos, ranking con validación anti-trampa, suscriptores, merch y fotos. Un proceso automático resume los datos cada día.", en: "PostgreSQL database: visitors, events, leaderboard with anti-cheat validation, subscribers, merch and photos. An automatic job summarizes the data every day." }],
+      ["data",    { es: "PostgreSQL con 18 tablas: visitantes, eventos, ranking con validación anti-trampa, suscriptores, merch y fotos. Un proceso automático (cron) resume cada día los eventos crudos en totales diarios y purga el detalle de más de 90 días.", en: "PostgreSQL with 18 tables: visitors, events, leaderboard with anti-cheat validation, subscribers, merch and photos. An automatic job (cron) rolls raw events up into daily totals every day and purges detail older than 90 days." }],
+      ["analytics", { es: "Dashboard con KPIs de visitas (activos, día, semana, mes), mapa de calor día × hora de 90 días, tiempo promedio por sección, elementos más clickeados, embudos de conversión (merch → carrito) y uso por dispositivo y navegador: 11 gráficas en Recharts sobre 35 consultas SQL con COUNT, AVG, GROUP BY y date_trunc. Reportes exportables a Excel.", en: "Dashboard with visit KPIs (active, day, week, month), a 90-day day × hour heatmap, average time per section, most-clicked elements, conversion funnels (merch → cart) and device/browser usage: 11 Recharts charts on top of 35 SQL queries with COUNT, AVG, GROUP BY and date_trunc. Reports exportable to Excel." }],
       ["access",  { es: "Panel de administración privado con login: contraseñas cifradas (bcrypt), sesiones guardadas en la base de datos y límite de intentos.", en: "Private admin panel with login: hashed passwords (bcrypt), sessions stored in the database and rate limiting." }],
       ["hosting", { es: "Contenedor Docker desplegado en Railway.", en: "Docker container deployed on Railway." }],
       ["domain",  { es: "Dominio propio: losskeepers.com", en: "Custom domain: losskeepers.com" }],
       ["libs",    { es: "Node.js + Express · React + Vite + Recharts (panel) · multer (subir fotos) · exceljs (exportar a Excel) · geoip-lite (país aproximado, sin guardar la IP) · node-cron.", en: "Node.js + Express · React + Vite + Recharts (panel) · multer (photo uploads) · exceljs (Excel export) · geoip-lite (approximate country, IP not stored) · node-cron." }],
+    ],
+  },
+  {
+    id: "fleetcontrol",
+    name: "FleetControl",
+    cat: "freelance",
+    sold: true,
+    featured: true,
+    client: { es: "Llantas Ávila", en: "Llantas Ávila" },
+    desc: {
+      es: "Sistema web de gestión de flota entregado a Llantas Ávila. Resuelve un problema real: saber qué piloto manejaba cada camión el día de una multa. 9 pilotos registrados con foto, fecha e historial de mantenimiento por vehículo.",
+      en: "Fleet management web system delivered to Llantas Ávila. It solves a real problem: knowing which driver had each truck on the day of a traffic fine. 9 registered drivers with photo, date and maintenance history per vehicle.",
+    },
+    tech: ["SQL", "PostgreSQL", "React", "Node.js", "Express", "Docker", "Railway", "Cloudflare R2"],
+    img: "img/FleetControl.png",
+    demo: "",
+    github: "",
+    build: [
+      ["purpose", { es: "Control de flota: qué piloto tenía qué camión y cuándo, con evidencia fotográfica e historial de mantenimiento.", en: "Fleet control: which driver had which truck and when, with photo evidence and maintenance history." }],
+      ["data",    { es: "Base de datos PostgreSQL con pilotos, vehículos, registros y mantenimientos. Las fotos se guardan en Cloudflare R2.", en: "PostgreSQL database with drivers, vehicles, logs and maintenance. Photos are stored on Cloudflare R2." }],
+      ["access",  { es: "Login con usuario y contraseña para cada piloto; registro vinculado por código QR.", en: "Username and password login for each driver; QR-linked registration." }],
+      ["hosting", { es: "En producción en Railway, empaquetado con Docker, con hosting anual activo.", en: "In production on Railway, packaged with Docker, with active yearly hosting." }],
+      ["libs",    { es: "React (interfaz) · Node.js + Express (API).", en: "React (interface) · Node.js + Express (API)." }],
     ],
   },
   {
@@ -191,7 +192,7 @@ const PROJECTS = [
       es: "Sistema de control de accesos para garitas de residenciales y condominios: lee el DPI y la placa del vehículo con OCR, verifica si el residente está al día en sus pagos y deja registro de cada acceso. 5 participantes activos durante su implementación.",
       en: "Access control system for gatehouses in residential complexes: reads ID cards (DPI) and license plates with OCR, checks whether the resident's payments are up to date and logs every access. 5 active participants during implementation.",
     },
-    tech: ["TypeScript", "React", "Node.js", "Express", "PostgreSQL", "Docker"],
+    tech: ["SQL", "PostgreSQL", "TypeScript", "React", "Node.js", "Express", "Docker"],
     img: "",
     demo: "",
     github: "",
@@ -322,23 +323,6 @@ const PROJECTS = [
       ["hosting", { es: "GitHub Pages.", en: "GitHub Pages." }],
     ],
   },
-  {
-    id: "gvu",
-    name: "GVU",
-    cat: "personal",
-    client: { es: "Exploración técnica", en: "Technical exploration" },
-    desc: {
-      es: "Intento de red social universitaria construida en JavaScript, enfocada en interfaces dinámicas y lógica frontend moderna. Proyecto de exploración técnica sin usuarios activos.",
-      en: "University social network experiment built in JavaScript, focused on dynamic interfaces and modern frontend logic. A technical exploration with no active users.",
-    },
-    tech: ["JavaScript", "HTML5", "CSS3", "Docker"],
-    img: "img/GVU.png",
-    demo: "",
-    github: "https://github.com/MADCO-py/GVU",
-    build: [
-      ["hosting", { es: "Entorno Docker para un desarrollo uniforme.", en: "Docker environment for uniform development." }],
-    ],
-  },
 ];
 
 /* Categorías (orden en el portafolio) */
@@ -353,6 +337,7 @@ const CATEGORIES = {
 const BUILD_LABELS = {
   purpose: { icon: "fa-solid fa-bullseye",       es: "Función principal", en: "Main purpose" },
   data:    { icon: "fa-solid fa-database",       es: "Datos",             en: "Data" },
+  analytics: { icon: "fa-solid fa-chart-line",   es: "Análisis de datos", en: "Data analysis" },
   access:  { icon: "fa-solid fa-lock",           es: "Acceso",            en: "Access" },
   hosting: { icon: "fa-solid fa-server",         es: "Hosting",           en: "Hosting" },
   domain:  { icon: "fa-solid fa-globe",          es: "Dominio",           en: "Domain" },

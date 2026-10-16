@@ -17,7 +17,7 @@
 
   function linksHTML(p) {
     const out = [];
-    if (p.demo) out.push(`<a class="btn btn-dark btn-sm" href="${p.demo}" target="_blank" rel="noopener"><i class="fa-solid fa-arrow-up-right-from-square"></i> ${L('Ver sitio', 'Visit site')}</a>`);
+    if (p.demo) out.push(`<a class="btn btn-dark btn-visit" href="${p.demo}" target="_blank" rel="noopener"><i class="fa-solid fa-arrow-up-right-from-square"></i> ${L('Ver sitio', 'Visit site')}</a>`);
     if (p.github) out.push(`<a class="btn btn-outline btn-sm" href="${p.github}" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> ${L('Código', 'Code')}</a>`);
     else out.push(`<span class="btn btn-outline btn-sm is-disabled"><i class="fa-solid fa-lock"></i> ${L('Código privado', 'Private code')}</span>`);
     if (!p.demo) out.push(`<span class="featured-note"><i class="fa-solid fa-shield-halved"></i> ${L('Sistema interno del cliente', "Client's internal system")}</span>`);
