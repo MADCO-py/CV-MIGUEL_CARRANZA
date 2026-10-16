@@ -1,382 +1,144 @@
 /* ============================================================
-   portfolio.js — Lógica del portafolio
-   - Base de datos de proyectos (editar aquí para agregar nuevos)
-   - Búsqueda en tiempo real
-   - Filtros por categoría
-   - Render dinámico de cards
+   portfolio.js — Portafolio
+   Los proyectos están en js/projects-data.js (compartido con el CV).
+   Aquí solo: búsqueda, filtros por categoría y render de tarjetas.
    ============================================================ */
+(function () {
+  'use strict';
+  const L = (es, en) => (SITE.lang() === 'es' ? es : en);
+  const ORDER = ['freelance', 'community', 'university', 'personal'];
 
+  let currentFilter = 'all';
+  let currentSearch = '';
 
-/* ============================================================
-   PROYECTOS — Edita este arreglo para agregar / modificar
-   Campos disponibles:
-     id        — identificador único (string)
-     name      — nombre del proyecto
-     category  — "freelance" | "university" | "personal"
-     client    — nombre del cliente (solo freelance, opcional)
-     desc      — descripción corta (~2 líneas)
-     tech      — arreglo de tecnologías usadas
-     image     — ruta a imagen en img/ (dejar "" para placeholder)
-     video     — ruta a video en img/ (opcional, tiene prioridad sobre image;
-                 se reproduce en loop, muteado y autoplay como preview)
-     github    — URL del repositorio (dejar "" si es privado)
-     demo      — URL de demo live (dejar "" si no existe)
-     sold      — true si fue un proyecto vendido a cliente real
-   ============================================================ */
-const PROJECTS = [
+  /* Texto donde busca: nombre, cliente, descripción, tecnologías y "cómo está hecho" */
+  function haystack(p) {
+    const build = (p.build || []).map(([, v]) => `${v.es} ${v.en}`).join(' ');
+    return [p.name, p.client.es, p.client.en, p.desc.es, p.desc.en, p.tech.join(' '), build].join(' ').toLowerCase();
+  }
 
-  /* ── FREELANCE ─────────────────────────────────────── */
-  {
-    id:       "llantas-avila",
-    name:     "FleetControl — Llantas Ávila",
-    category: "freelance",
-    client:   "Llantas Ávila",
-    desc:     "Resuelve el caos de identificar qué piloto fue multado en un día dado. 9 pilotos registrados con foto, fecha e historial de mantenimiento por vehículo. Acceso por usuario/contraseña con registro vinculado por QR.",
-    tech:     ["Python", "PostgreSQL", "Docker", "JavaScript", "QR"],
-    image:    "../img/FleetControl.png",
-    github:   "",
-    demo:     "#",
-    sold:     true,
-  },
+  /* ── Tarjeta ── */
+  function renderCard(p) {
+    const cat = CATEGORIES[p.cat];
+    const links = [];
+    if (p.demo) links.push(`<a href="${p.demo}" class="proj-link proj-link-accent" target="_blank" rel="noopener"><i class="fa-solid fa-arrow-up-right-from-square"></i> ${L('Ver sitio', 'Visit site')}</a>`);
+    if (p.github) links.push(`<a href="${p.github}" class="proj-link" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> ${L('Código', 'Code')}</a>`);
+    else links.push(`<span class="proj-link is-private"><i class="fa-solid fa-lock"></i> ${L('Código privado', 'Private code')}</span>`);
 
-  /* ── UNIVERSITARIO ──────────────────────────────────── */
-  {
-    id:       "cv-portafolio",
-    name:     "CV & Portafolio Personal",
-    category: "university",
-    client:   "",
-    desc:     "Sitio web personal con CV interactivo y portafolio de proyectos. Desarrollado con HTML, CSS y JS puro, containerizado con Docker y desplegado en GitHub Pages.",
-    tech:     ["HTML", "CSS", "JavaScript", "Docker"],
-    image:    "../img/FotoCV.png",
-    video:    "../img/VIDEOS/CVMIGUEL.mp4",
-    github:   "https://github.com/MADCO-py/CV-MIGUEL_CARRANZA",
-    demo:     "https://madco-py.github.io/CV-MIGUEL_CARRANZA/index.html",
-    sold:     false,
-  },
-  {
-    id:       "plataformas-moviles",
-    name:     "Proyecto Plataformas Móviles",
-    category: "university",
-    client:   "",
-    desc:     "Proyecto colaborativo de desarrollo de aplicaciones móviles. Trabajo en equipo con Docker para replicar entornos de desarrollo de forma exacta entre colaboradores.",
-    tech:     ["Kotlin", "Android", "Docker", "Jetpack Compose"],
-    image:    "../img/Plats.png",
-    github:   "https://github.com/YayaG2805/Proyectoplats",
-    demo:     "",
-    sold:     false,
-  },
-
-  /* ── PERSONAL ───────────────────────────────────────── */
-  {
-    id:       "mentorhub",
-    name:     "MentorHub",
-    category: "personal",
-    client:   "",
-    desc:     "Conecta 7 tutores universitarios con 20 estudiantes que buscan apoyo académico. Plataforma web completa para gestión de tutorías entre colegios y familias.",
-    tech:     ["HTML", "CSS", "JavaScript"],
-    image:    "../img/MentorHub.png",
-    video:    "../img/VIDEOS/MENTORHUB.mp4",
-    github:   "#",
-    demo:     "https://madco-py.github.io/MentorHub/",
-    sold:     false,
-  },
-  {
-    id:       "madweb",
-    name:     "MADWEB",
-    category: "personal",
-    client:   "",
-    desc:     "Mi página personal, donde comparto mi trabajo, proyectos y forma de contacto. Construida con HTML, CSS y JavaScript puro, desplegada en GitHub Pages.",
-    tech:     ["HTML", "CSS", "JavaScript"],
-    image:    "",
-    video:    "../img/VIDEOS/MADWEB.mp4",
-    github:   "https://github.com/MADCO-py/MADWEB",
-    demo:     "https://madco-py.github.io/MADWEB/",
-    sold:     false,
-  },
-  {
-    id:       "gvu",
-    name:     "GVU",
-    category: "personal",
-    client:   "",
-    desc:     "Intento de red social universitaria construida en JavaScript. Enfocada en interfaces dinámicas y lógica frontend moderna. Proyecto de exploración técnica sin usuarios activos.",
-    tech:     ["JavaScript", "HTML", "CSS", "Docker"],
-    image:    "../img/GVU.png",
-    github:   "https://github.com/MADCO-py/GVU",
-    demo:     "",
-    sold:     false,
-  },
-  {
-    id:       "mad-gains",
-    name:     "MAD Gains",
-    category: "personal",
-    client:   "",
-    desc:     "Aplicación web para seguimiento de entrenamiento y nutrición. Permite registrar rutinas de gym, ver historial de ejercicios y llevar control de alimentación diaria.",
-    tech:     ["HTML", "CSS", "JavaScript"],
-    image:    "../img/mad_gains.png",
-    github:   "#",
-    demo:     "https://madco-py.github.io/mad-gains/",
-    sold:     false,
-  },
-  {
-    id:       "awa",
-    name:     "AwA",
-    category: "personal",
-    client:   "",
-    desc:     "Aplicación web para el seguimiento de hidratación diaria. Gamifica el consumo de agua con racha de días consecutivos, promedio semanal, historial acumulado y registro por botella.",
-    tech:     ["JavaScript", "HTML", "CSS"],
-    image:    "",
-    video:    "../img/VIDEOS/AWAVIDEO.mp4",
-    github:   "https://github.com/MADCO-py/AwA",
-    demo:     "https://madco-py.github.io/AwA/",
-    sold:     false,
-  },
-
-  /* ── UNIVERSITARIO ──────────────────────────────────── */
-  {
-    id:       "securegate",
-    name:     "SecureGate",
-    category: "university",
-    client:   "",
-    desc:     "Sistema de control de acceso para garita universitaria. Registra y gestiona quién entra y sale en tiempo real. 5 participantes activos durante su implementación, actualmente en fase de escalado.",
-    tech:     ["TypeScript", "CSS"],
-    image:    "",
-    github:   "#",
-    demo:     "",
-    sold:     false,
-  },
-
-];
-
-
-/* ============================================================
-   CATEGORÍAS — Configuración de labels e íconos
-   ============================================================ */
-const CATEGORIES = {
-  all:        { label: "Todos",       icon: "fa-solid fa-border-all"   },
-  freelance:  { label: "Freelance",   icon: "fa-solid fa-handshake"    },
-  university: { label: "Universitario", icon: "fa-solid fa-graduation-cap" },
-  personal:   { label: "Personal",    icon: "fa-solid fa-user"         },
-};
-
-
-/* ============================================================
-   ESTADO DE LA UI
-   ============================================================ */
-let currentFilter = "all";
-let currentSearch = "";
-
-
-/* ============================================================
-   RENDER — Genera el HTML de una card de proyecto
-   ============================================================ */
-function renderCard(project) {
-  const cat     = CATEGORIES[project.category] || CATEGORIES.all;
-  const imgHTML = project.video
-    ? `<video src="${project.video}" ${project.image ? `poster="${project.image}"` : ''} autoplay muted loop playsinline></video>`
-    : project.image
-    ? `<img src="${project.image}" alt="${project.name}" loading="lazy">`
-    : `<div class="proj-image-ph">
-         <i class="fa-regular fa-image"></i>
-         <span>Agregar imagen</span>
-       </div>`;
-
-  const soldBadge = project.sold
-    ? `<span class="proj-sold-badge"><i class="fa-solid fa-circle-check"></i> Vendido</span>`
-    : "";
-
-  const clientHTML = project.client
-    ? `<div class="proj-client"><i class="fa-solid fa-building"></i>${project.client}</div>`
-    : "";
-
-  const techHTML = project.tech
-    .map(t => `<span class="ptag">${t}</span>`)
-    .join("");
-
-  const githubBtn = project.github
-    ? `<a href="${project.github}" class="proj-link" target="_blank">
-         <i class="fa-brands fa-github"></i> Código
-       </a>`
-    : `<span class="proj-link" style="opacity:0.4;cursor:default;pointer-events:none">
-         <i class="fa-solid fa-lock"></i> Privado
-       </span>`;
-
-  const demoBtn = project.demo
-    ? `<a href="${project.demo}" class="proj-link proj-link-accent" target="_blank">
-         <i class="fa-solid fa-arrow-up-right-from-square"></i> Demo
-       </a>`
-    : "";
-
-  const cardLink = project.demo || '';
-
-  return `
-    <div class="proj-card reveal${cardLink ? ' proj-card-clickable' : ''}"
-         data-id="${project.id}"
-         data-category="${project.category}"
-         data-name="${project.name.toLowerCase()}"
-         data-tech="${project.tech.join(" ").toLowerCase()}"
-         data-desc="${project.desc.toLowerCase()}"
-         ${cardLink ? `data-link="${cardLink}"` : ''}>
-      <div class="proj-image">
-        ${imgHTML}
-        <span class="proj-cat-badge"><i class="${cat.icon}"></i> ${cat.label}</span>
-        ${soldBadge}
-      </div>
-      <div class="proj-body">
-        <div class="proj-name">${project.name}</div>
-        ${clientHTML}
-        <div class="proj-desc">${project.desc}</div>
-        <div class="proj-techs">${techHTML}</div>
-        <div class="proj-footer">
-          ${githubBtn}
-          ${demoBtn}
+    return `
+      <article class="proj-card reveal" id="${p.id}" data-card>
+        <div class="proj-image">
+          ${mediaHTML(p, 'proj-media')}
+          <span class="proj-cat-badge"><i class="${cat.icon}"></i> ${SITE.t(cat)}</span>
+          ${p.sold ? `<span class="proj-sold-badge"><i class="fa-solid fa-circle-check"></i> ${L('Vendido', 'Sold')}</span>` : ''}
         </div>
-      </div>
-    </div>
-  `;
-}
-
-
-/* ============================================================
-   RENDER CATEGORÍAS — Agrupa los proyectos filtrados por sección
-   ============================================================ */
-function renderAll() {
-  const query    = currentSearch.toLowerCase().trim();
-  const catKey   = currentFilter;
-
-  /* Filtrar proyectos según búsqueda y categoría activa */
-  const filtered = PROJECTS.filter((p) => {
-    const matchCat = catKey === "all" || p.category === catKey;
-    const matchQ   = !query
-      || p.name.toLowerCase().includes(query)
-      || p.tech.join(" ").toLowerCase().includes(query)
-      || p.desc.toLowerCase().includes(query)
-      || (p.client && p.client.toLowerCase().includes(query));
-    return matchCat && matchQ;
-  });
-
-  /* Actualizar contador */
-  const counter = document.getElementById('searchCount');
-  if (counter) {
-    counter.textContent = filtered.length === 1
-      ? "1 proyecto"
-      : `${filtered.length} proyectos`;
+        <div class="proj-body">
+          <h3 class="proj-name">${SITE.esc(p.name)}</h3>
+          <div class="proj-client"><i class="fa-solid fa-building"></i>${SITE.esc(SITE.t(p.client))}</div>
+          <p class="proj-desc">${SITE.esc(SITE.t(p.desc))}</p>
+          <div class="proj-techs">${p.tech.map(t => `<span class="ptag">${SITE.esc(t)}</span>`).join('')}</div>
+          ${p.build && p.build.length ? `
+          <details class="proj-build">
+            <summary><i class="fa-solid fa-gears"></i> ${L('Cómo está hecho', 'How it is built')}<i class="fa-solid fa-chevron-down proj-build-arrow"></i></summary>
+            ${buildHTML(p)}
+          </details>` : ''}
+          <div class="proj-footer">${links.join('')}</div>
+        </div>
+      </article>`;
   }
 
-  const container  = document.getElementById('pfContent');
-  const noResults  = document.getElementById('noResults');
-  if (!container) return;
+  /* ── Lista agrupada por categoría ── */
+  function renderAll() {
+    const q = currentSearch.toLowerCase().trim();
+    const filtered = PROJECTS.filter(p => (currentFilter === 'all' || p.cat === currentFilter) && (!q || haystack(p).includes(q)));
 
-  if (filtered.length === 0) {
-    container.innerHTML = "";
-    noResults.classList.add('visible');
-    return;
-  }
-  noResults.classList.remove('visible');
+    const counter = document.getElementById('searchCount');
+    if (counter) counter.textContent = filtered.length === 1 ? L('1 proyecto', '1 project') : L(`${filtered.length} proyectos`, `${filtered.length} projects`);
 
-  /* Agrupar por categoría */
-  const groups = {};
-  filtered.forEach((p) => {
-    if (!groups[p.category]) groups[p.category] = [];
-    groups[p.category].push(p);
-  });
+    const container = document.getElementById('pfContent');
+    const noResults = document.getElementById('noResults');
+    if (!container) return;
+    if (!filtered.length) {
+      container.innerHTML = '';
+      noResults.classList.add('visible');
+      return;
+    }
+    noResults.classList.remove('visible');
 
-  /* Orden de categorías */
-  const order = ["freelance", "university", "personal"];
-
-  container.innerHTML = order
-    .filter(k => groups[k])
-    .map(k => {
-      const cat   = CATEGORIES[k];
-      const cards = groups[k].map(renderCard).join("");
+    container.innerHTML = ORDER.filter(k => filtered.some(p => p.cat === k)).map(k => {
+      const cat = CATEGORIES[k];
+      const items = filtered.filter(p => p.cat === k);
+      const n = items.length === 1 ? L('1 proyecto', '1 project') : L(`${items.length} proyectos`, `${items.length} projects`);
       return `
-        <div class="category-section" data-cat="${k}">
+        <section class="category-section" data-cat="${k}">
           <div class="category-header">
             <div class="category-icon"><i class="${cat.icon}"></i></div>
             <div>
-              <div class="category-title">${cat.label}</div>
-              <div class="category-count">${groups[k].length} proyecto${groups[k].length !== 1 ? 's' : ''}</div>
+              <h2 class="category-title">${SITE.t(cat)}</h2>
+              <div class="category-count">${n}</div>
             </div>
           </div>
-          <div class="proj-grid">
-            ${cards}
-          </div>
-        </div>
-      `;
-    })
-    .join("");
+          <div class="proj-grid">${items.map(renderCard).join('')}</div>
+        </section>`;
+    }).join('');
 
-  /* Re-activar observer para las cards recién renderizadas */
-  if (window.reObserve) window.reObserve();
-}
+    wireVideos(container);
+    if (window.reObserve) window.reObserve();
+  }
 
-
-/* ============================================================
-   FILTROS — Botones de categoría
-   ============================================================ */
-function initFilters() {
-  const row = document.getElementById('filterRow');
-  if (!row) return;
-
-  /* Calcular conteos por categoría */
-  const counts = { all: PROJECTS.length };
-  PROJECTS.forEach(p => {
-    counts[p.category] = (counts[p.category] || 0) + 1;
-  });
-
-  /* Renderizar botones */
-  row.innerHTML = Object.entries(CATEGORIES)
-    .map(([key, cat]) => `
-      <button class="filter-btn ${key === 'all' ? 'active' : ''}"
-              data-filter="${key}">
-        ${cat.label}
-        <span class="filter-count">${counts[key] || 0}</span>
-      </button>
-    `)
-    .join("");
-
-  /* Listeners de click */
-  row.querySelectorAll('.filter-btn').forEach((btn) => {
-    btn.addEventListener('click', () => {
-      row.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
+  /* ── Filtros ── */
+  function renderFilters() {
+    const row = document.getElementById('filterRow');
+    if (!row) return;
+    const counts = { all: PROJECTS.length };
+    PROJECTS.forEach(p => { counts[p.cat] = (counts[p.cat] || 0) + 1; });
+    const opts = [['all', { es: 'Todos', en: 'All' }], ...ORDER.map(k => [k, CATEGORIES[k]])];
+    row.innerHTML = opts.map(([k, c]) => `
+      <button class="filter-btn${k === currentFilter ? ' active' : ''}" data-filter="${k}" aria-pressed="${k === currentFilter}">
+        ${SITE.t(c)} <span class="filter-count">${counts[k] || 0}</span>
+      </button>`).join('');
+    row.querySelectorAll('.filter-btn').forEach(btn => btn.addEventListener('click', () => {
       currentFilter = btn.dataset.filter;
+      renderFilters();
       renderAll();
+    }));
+  }
+
+  /* ── Búsqueda ── */
+  function initSearch() {
+    const input = document.getElementById('searchInput');
+    if (!input) return;
+    let t;
+    input.addEventListener('input', () => {
+      clearTimeout(t);
+      t = setTimeout(() => { currentSearch = input.value; renderAll(); }, 200);
     });
-  });
-}
+  }
+  function translateSearch() {
+    const input = document.getElementById('searchInput');
+    if (input) input.placeholder = L('Buscar por nombre, tecnología, cliente o base de datos…', 'Search by name, technology, client or database…');
+    const nr = document.querySelector('#noResults p');
+    if (nr) nr.textContent = L('No se encontraron proyectos que coincidan con tu búsqueda.', 'No projects match your search.');
+  }
 
-
-/* ============================================================
-   BÚSQUEDA — Input con debounce
-   ============================================================ */
-function initSearch() {
-  const input = document.getElementById('searchInput');
-  if (!input) return;
-
-  let debounce;
-  input.addEventListener('input', () => {
-    clearTimeout(debounce);
-    debounce = setTimeout(() => {
-      currentSearch = input.value;
-      renderAll();
-    }, 200);
-  });
-}
-
-
-/* ============================================================
-   INIT — Arranca todo cuando el DOM esté listo
-   ============================================================ */
-document.addEventListener('DOMContentLoaded', () => {
-  initFilters();
-  initSearch();
-  renderAll();
-
-  /* Card-wide click: navigate to demo URL if card has data-link */
-  document.addEventListener('click', (e) => {
-    const card = e.target.closest('.proj-card[data-link]');
+  /* ── Llegar desde el CV con #proyecto: abre su "cómo está hecho" ── */
+  function focusHash() {
+    const id = decodeURIComponent(location.hash.slice(1));
+    const card = id && document.getElementById(id);
     if (!card) return;
-    if (e.target.closest('a')) return;
-    window.open(card.dataset.link, '_blank');
+    card.classList.add('on', 'is-target');
+    const d = card.querySelector('details');
+    if (d) d.open = true;
+    setTimeout(() => card.scrollIntoView({ behavior: 'smooth', block: 'center' }), 150);
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    renderFilters();
+    initSearch();
+    translateSearch();
+    renderAll();
+    focusHash();
   });
-});
+  window.addEventListener('hashchange', focusHash);
+  document.addEventListener('langchange', () => { renderFilters(); translateSearch(); renderAll(); });
+})();

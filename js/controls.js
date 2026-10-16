@@ -12,6 +12,22 @@
   /* ── TRANSLATIONS ──────────────────────────────────────────── */
   const i18n = {
     en: {
+      'nav.featured':        'Projects',
+      'hero.cta.pdf':        'PDF résumé',
+      'stack.cat.cloud':     'Cloud &amp; Deploy',
+      'stack.lead':          'Each technology is backed by real projects. Pick one to see the evidence.',
+      'stack.explorer.hint': 'Tap a technology to see where I used it',
+      'featured.eyebrow':    'Delivered to clients',
+      'featured.title':      'Featured Projects',
+      'featured.lead':       'Three projects sold and in use. Each one explains how it is built: data, access, hosting and libraries.',
+      'featured.more':       'See all projects',
+      'download.eyebrow':    'Résumé',
+      'download.title':      'Download my CV',
+      'download.desc':       'One page, ready to print or attach to an application. Typeset in LaTeX.',
+      'download.lang':       'Spanish',
+      'download.updated':    'Updated October 2026',
+      'download.btn':        'Download PDF',
+      'download.view':       'View in browser',
       // Nav
       'nav.about':      'About',
       'nav.stack':      'Stack',
@@ -26,7 +42,7 @@
       'hero.cta.whatsapp':  'WhatsApp',
       'hero.cta.contact':   'Contact',
       'hero.cta.portfolio': 'View portfolio',
-      'hero.stat.clients':  'Freelance Client',
+      'hero.stat.clients':  'Freelance Clients',
       'hero.stat.projects': 'Projects',
       'hero.stat.impact':   'People Reached',
 
@@ -140,12 +156,28 @@
       // Portfolio page
       'pf.eyebrow':     'Work',
       'pf.title':       'Portfolio',
-      'pf.sub':         'Freelance, university and personal projects. Real code, real clients, real technologies.',
+      'pf.sub':         'Projects for clients, small businesses, university and personal work. Each one explains how it is built.',
       'pf.footer.note': 'Do you have a project in mind? I am available for freelance, collaborations and professional internships.',
       'pf.footer.cta':  'Contact',
     },
 
     es: {
+      'nav.featured':        'Proyectos',
+      'hero.cta.pdf':        'CV en PDF',
+      'stack.cat.cloud':     'Nube &amp; Despliegue',
+      'stack.lead':          'Cada tecnología está respaldada por proyectos reales. Elige una para ver la evidencia.',
+      'stack.explorer.hint': 'Toca una tecnología para ver dónde la usé',
+      'featured.eyebrow':    'Entregados a clientes',
+      'featured.title':      'Proyectos destacados',
+      'featured.lead':       'Tres proyectos vendidos y en uso. Cada uno explica cómo está hecho: datos, acceso, hosting y librerías.',
+      'featured.more':       'Ver todos los proyectos',
+      'download.eyebrow':    'Currículum',
+      'download.title':      'Descarga mi CV',
+      'download.desc':       'Una página, lista para imprimir o adjuntar a una postulación. Hecho en LaTeX.',
+      'download.lang':       'Español',
+      'download.updated':    'Actualizado en octubre de 2026',
+      'download.btn':        'Descargar PDF',
+      'download.view':       'Ver en el navegador',
       // Nav
       'nav.about':      'Sobre mí',
       'nav.stack':      'Stack',
@@ -160,7 +192,7 @@
       'hero.cta.whatsapp':  'WhatsApp',
       'hero.cta.contact':   'Contactar',
       'hero.cta.portfolio': 'Ver portafolio',
-      'hero.stat.clients':  'Cliente Freelance',
+      'hero.stat.clients':  'Clientes Freelance',
       'hero.stat.projects': 'Proyectos',
       'hero.stat.impact':   'Personas Impactadas',
 
@@ -274,7 +306,7 @@
       // Portfolio page
       'pf.eyebrow':     'Trabajo',
       'pf.title':       'Portafolio',
-      'pf.sub':         'Proyectos freelance, universitarios y personales. Código real, clientes reales, tecnologías reales.',
+      'pf.sub':         'Proyectos para clientes, emprendedores, la universidad y personales. Cada uno explica cómo está hecho.',
       'pf.footer.note': '¿Tienes un proyecto en mente? Estoy disponible para freelance, colaboraciones y prácticas profesionales.',
       'pf.footer.cta':  'Contactar',
     }
@@ -314,6 +346,9 @@
 
     /* Animate slider after a micro-tick so offsetLeft is accurate */
     requestAnimationFrame(function() { updateLangSlider(lang); });
+
+    /* Avisa a las secciones generadas con JS (proyectos, explorador) */
+    document.dispatchEvent(new CustomEvent('langchange', { detail: lang }));
   }
 
   /* Init lang from localStorage (default EN) */
@@ -337,6 +372,22 @@
         langToggle.click();
       }
     });
+  }
+
+  /* ── MENÚ EN CELULAR ──────────────────────────────────────────── */
+  const menuBtn = document.getElementById('navMenuBtn');
+  const navEl = document.getElementById('mainNav');
+  if (menuBtn && navEl) {
+    const setMenu = function (open) {
+      navEl.classList.toggle('menu-open', open);
+      menuBtn.setAttribute('aria-expanded', String(open));
+      menuBtn.innerHTML = '<i class="fa-solid fa-' + (open ? 'xmark' : 'bars') + '"></i>';
+    };
+    menuBtn.addEventListener('click', function () { setMenu(!navEl.classList.contains('menu-open')); });
+    navEl.querySelectorAll('.nav-links a').forEach(function (a) {
+      a.addEventListener('click', function () { setMenu(false); });
+    });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') setMenu(false); });
   }
 
   /* ── THEME ───────────────────────────────────────────────────── */

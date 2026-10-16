@@ -41,6 +41,11 @@
     io.observe(el);
   });
 
+  /* Para contenido que se pinta después con JS (proyectos destacados) */
+  window.reObserve = function () {
+    document.querySelectorAll('.reveal:not(.on)').forEach((el) => io.observe(el));
+  };
+
   /* ── Nav: compacta al hacer scroll ── */
   const nav = document.getElementById('mainNav');
   if (nav) {

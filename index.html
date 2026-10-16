@@ -19,6 +19,7 @@
   <link rel="stylesheet" href="css/variables.css">
   <link rel="stylesheet" href="css/components.css">
   <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/cv-extra.css">
 </head>
 <body>
 
@@ -31,9 +32,10 @@
   ================================================================ -->
   <nav class="nav" id="mainNav">
     <a class="nav-logo" href="index.html">Miguel Carranza</a>
-    <div class="nav-links">
+    <div class="nav-links" id="mainNavLinks">
       <a href="#about"                   data-i18n="nav.about">About</a>
       <a href="#stack"                   data-i18n="nav.stack">Stack</a>
+      <a href="#featured"                data-i18n="nav.featured">Projects</a>
       <a href="#education"               data-i18n="nav.education">Education</a>
       <a href="pages/portafolio.html"    data-i18n="nav.portfolio">Portfolio</a>
       <a href="#contact" class="nav-cta" data-i18n="nav.contact">Contact</a>
@@ -52,6 +54,9 @@
       <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
         <i class="fa-solid fa-sun  theme-icon sun"></i>
         <i class="fa-solid fa-moon theme-icon moon"></i>
+      </button>
+      <button class="nav-menu-btn" id="navMenuBtn" aria-label="Menu" aria-expanded="false" aria-controls="mainNavLinks">
+        <i class="fa-solid fa-bars"></i>
       </button>
     </div>
   </nav>
@@ -91,15 +96,18 @@
         <a href="pages/portafolio.html" class="btn btn-outline">
           <i class="fa-solid fa-layer-group"></i> <span data-i18n="hero.cta.portfolio">View portfolio</span>
         </a>
+        <a href="#download" class="btn btn-outline">
+          <i class="fa-solid fa-file-arrow-down"></i> <span data-i18n="hero.cta.pdf">PDF résumé</span>
+        </a>
       </div>
 
       <div class="hero-stats">
         <div class="stat">
-          <span class="stat-n">1</span>
-          <span class="stat-l" data-i18n="hero.stat.clients">Freelance Client</span>
+          <span class="stat-n">3</span>
+          <span class="stat-l" data-i18n="hero.stat.clients">Freelance Clients</span>
         </div>
         <div class="stat">
-          <span class="stat-n">6</span>
+          <span class="stat-n" data-count="projects">15</span>
           <span class="stat-l" data-i18n="hero.stat.projects">Projects</span>
         </div>
         <div class="stat">
@@ -204,57 +212,71 @@
       <div class="stack-left">
         <div class="section-eyebrow" data-i18n="stack.eyebrow">Tools</div>
         <h2 class="section-title" data-i18n="stack.title">Tech Stack</h2>
+        <p class="section-lead" data-i18n="stack.lead">Each technology is backed by real projects. Pick one to see the evidence.</p>
 
         <div class="tech-grid">
 
           <div class="tech-cat reveal">
             <div class="cat-label"><i class="fa-solid fa-display"></i> <span data-i18n="stack.cat.frontend">Frontend</span></div>
             <div class="pills">
-              <span class="pill"><i class="fa-brands fa-html5"></i> HTML5</span>
-              <span class="pill"><i class="fa-brands fa-css3-alt"></i> CSS3</span>
-              <span class="pill"><i class="fa-brands fa-js"></i> JavaScript</span>
-              <span class="pill"><i class="fa-solid fa-code"></i> TypeScript</span>
-              <span class="pill"><i class="fa-brands fa-react"></i> React</span>
+              <button type="button" class="pill skill" data-skill="HTML5"><i class="fa-brands fa-html5"></i> HTML5</button>
+              <button type="button" class="pill skill" data-skill="CSS3"><i class="fa-brands fa-css3-alt"></i> CSS3</button>
+              <button type="button" class="pill skill" data-skill="JavaScript"><i class="fa-brands fa-js"></i> JavaScript</button>
+              <button type="button" class="pill skill" data-skill="TypeScript"><i class="fa-solid fa-code"></i> TypeScript</button>
+              <button type="button" class="pill skill" data-skill="React"><i class="fa-brands fa-react"></i> React</button>
+              <button type="button" class="pill skill" data-skill="Vite"><i class="fa-solid fa-bolt-lightning"></i> Vite</button>
             </div>
           </div>
 
-          <div class="tech-cat reveal" style="transition-delay: 0.08s">
+          <div class="tech-cat reveal" style="transition-delay: 0.06s">
             <div class="cat-label"><i class="fa-solid fa-server"></i> <span data-i18n="stack.cat.backend">Backend &amp; Languages</span></div>
             <div class="pills">
-              <span class="pill"><i class="fa-brands fa-python"></i> Python</span>
-              <span class="pill"><i class="fa-brands fa-java"></i> Java</span>
-              <span class="pill"><i class="fa-solid fa-k"></i> Kotlin</span>
-              <span class="pill"><i class="fa-solid fa-c"></i> C / C++</span>
+              <button type="button" class="pill skill" data-skill="Node.js"><i class="fa-brands fa-node-js"></i> Node.js</button>
+              <button type="button" class="pill skill" data-skill="Express"><i class="fa-solid fa-route"></i> Express</button>
+              <button type="button" class="pill skill" data-skill="Python"><i class="fa-brands fa-python"></i> Python</button>
+              <button type="button" class="pill skill" data-skill="Java"><i class="fa-brands fa-java"></i> Java</button>
+              <button type="button" class="pill skill" data-skill="Kotlin"><i class="fa-solid fa-k"></i> Kotlin</button>
+              <button type="button" class="pill skill" data-skill="C / C++"><i class="fa-solid fa-c"></i> C / C++</button>
             </div>
           </div>
 
-          <div class="tech-cat reveal" style="transition-delay: 0.16s">
+          <div class="tech-cat reveal" style="transition-delay: 0.12s">
             <div class="cat-label"><i class="fa-solid fa-database"></i> <span data-i18n="stack.cat.db">Databases</span></div>
             <div class="pills">
-              <span class="pill"><i class="fa-solid fa-elephant"></i> PostgreSQL</span>
-              <span class="pill"><i class="fa-solid fa-circle-nodes"></i> Neo4J</span>
+              <button type="button" class="pill skill" data-skill="PostgreSQL"><i class="fa-solid fa-database"></i> PostgreSQL</button>
+              <button type="button" class="pill skill" data-skill="Neo4J"><i class="fa-solid fa-circle-nodes"></i> Neo4J</button>
+            </div>
+          </div>
+
+          <div class="tech-cat reveal" style="transition-delay: 0.18s">
+            <div class="cat-label"><i class="fa-solid fa-cloud"></i> <span data-i18n="stack.cat.cloud">Cloud &amp; Deploy</span></div>
+            <div class="pills">
+              <button type="button" class="pill skill" data-skill="Docker"><i class="fa-brands fa-docker"></i> Docker</button>
+              <button type="button" class="pill skill" data-skill="GitHub Pages"><i class="fa-brands fa-github"></i> GitHub Pages</button>
+              <button type="button" class="pill skill" data-skill="Railway"><i class="fa-solid fa-train"></i> Railway</button>
+              <button type="button" class="pill skill" data-skill="Cloudflare R2"><i class="fa-brands fa-cloudflare"></i> Cloudflare R2</button>
             </div>
           </div>
 
           <div class="tech-cat reveal" style="transition-delay: 0.24s">
             <div class="cat-label"><i class="fa-solid fa-wrench"></i> <span data-i18n="stack.cat.devops">DevOps &amp; Tools</span></div>
             <div class="pills">
-              <span class="pill"><i class="fa-brands fa-docker"></i> Docker</span>
-              <span class="pill"><i class="fa-brands fa-git-alt"></i> Git</span>
-              <span class="pill"><i class="fa-brands fa-linux"></i> Linux</span>
-              <span class="pill"><i class="fa-solid fa-code"></i> VS Code</span>
-              <span class="pill"><i class="fa-brands fa-android"></i> Android Studio</span>
-              <span class="pill"><i class="fa-brands fa-jira"></i> Jira</span>
+              <button type="button" class="pill skill" data-skill="Git"><i class="fa-brands fa-git-alt"></i> Git</button>
+              <button type="button" class="pill skill" data-skill="Linux"><i class="fa-brands fa-linux"></i> Linux</button>
+              <button type="button" class="pill skill" data-skill="VS Code"><i class="fa-solid fa-laptop-code"></i> VS Code</button>
+              <button type="button" class="pill skill" data-skill="Android Studio"><i class="fa-brands fa-android"></i> Android Studio</button>
+              <button type="button" class="pill skill" data-skill="Jetpack Compose"><i class="fa-solid fa-mobile-screen"></i> Jetpack Compose</button>
+              <button type="button" class="pill skill" data-skill="Jira"><i class="fa-brands fa-jira"></i> Jira</button>
             </div>
           </div>
 
           <div class="tech-cat reveal" style="transition-delay: 0.30s">
             <div class="cat-label"><i class="fa-solid fa-microchip"></i> <span data-i18n="stack.cat.iot">Hardware &amp; IoT</span></div>
             <div class="pills">
-              <span class="pill"><i class="fa-solid fa-bolt"></i> Arduino</span>
-              <span class="pill"><i class="fa-solid fa-wifi"></i> ESP32</span>
-              <span class="pill"><i class="fa-solid fa-wave-square"></i> Sensores</span>
-              <span class="pill"><i class="fa-solid fa-memory"></i> Embebidos</span>
+              <button type="button" class="pill skill" data-skill="Arduino"><i class="fa-solid fa-bolt"></i> Arduino</button>
+              <button type="button" class="pill skill" data-skill="ESP32"><i class="fa-solid fa-wifi"></i> ESP32</button>
+              <button type="button" class="pill skill" data-skill="Sensores"><i class="fa-solid fa-wave-square"></i> Sensores</button>
+              <button type="button" class="pill skill" data-skill="Embebidos"><i class="fa-solid fa-memory"></i> Embebidos</button>
             </div>
           </div>
 
@@ -286,14 +308,12 @@
         </div><!-- /.tech-grid -->
       </div><!-- /.stack-left -->
 
-      <!-- ── Columna derecha: carrusel (sin título ni eyebrow) ── -->
-      <div class="stack-right" id="cflowAnchor">
-        <div class="cflow-scene" id="cflowScene"></div>
-        <div class="cflow-label">
-          <i class="cflow-label-icon" id="cflowLabelIcon"></i>
-          <span class="cflow-label-name" id="cflowLabelName"></span>
-        </div>
-      </div><!-- /.stack-right -->
+      <!-- ── Columna derecha: explorador "¿dónde lo usé?" ── -->
+      <aside class="stack-right skill-panel" id="skillPanel" aria-live="polite">
+        <button type="button" class="skill-panel-close" id="skillPanelClose" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+        <div class="skill-panel-hint" data-i18n="stack.explorer.hint">Tap a technology to see where I used it</div>
+        <div id="skillPanelBody"></div>
+      </aside>
 
     </div><!-- /.stack-layout -->
   </section>
@@ -354,11 +374,13 @@
             Developed and delivered a full web system for truck fleet management. The system solves the problem of identifying which driver received a traffic fine on a given day. Drivers log in via username/password and access records through a QR-linked web interface. Includes photo evidence and maintenance history per vehicle.
           </div>
           <div class="t-tags">
-            <span class="ttag">Python</span>
+            <span class="ttag">React</span>
+            <span class="ttag">Node.js / Express</span>
             <span class="ttag">PostgreSQL</span>
             <span class="ttag">Docker</span>
-            <span class="ttag">JavaScript</span>
-            <span class="ttag">QR Integration</span>
+            <span class="ttag">Railway</span>
+            <span class="ttag">Cloudflare R2</span>
+            <span class="ttag">QR</span>
           </div>
           <div class="t-sold-tag">
             <i class="fa-solid fa-circle-check"></i>
@@ -405,6 +427,20 @@
       </div>
 
     </div>
+  </section>
+
+
+  <!-- ================================================================
+       PROYECTOS DESTACADOS / FEATURED WORK  (render: js/cv-sections.js)
+  ================================================================ -->
+  <section id="featured" style="background: var(--gray1);">
+    <div class="section-eyebrow" data-i18n="featured.eyebrow">Delivered to clients</div>
+    <h2 class="section-title" data-i18n="featured.title">Featured Projects</h2>
+    <p class="section-lead" data-i18n="featured.lead">Three projects sold and in use. Each one explains how it is built: data, access, hosting and libraries.</p>
+    <div class="featured-list" id="featuredList"></div>
+    <a href="pages/portafolio.html" class="btn btn-dark featured-more">
+      <i class="fa-solid fa-layer-group"></i> <span data-i18n="featured.more">See all projects</span>
+    </a>
   </section>
 
 
@@ -594,6 +630,35 @@
 
 
   <!-- ================================================================
+       DESCARGAR CV EN PDF
+  ================================================================ -->
+  <section class="download-section" id="download">
+    <div class="download-card reveal">
+      <a class="download-preview" href="cv/Miguel_Carranza_CV.pdf" target="_blank" rel="noopener" aria-label="PDF">
+        <img src="cv/preview.png" alt="CV Miguel Carranza (PDF)" loading="lazy" width="420" height="594">
+      </a>
+      <div class="download-info">
+        <div class="section-eyebrow" data-i18n="download.eyebrow">Résumé</div>
+        <h2 class="section-title" data-i18n="download.title">Download my CV</h2>
+        <p class="download-desc" data-i18n="download.desc">One page, ready to print or attach to an application. Typeset in LaTeX.</p>
+        <ul class="download-meta">
+          <li><i class="fa-solid fa-file-pdf"></i> PDF · <span data-i18n="download.lang">Spanish</span></li>
+          <li><i class="fa-solid fa-calendar-check"></i> <span data-i18n="download.updated">Updated October 2026</span></li>
+        </ul>
+        <div class="download-actions">
+          <a href="cv/Miguel_Carranza_CV.pdf" class="btn btn-dark" download="Miguel_Carranza_CV.pdf">
+            <i class="fa-solid fa-file-arrow-down"></i> <span data-i18n="download.btn">Download PDF</span>
+          </a>
+          <a href="cv/Miguel_Carranza_CV.pdf" class="btn btn-outline" target="_blank" rel="noopener">
+            <i class="fa-regular fa-eye"></i> <span data-i18n="download.view">View in browser</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ================================================================
        FOOTER
   ================================================================ -->
   <footer class="footer">
@@ -621,7 +686,8 @@
   <script src="js/cursor.js"></script>
   <script src="js/observer.js"></script>
   <script src="js/controls.js"></script>
-  <script src="js/skills-wheel.js"></script>
+  <script src="js/projects-data.js"></script>
+  <script src="js/cv-sections.js"></script>
 
 </body>
 </html>

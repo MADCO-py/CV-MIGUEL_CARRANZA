@@ -480,3 +480,48 @@
   .proj-grid         { grid-template-columns: 1fr; }
   .filter-btn span.filter-count { display: none; }
 }
+
+
+/* ============================================================
+   Portafolio — media, "Cómo está hecho" y celular
+   ============================================================ */
+.proj-image { height: auto; aspect-ratio: 16 / 10; background: #000; }
+.proj-media { width: 100%; height: 100%; object-fit: cover; object-position: top; transition: transform 0.5s var(--ease); }
+.proj-card:hover .proj-media { transform: scale(1.04); }
+.proj-card { cursor: default; }
+.proj-card.is-target { box-shadow: 0 0 0 3px var(--accent), var(--shadow-lg); }
+.proj-cat-badge i { margin-right: 4px; }
+.proj-sold-badge i { margin-right: 4px; color: #34c759; }
+
+.proj-build {
+  margin: 4px 0 14px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--gray1);
+}
+.proj-build summary {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 14px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--black);
+  cursor: pointer;
+  list-style: none;
+}
+.proj-build summary::-webkit-details-marker { display: none; }
+.proj-build summary i:first-child { color: var(--accent); }
+.proj-build-arrow { margin-left: auto; font-size: 0.7rem; color: var(--gray4); transition: transform 0.25s ease; }
+.proj-build[open] .proj-build-arrow { transform: rotate(180deg); }
+.proj-build .build { margin: 0 14px 6px; }
+.proj-build .build-row { grid-template-columns: 1fr; gap: 3px; padding: 9px 0; }
+.proj-build .build-row:last-child { border-bottom: 0; }
+
+.proj-link.is-private { opacity: 0.5; cursor: default; }
+
+@media (max-width: 640px) {
+  .proj-grid { grid-template-columns: 1fr; }
+  .proj-body { padding: 18px; }
+  .proj-footer { flex-wrap: wrap; }
+}

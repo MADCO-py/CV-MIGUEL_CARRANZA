@@ -32,10 +32,11 @@
   ================================================================ -->
   <nav class="nav" id="mainNav">
     <a class="nav-logo" href="../index.html">Miguel Carranza</a>
-    <div class="nav-links">
+    <div class="nav-links" id="mainNavLinks">
       <a href="../index.html">CV</a>
       <a href="../index.html#about"    data-i18n="nav.about">Sobre mí</a>
       <a href="../index.html#stack"    data-i18n="nav.stack">Stack</a>
+      <a href="../index.html#download" data-i18n="hero.cta.pdf">CV en PDF</a>
       <a href="portafolio.html" class="active" data-i18n="nav.portfolio">Portafolio</a>
       <a href="../index.html#contact"  class="nav-cta" data-i18n="nav.contact">Contacto</a>
     </div>
@@ -54,6 +55,9 @@
         <i class="fa-solid fa-sun  theme-icon sun"></i>
         <i class="fa-solid fa-moon theme-icon moon"></i>
       </button>
+      <button class="nav-menu-btn" id="navMenuBtn" aria-label="Menu" aria-expanded="false" aria-controls="mainNavLinks">
+        <i class="fa-solid fa-bars"></i>
+      </button>
     </div>
   </nav>
 
@@ -67,8 +71,8 @@
     </div>
     <h1 data-i18n="pf.title">Portafolio</h1>
     <p class="pf-hero-sub" data-i18n="pf.sub">
-      Proyectos freelance, universitarios y personales.
-      Código real, clientes reales, tecnologías reales.
+      Proyectos para clientes, emprendedores, la universidad y personales.
+      Cada uno explica cómo está hecho.
     </p>
   </header>
 
@@ -92,7 +96,7 @@
     </div>
 
     <!-- Contador de resultados -->
-    <div class="search-count" id="searchCount">5 proyectos</div>
+    <div class="search-count" id="searchCount"></div>
 
     <!-- Botones de filtro por categoría (generados por portfolio.js) -->
     <div class="filter-row" id="filterRow"></div>
@@ -163,7 +167,8 @@
   <script src="../js/cursor.js"></script>
   <script src="../js/controls.js"></script>
 
-  <!-- portfolio.js renderiza las cards y luego observer.js las anima -->
+  <!-- projects-data.js tiene los proyectos; portfolio.js los pinta -->
+  <script src="../js/projects-data.js"></script>
   <script src="../js/portfolio.js"></script>
 
   <script>

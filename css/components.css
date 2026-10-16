@@ -444,3 +444,116 @@ body:has(button:hover) #cur-r {
   .lang-opt { padding: 4px 7px; min-width: 26px; }
   .nav-controls { margin-left: 8px; }
 }
+
+/* ============================================================
+   COMPARTIDO — menú en celular, "Cómo está hecho", portadas
+   ============================================================ */
+
+/* Botón de menú (solo celular) */
+.nav-menu-btn {
+  display: none;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1px solid var(--border-dark);
+  background: var(--white);
+  color: var(--black);
+  font-size: 0.9rem;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 760px) {
+  .nav { padding: 0 14px; }
+  .nav-logo { font-size: 0.85rem; white-space: nowrap; }
+  .nav-controls { margin-left: auto; gap: 6px; }
+  .nav-menu-btn { display: inline-flex; }
+
+  /* Los links pasan a un menú desplegable */
+  .nav-links {
+    position: absolute;
+    top: 52px; left: 0; right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 8px 14px 16px;
+    background: var(--white);
+    border-bottom: 1px solid var(--border);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-8px);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease, transform 0.2s ease, visibility 0s linear 0.2s;
+  }
+  .nav.menu-open .nav-links {
+    transform: none;
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+  }
+  .nav-links a,
+  .nav-links a:not(.nav-cta) {
+    display: block;
+    padding: 13px 4px;
+    font-size: 1rem;
+    color: var(--black);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-links a:last-child { border-bottom: 0; }
+}
+
+@media (max-width: 380px) {
+  .nav-whatsapp { display: none; }
+}
+
+/* Botón deshabilitado (código privado) */
+.btn.is-disabled { opacity: 0.55; pointer-events: none; box-shadow: none; }
+
+/* Portada cuando el proyecto no tiene imagen */
+.media-ph {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: linear-gradient(135deg, var(--gray1), var(--gray2));
+  color: var(--gray4);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+.media-ph i { font-size: 2rem; }
+.media-ph span { font-size: 1.1rem; color: var(--black3); }
+
+/* "Cómo está hecho": filas etiqueta / texto */
+.build {
+  display: grid;
+  gap: 0;
+  border-top: 1px solid var(--border);
+}
+.build-row {
+  display: grid;
+  grid-template-columns: 128px 1fr;
+  gap: 14px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border);
+}
+.build dt {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--gray4);
+}
+.build dt i { width: 14px; text-align: center; color: var(--accent); }
+.build dd {
+  font-size: 0.86rem;
+  line-height: 1.55;
+  color: var(--gray5);
+}
+@media (max-width: 520px) {
+  .build-row { grid-template-columns: 1fr; gap: 4px; }
+}
