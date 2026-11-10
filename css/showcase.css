@@ -96,3 +96,4 @@ button.featured-build-title { background:none; border:0; padding:8px 0; color:va
 @media(max-width:760px) { .hero h1 { font-size:clamp(3.9rem,16vw,7.4rem); }.hero-visual { overflow:visible; }.build-orbit { width:97%; } }
 .about-grid > *, .about-cards > *, .int-grid > *, .certs-grid > * { min-width:0; }
 @media(max-width:760px) { .about-grid { grid-template-columns:minmax(0,1fr); }.about-cards { grid-template-columns:repeat(2,minmax(0,1fr)); }.about-card-val { overflow-wrap:anywhere; }.certs-grid { grid-template-columns:minmax(0,1fr); }.int-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }.demo-stage { padding:14px; }.task { font-size:10px; padding:10px 6px; }.terminal-demo,.canvas-stage { padding:0; } }
+.arch-layer.is-active { z-index:4; }
