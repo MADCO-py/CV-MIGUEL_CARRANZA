@@ -26,6 +26,7 @@
 
   function renderFeatured() {
     if (!featuredList) return;
+    if (lazyVideoIO) featuredList.querySelectorAll("video").forEach(v => { v.pause(); lazyVideoIO.unobserve(v); });
     featuredList.innerHTML = PROJECTS.filter(p => p.featured).map((p, i) => `
       <article class="featured-card reveal" data-card id="f-${p.id}">
         <div class="featured-media">
@@ -38,7 +39,7 @@
           <div class="featured-client"><i class="fa-solid fa-building"></i> ${SITE.esc(SITE.t(p.client))}</div>
           <p class="featured-desc">${SITE.esc(SITE.t(p.desc))}</p>
           <div class="featured-tech">${p.tech.map(t => `<span>${SITE.esc(t)}</span>`).join('')}</div>
-          <div class="featured-build-title">${L('Cómo está hecho', 'How it is built')}</div>
+          <button type="button" class="featured-build-title" aria-expanded="false">${L('Cómo está hecho', 'How it is built')}</button>
           ${buildHTML(p)}
           <div class="featured-links">${linksHTML(p)}</div>
         </div>

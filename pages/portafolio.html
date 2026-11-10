@@ -7,7 +7,7 @@
   <link rel="icon" type="image/png" href="../img/Icono.png">
 
   <!-- Anti-FOUC: apply saved theme/lang before CSS renders -->
-  <script>(function(){var t=localStorage.getItem('theme')||'light',l=localStorage.getItem('lang')||'en';document.documentElement.setAttribute('data-theme',t);document.documentElement.setAttribute('data-lang',l);document.documentElement.lang=l})()</script>
+  <script>(function(){var t=localStorage.getItem('theme')||'light',l=localStorage.getItem('lang')||'es';document.documentElement.setAttribute('data-theme',t);document.documentElement.setAttribute('data-lang',l);document.documentElement.lang=l})()</script>
 
   <!-- Fuentes -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -88,7 +88,7 @@
       <i class="fa-solid fa-magnifying-glass"></i>
       <input
         type="text"
-        id="searchInput"
+        id="searchInput" aria-label="Buscar proyectos / Search projects"
         placeholder="Buscar por nombre, tecnología o cliente…"
         autocomplete="off"
         spellcheck="false"

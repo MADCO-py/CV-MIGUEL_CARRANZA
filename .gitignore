@@ -1,0 +1,7 @@
+# Generated artifacts and private application tracking
+output/
+tmp/
+# Local agent and machine configuration
+.agents/
+.codex/
+.aws/

@@ -12,8 +12,8 @@
   /* ── TRANSLATIONS ──────────────────────────────────────────── */
   const i18n = {
     en: {
-      'hero.role.main': 'Data Analyst',
-      'hero.badge': 'Data · SQL · Dashboards',
+      'hero.role.main': "Full Stack Developer",
+      'hero.badge': "React · Node.js · PostgreSQL",
       'nav.data': 'Data',
       'stack.cat.data': 'Data &amp; Analysis',
       'int.data.title': 'Data Analysis',
@@ -50,7 +50,7 @@
       'download.title':      'Download my CV',
       'download.desc':       'One page, ready to print or attach to an application. Typeset in LaTeX.',
       'download.lang':       'Spanish',
-      'download.updated':    'Updated October 2026',
+      'download.updated':    "Updated November 2026",
       'download.btn':        'Download PDF',
       'download.view':       'View in browser',
       // Nav
@@ -61,9 +61,9 @@
       'nav.contact':    'Contact',
 
       // Hero
-      'hero.eyebrow':       'Available · Guatemala',
-      'hero.role.suffix': 'Full Stack Developer &amp; Engineering Student',
-      'hero.desc': 'I turn data into decisions: I design SQL databases, collect and summarize data automatically, and present it in dashboards and reports. Systems in production for real clients.',
+      'hero.eyebrow':       "Available · Part time · Mornings",
+      'hero.role.suffix': "Junior · Computer Science Student",
+      'hero.desc': "I build web applications from interface to deployment. Real projects, real clients, and a hands-on approach to solving problems.",
       'hero.cta.whatsapp':  'WhatsApp',
       'hero.cta.contact':   'Contact',
       'hero.cta.portfolio': 'View portfolio',
@@ -74,21 +74,21 @@
       // About
       'about.eyebrow': 'Who I am',
       'about.title':   'About Me',
-      'about.p1': 'I am a <strong>Computer Science Engineering</strong> student at Universidad del Valle de Guatemala, currently in my third year. I specialize in creating clean, scalable and visually appealing solutions.',
+      'about.p1': "I am completing my third year of <strong>Computer Science and IT Engineering at UVG</strong>. I combine university training with software projects delivered to real clients.",
       'about.p2': 'My focus is <strong>Full Stack</strong> development: from modern interfaces to robust backend systems, relational and graph databases, Docker containers and microcontroller programming.',
       'about.p3': 'I am deeply interested in <strong>cybersecurity</strong>, artificial intelligence and systems architecture. I work in a structured way using sprints and Jira management, prioritizing clean and maintainable code.',
       'about.lang.es':              'Spanish',
       'about.lang.en':              'English',
-      'about.card.age.label':       'Age',
-      'about.card.age.value':       '20 years',
+      'about.card.age.label':       "Availability",
+      'about.card.age.value':       "Part time · Mornings",
       'about.card.location.label':  'Location',
       'about.card.location.value':  'Zone 10, Guatemala',
       'about.card.university.label':'University',
       'about.card.university.value':'UVG — CS Eng.',
       'about.card.transport.label': 'Transport',
       'about.card.transport.value': 'Own vehicle',
-      'about.card.billing.label':   'Billing',
-      'about.card.billing.value':   'Active NIT',
+      'about.card.billing.label':   "Work mode",
+      'about.card.billing.value':   "Hybrid · On-site · Remote",
       'about.card.method.label':    'Methodology',
       'about.card.method.value':    'Agile · Jira',
 
@@ -115,8 +115,8 @@
       'edu.eyebrow':    'Training',
       'edu.title':      'Education',
       'edu.uvg.degree': 'Computer Science and IT Engineering',
-      'edu.uvg.date':   '2023 – Present',
-      'edu.uvg.desc':   'Currently in third year. Algorithms, data structures, databases, operating systems and software development.',
+      'edu.uvg.date':   "2024 – Present",
+      'edu.uvg.desc':   "Completing my third year. Databases, Algorithms and Data Structures, Object-Oriented Programming, Software Engineering and Web Technologies.",
       'edu.db.degree':  'Bachelor in Sciences and Letters — Computing',
       'edu.db.desc':    'Computer fundamentals and introduction to programming.',
       'edu.db.badge':   'Graduated CUM LAUDE',
@@ -174,7 +174,7 @@
       // Contact
       'contact.eyebrow':   "Let's Talk",
       'contact.title':     'Contact',
-      'contact.subtitle':  'Available for freelance projects, academic collaborations or professional internships. Write to me.',
+      'contact.subtitle':  "Looking for a junior developer role, part time in the mornings. Available in Guatemala for hybrid, on-site or remote work. Let’s talk.",
       'contact.portfolio': 'View projects',
       'contact.primary.label': 'Fastest way to reach me',
 
@@ -187,8 +187,8 @@
     },
 
     es: {
-      'hero.role.main': 'Analista de Datos',
-      'hero.badge': 'Datos · SQL · Dashboards',
+      'hero.role.main': "Desarrollador Full Stack",
+      'hero.badge': "React · Node.js · PostgreSQL",
       'nav.data': 'Datos',
       'stack.cat.data': 'Datos &amp; Análisis',
       'int.data.title': 'Análisis de Datos',
@@ -225,7 +225,7 @@
       'download.title':      'Descarga mi CV',
       'download.desc':       'Una página, lista para imprimir o adjuntar a una postulación. Hecho en LaTeX.',
       'download.lang':       'Español',
-      'download.updated':    'Actualizado en octubre de 2026',
+      'download.updated':    "Actualizado en noviembre de 2026",
       'download.btn':        'Descargar PDF',
       'download.view':       'Ver en el navegador',
       // Nav
@@ -236,9 +236,9 @@
       'nav.contact':    'Contacto',
 
       // Hero
-      'hero.eyebrow':       'Disponible · Guatemala',
-      'hero.role.suffix': 'Desarrollador Full Stack &amp; Estudiante de Ingeniería',
-      'hero.desc': 'Convierto datos en decisiones: diseño bases de datos SQL, recolecto y resumo datos de forma automática y los presento en dashboards y reportes. Sistemas en producción para clientes reales.',
+      'hero.eyebrow':       "Disponible · Medio tiempo · Mañanas",
+      'hero.role.suffix': "Junior · Estudiante de Computación",
+      'hero.desc': "Construyo aplicaciones web de la interfaz al despliegue. Proyectos reales, clientes reales y código que resuelve problemas.",
       'hero.cta.whatsapp':  'WhatsApp',
       'hero.cta.contact':   'Contactar',
       'hero.cta.portfolio': 'Ver portafolio',
@@ -249,21 +249,21 @@
       // About
       'about.eyebrow': 'Quién soy',
       'about.title':   'Sobre mí',
-      'about.p1': 'Soy estudiante de <strong>Ingeniería en Ciencia de la Computación</strong> en la Universidad del Valle de Guatemala, actualmente en tercer año. Me especializo en crear soluciones limpias, escalables y visualmente atractivas.',
+      'about.p1': "Estoy cerrando tercer año de <strong>Ingeniería en Ciencias de la Computación y TI en la UVG</strong>. Combino mi formación universitaria con proyectos de software entregados a clientes reales.",
       'about.p2': 'Mi enfoque es el desarrollo <strong>Full Stack</strong>: desde interfaces modernas hasta sistemas backend robustos, bases de datos relacionales y de grafos, contenedores Docker y programación de microcontroladores.',
       'about.p3': 'Me interesa profundamente la <strong>ciberseguridad</strong>, la inteligencia artificial y la arquitectura de sistemas. Trabajo de forma estructurada en sprints con gestión Jira, priorizando código limpio y mantenible.',
       'about.lang.es':              'Español',
       'about.lang.en':              'Inglés',
-      'about.card.age.label':       'Edad',
-      'about.card.age.value':       '20 años',
+      'about.card.age.label':       "Disponibilidad",
+      'about.card.age.value':       "Medio tiempo · Mañanas",
       'about.card.location.label':  'Ubicación',
       'about.card.location.value':  'Zona 10, Guatemala',
       'about.card.university.label':'Universidad',
       'about.card.university.value':'UVG — Ing. CS',
       'about.card.transport.label': 'Transporte',
       'about.card.transport.value': 'Vehículo propio',
-      'about.card.billing.label':   'Facturación',
-      'about.card.billing.value':   'NIT activo',
+      'about.card.billing.label':   "Modalidad",
+      'about.card.billing.value':   "Híbrido · Presencial · Remoto",
       'about.card.method.label':    'Metodología',
       'about.card.method.value':    'Agile · Jira',
 
@@ -290,8 +290,8 @@
       'edu.eyebrow':    'Formación',
       'edu.title':      'Educación',
       'edu.uvg.degree': 'Ingeniería en Ciencia de la Computación y TI',
-      'edu.uvg.date':   '2023 – Presente',
-      'edu.uvg.desc':   'Actualmente en tercer año. Algoritmos, estructuras de datos, bases de datos, sistemas operativos y desarrollo de software.',
+      'edu.uvg.date':   "2024 – Presente",
+      'edu.uvg.desc':   "En cierre de tercer año. Bases de Datos, Algoritmos y Estructuras de Datos, Programación Orientada a Objetos, Ingeniería de Software y Tecnologías Web.",
       'edu.db.degree':  'Bachiller en Ciencias y Letras — Computación',
       'edu.db.desc':    'Fundamentos de computación e introducción a la programación.',
       'edu.db.badge':   'Graduado CUM LAUDE',
@@ -349,7 +349,7 @@
       // Contact
       'contact.eyebrow':   'Hablemos',
       'contact.title':     'Contacto',
-      'contact.subtitle':  'Disponible para proyectos freelance, colaboraciones académicas o prácticas profesionales. Escríbeme.',
+      'contact.subtitle':  "Busco una oportunidad como desarrollador junior, medio tiempo por las mañanas. Disponible en Guatemala para trabajo híbrido, presencial o remoto. Conversemos.",
       'contact.portfolio': 'Ver proyectos',
       'contact.primary.label': 'La forma más rápida de contactarme',
 
@@ -402,7 +402,7 @@
   }
 
   /* Init lang from localStorage (default EN) */
-  var savedLang = localStorage.getItem('lang') || 'en';
+  var savedLang = localStorage.getItem('lang') || 'es';
   applyLang(savedLang);
 
   /* Reposition slider on resize */

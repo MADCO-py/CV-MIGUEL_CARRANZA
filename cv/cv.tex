@@ -15,6 +15,7 @@
 \usepackage{enumitem}
 \usepackage[hidelinks]{hyperref}
 \usepackage{microtype}
+\hypersetup{pdftitle={Miguel Carranza - Desarrollador Full Stack Junior}, pdfauthor={Miguel Carranza}, pdfsubject={Curriculum vitae}}
 
 % ── Colores ──
 \definecolor{ink}{HTML}{0A0A0A}
@@ -65,7 +66,8 @@
 % ============================================================
 \hspace*{20pt}%
 \begin{minipage}[t][0.97\paperheight][t]{\dimexpr0.335\paperwidth-38pt\relax}
-\vspace{26pt}
+\vspace{22pt}
+\raggedright
 
 % Foto
 \begin{center}
@@ -83,29 +85,29 @@
 \contact{\faGithub}{\href{https://github.com/MADCO-py}{github.com/MADCO-py}}
 \contact{\faGlobe}{\href{https://madco-py.github.io/CV-MIGUEL_CARRANZA/}{Portafolio en línea}}
 
-\sidetitle{Datos personales}
-\contact{\faUser}{20 años}
+\sidetitle{Disponibilidad}
 \contact{\faMapMarker*}{Zona 10, Guatemala}
 \contact{\faCar}{Vehículo propio}
-\contact{\faFile*}{NIT activo}
+{\fontsize{8.5}{11}\selectfont \textbf{Medio tiempo por las mañanas}\\Híbrido, presencial o remoto.}\par
 
 \sidetitle{Habilidades técnicas}
-\skillgroup{Datos y análisis}{SQL (PostgreSQL), Neo4J, Python, dashboards (Recharts), reportes en Excel}
-\skillgroup{Frontend}{HTML5, CSS3, JavaScript, TypeScript, React, Vite}
-\skillgroup{Backend y lenguajes}{Node.js, Express, Java, Kotlin, C / C++}
-\skillgroup{Nube y despliegue}{Docker, Railway, Cloudflare R2, GitHub Pages}
-\skillgroup{Herramientas}{Git, Linux, VS Code, Android Studio, Jetpack Compose, Jira}
-\skillgroup{Hardware e IoT}{Arduino, ESP32, sensores, sistemas embebidos}
+\skillgroup{Frontend}{JavaScript, TypeScript, React, HTML5, CSS3, Vite}
+\skillgroup{Backend y bases de datos}{Node.js, Express, PostgreSQL, SQL; modelado relacional y autenticación de usuarios}
+\skillgroup{Despliegue y herramientas}{Docker, Railway, Cloudflare R2, GitHub Pages, Git, Linux, Jira; trabajo por sprints}
+\skillgroup{Análisis y visualización}{Python, Recharts, consultas SQL, procesos ETL y exportación de reportes a Excel}
+\skillgroup{Otros lenguajes y plataformas}{Java, Kotlin, Jetpack Compose, C / C++, Neo4j, Arduino, ESP32}
 
 \sidetitle{Idiomas}
-\contact{\faComment}{Español — 100\,\%}
-\contact{\faComment}{Inglés — 80\,\%}
+\contact{\faComment}{Español: nativo}
+{\fontsize{8.5}{11}\selectfont Inglés conversacional. Formación: Intermediate English A (UVG, 2026).}\par
 
-\sidetitle{Metodología}
-{\fontsize{8.5}{11}\selectfont Trabajo ágil por sprints con gestión en Jira; código limpio y mantenible.}\par
-
-\sidetitle{Áreas de interés}
-{\fontsize{8.5}{11}\selectfont Análisis de datos · Inteligencia artificial · Ciberseguridad · Desarrollo web · Backend y APIs · Sistemas y hardware}\par
+\sidetitle{Portafolio y proyectos}
+\begin{center}
+\href{https://madco-py.github.io/CV-MIGUEL_CARRANZA/}{\includegraphics[width=2.4cm]{qr-portafolio.png}}\par
+\vspace{2pt}
+{\fontsize{8}{10}\selectfont Escanea para ver mis proyectos.}\par
+\href{https://madco-py.github.io/CV-MIGUEL_CARRANZA/}{\color{accent}\fontsize{7.5}{10}\selectfont madco-py.github.io/\\CV-MIGUEL\_CARRANZA/}
+\end{center}
 \end{minipage}%
 \hspace*{18pt}\hspace*{24pt}%
 % ============================================================
@@ -116,56 +118,55 @@
 
 {\color{ink}\fontsize{30}{32}\selectfont\bfseries Miguel Carranza}\par
 \vspace{5pt}
-{\color{accent}\fontsize{11.5}{14}\selectfont\bfseries Analista de Datos}%
-{\color{muted}\fontsize{11.5}{14}\selectfont\ \ ·\ \ Desarrollador Full Stack\ \ ·\ \ Estudiante de Ingeniería}\par
+{\color{accent}\fontsize{11.5}{14}\selectfont\bfseries Desarrollador Full Stack Junior}%
+{\color{muted}\fontsize{11.5}{14}\selectfont\ \ ·\ \ React · Node.js · PostgreSQL}\par
 \vspace{8pt}
-Convierto datos en decisiones: diseño bases de datos SQL, recolecto y resumo datos de forma automática y los presento en dashboards y reportes. Estudiante de tercer año de Ingeniería en Ciencias de la Computación en la Universidad del Valle de Guatemala, con sistemas vendidos y en producción para clientes reales.\par
+Estudiante de Ingeniería en Ciencias de la Computación y TI en la Universidad del Valle de Guatemala, en cierre de tercer año. Desarrollo aplicaciones web con React, Node.js y PostgreSQL: interfaces, backend, bases de datos y despliegue. He entregado proyectos vendidos a clientes reales y sistemas en producción. Busco integrarme a un equipo de desarrollo de software a medio tiempo por las mañanas, en modalidad híbrida, presencial o remota.\par
 
-\maintitle{Experiencia en análisis de datos}
-\job{Los Skeepers — plataforma de fans con analítica}{Freelance · \href{https://www.losskeepers.com/}{losskeepers.com}}{Proyecto vendido}
+\maintitle{Experiencia en desarrollo de software}
+\job{Desarrollador full stack freelance}{Los Skeepers · Proyecto vendido · \href{https://www.losskeepers.com/}{\textbf{losskeepers.com} \faExternalLink*}}{Jul. 2026 (aprox.)}
 \begin{itemize}
-  \item Diseñé un dashboard de analítica: KPIs de visitas (activos, día, semana, mes), mapa de calor día × hora de 90 días, embudos de conversión, tiempo por sección y uso por dispositivo; \textbf{11 gráficas} sobre \textbf{35 consultas SQL} (COUNT, AVG, GROUP BY, date\_trunc).
-  \item Modelé \textbf{18 tablas} en PostgreSQL y un proceso ETL diario (cron) que resume eventos crudos en totales diarios y purga el detalle de más de 90 días; reportes exportables a Excel.
-  \item Privacidad por diseño: IDs anónimos, sin guardar la IP, ubicación aproximada agrupada por país, región y ciudad.
-\end{itemize}
-
-\maintitle{Experiencia}
-\job{Desarrollador de software freelance}{Llantas Ávila — FleetControl}{Abr. 2026 · 30 h}
-\begin{itemize}
-  \item Desarrollé y entregué un sistema web de gestión de flota de camiones que resuelve un problema real: identificar qué piloto recibió una multa en un día determinado.
-  \item 9 pilotos registrados con foto, fecha e historial de mantenimiento por vehículo; acceso con usuario y contraseña y registro vinculado por código QR.
-  \item Base de datos PostgreSQL con pilotos, vehículos y registros; React y Node.js + Express, en producción en Railway con Docker.
+  \item Desarrollé el sitio de la banda y su panel privado de administración con \textbf{React, Node.js y Express}; implementé autenticación, gestión de contenido y despliegue con \textbf{Docker en Railway}.
+  \item Modelé \textbf{18 tablas en PostgreSQL} y construí un dashboard con \textbf{11 gráficas y 35 consultas SQL} para analizar visitas, dispositivos, interacción y embudos de conversión.
+  \item Automaticé el resumen diario de eventos con cron y la exportación de reportes a Excel; incorporé IDs anónimos y retención de eventos detallados de 90 días.
 \end{itemize}
 \vspace{5pt}
+\job{Desarrollador full stack freelance}{Llantas Ávila — FleetControl · Sistema en producción}{Abr. 2026}
+\begin{itemize}
+  \item Entregué un sistema de gestión de flota con \textbf{React, Node.js, Express y PostgreSQL} para identificar qué piloto tenía asignado un camión en una fecha determinada.
+  \item Implementé autenticación, registro mediante QR y gestión de \textbf{9 pilotos}, con evidencia fotográfica e historial de mantenimiento por vehículo; almacenamiento de fotos en Cloudflare R2.
+  \item Empaqueté la aplicación con \textbf{Docker} y la desplegué en \textbf{Railway} para uso del cliente.
+\end{itemize}
+\vspace{5pt}
+{\color{ink}\bfseries\fontsize{10}{12}\selectfont The Sunset Sessions — desarrollo web freelance}\par
+{\color{accent}\fontsize{9}{11}\selectfont Proyecto vendido · \href{https://madco-py.github.io/The-Sunset-Sessions/}{\textbf{madco-py.github.io/The-Sunset-Sessions/} \faExternalLink*} · \href{https://github.com/MADCO-py/The-Sunset-Sessions}{Código}}\par\vspace{2pt}
+\begin{itemize}
+  \item Desarrollé y publiqué un sitio de evento con \textbf{React y GitHub Pages}: artistas, cuenta regresiva y formulario que genera la solicitud de compra de entradas por WhatsApp.
+\end{itemize}
+
+\maintitle{Proyectos adicionales}
+\begin{itemize}
+  \item \textbf{\color{ink}SecureGate} — control de accesos con registro de ingresos en PostgreSQL y lectura de DPI y placas mediante Google Cloud Vision.
+  \item \textbf{\color{ink}MentorHub} — plataforma con React y Vite que conecta \textbf{7 tutores con 20 estudiantes} universitarios.
+\end{itemize}
+
+\maintitle{Experiencia complementaria}
 \job{Guía educativo}{Museo de los Niños de Guatemala}{Abr. 2025 – Oct. 2025}
-\begin{itemize}
-  \item Atención a niños y padres, comunicación efectiva, creación de contenido educativo digital y actividades dinámicas.
-\end{itemize}
-\vspace{5pt}
+{\fontsize{8.8}{11.5}\selectfont Comunicación con niños y padres, actividades educativas y creación de contenido digital.}\par
+\vspace{4pt}
 \job{Dependiente de tienda}{Bershka — Oakland Mall}{Nov. 2022 – Ene. 2023}
-\begin{itemize}
-  \item Servicio al cliente, apoyo en caja en horas de alta afluencia, control básico de inventario y organización de tienda.
-\end{itemize}
-
-\maintitle{Otros proyectos}
-\begin{itemize}
-  \item \textbf{\color{ink}The Sunset Sessions} (vendido) — sitio de evento con venta de entradas por WhatsApp; React, GitHub Pages.
-  \item \textbf{\color{ink}SecureGate} — control de accesos con registro de cada ingreso en PostgreSQL y lectura de DPI y placas (Google Cloud Vision).
-  \item \textbf{\color{ink}MentorHub} — conecta 7 tutores universitarios con 20 estudiantes; React + Vite.
-  \item \textbf{\color{ink}Sitios para emprendedores y artistas} — Walter Mazariegos, Nalú Korean Food, March Jewelry y Marce Juárez.
-\end{itemize}
+{\fontsize{8.8}{11.5}\selectfont Servicio al cliente, apoyo en caja, control de inventario y organización de tienda.}\par
 
 \maintitle{Educación}
-\job{Ingeniería en Ciencias de la Computación y TI}{Universidad del Valle de Guatemala}{2023 – presente}
-{\fontsize{8.8}{11.5}\selectfont Tercer año. Algoritmos, estructuras de datos, bases de datos, sistemas operativos y desarrollo de software.}\par
+\job{Ingeniería en Ciencias de la Computación y TI}{Universidad del Valle de Guatemala}{2024 – presente}
+{\fontsize{8.8}{11.5}\selectfont \textbf{En cierre de tercer año.} Cursos relevantes: Bases de Datos 1, Algoritmos y Estructuras de Datos, Programación Orientada a Objetos, Ingeniería de Software 1 y Sistemas y Tecnologías Web. \textbf{En curso:} Ingeniería de Software 2.}\par
 \vspace{6pt}
 \job{Bachillerato en Ciencias y Letras, orientación en Computación}{Colegio Salesiano Don Bosco}{2020 – 2022}
 {\fontsize{8.8}{11.5}\selectfont Graduado \textbf{Cum Laude}.}\par
 
-\maintitle{Certificaciones}
+\maintitle{Certificaciones y formación}
 \begin{itemize}
   \item \textbf{\color{ink}Creación de Páginas Web — HTML, CSS, JavaScript} · INTECAP, nivel intermedio.
-  \item \textbf{\color{ink}HCI — Interacción Humano-Computadora} · Universidad del Valle de Guatemala.
   \item \textbf{\color{ink}Ética en Investigación con Sujetos Humanos} · UVG — CCSS, 8 h · 7 de mayo de 2026 (manejo ético de datos de personas).
 \end{itemize}
 \end{minipage}

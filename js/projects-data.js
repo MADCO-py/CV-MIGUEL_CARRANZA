@@ -358,7 +358,7 @@ const SITE = {
    la tarjeta está en pantalla (en compu, al pasar el mouse). */
 const lazyVideoIO = "IntersectionObserver" in window ? new IntersectionObserver(entries => {
   entries.forEach(e => {
-    if (e.isIntersecting) e.target.play().catch(() => {});
+    if (e.isIntersecting && e.target.isConnected && !matchMedia("(prefers-reduced-motion: reduce)").matches) e.target.play().catch(() => {});
     else e.target.pause();
   });
 }, { threshold: 0.5 }) : null;
@@ -373,6 +373,7 @@ function mediaHTML(p, cls) {
 
 /* Activa los videos de un contenedor recién pintado */
 function wireVideos(root) {
+  if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
   const canHover = matchMedia("(hover: hover) and (pointer: fine)").matches;
   root.querySelectorAll("video[preload='none']").forEach(v => {
     const card = v.closest("[data-card]") || v.parentElement;

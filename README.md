@@ -16,6 +16,7 @@ CV-MIGUEL_CARRANZA/
 │   ├── components.css      ← Nav (y menú en celular), botones, "Cómo está hecho"
 │   ├── index.css           ← Estilos del CV
 │   ├── cv-extra.css        ← Explorador del stack, destacados, descarga del PDF
+│   ├── showcase.css        ← Portada y laboratorio interactivo
 │   └── portfolio.css       ← Estilos del portafolio
 ├── js/
 │   ├── projects-data.js    ← TODOS los proyectos (ES/EN) — se edita aquí
@@ -23,7 +24,8 @@ CV-MIGUEL_CARRANZA/
 │   ├── portfolio.js        ← Búsqueda, filtros y tarjetas
 │   ├── controls.js         ← Idioma, tema y menú en celular
 │   ├── observer.js         ← Animaciones al hacer scroll
-│   └── cursor.js           ← Cursor personalizado
+│   ├── showcase.js         ← Demos locales, ES/EN, teclado y movimiento reducido
+│   └── cursor.js           ← Conserva el cursor nativo
 ├── cv/
 │   ├── cv.tex              ← CV en LaTeX (fuente)
 │   ├── foto.jpg            ← Foto del PDF
@@ -75,3 +77,21 @@ git push origin main
 ```
 
 GitHub Pages sirve automáticamente desde la raíz del repositorio.
+
+## Laboratorio interactivo
+
+La portada incorpora seis demos originales inspiradas en el playground de
+[MADWEB](https://github.com/MADCO-py/MADWEB): personalización de interfaces,
+gráficos con datos simulados, un pipeline de ejemplo, un tablero persistente,
+una terminal con comandos predefinidos y una red de partículas en canvas.
+
+No requieren backend. El tablero guarda hasta 12 tareas en `localStorage`
+(`mc-lab-board-v1`); el botón Reiniciar restaura los ejemplos. Los datos del
+gráfico son ficticios y están identificados como tales. Las pestañas funcionan
+con flechas, Inicio y Fin. La animación se pausa fuera de pantalla y respeta
+la preferencia de movimiento reducido. Los videos no se reproducen
+automáticamente con esa preferencia.
+
+Vista previa local: `python3 -m http.server 8765`, después abre
+`http://localhost:8765/`. El sitio sigue siendo estático y compatible con
+GitHub Pages, sin un paso de compilación.
