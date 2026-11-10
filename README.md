@@ -114,3 +114,15 @@ Toda la web usa una sola familia: Ubuntu Mono (400 y 700), con respaldos
 monoespaciados. La paleta combina berenjena, naranja y el marco gris oscuro
 de la terminal de Ubuntu. Los iconos conservan su fuente para evitar perder
 sus símbolos. El PDF conserva su tipografía formal y su archivo original.
+
+### Cursos y experiencia visual
+
+`css/experience.css` añade la composición bento, superficies de vidrio con
+respaldo opaco y piezas con volumen. Mantiene Ubuntu Mono y la paleta Ubuntu.
+`js/experience.js` contiene seis grupos de cursos UVG y enlaces a evidencia;
+los cursos universitarios se presentan en Formación, separados de los
+certificados. Ingeniería de Software 2 se identifica como en curso.
+
+Los proyectos destacados resumen resultados y conservan los detalles técnicos
+en el control Cómo está hecho. Las interacciones funcionan por teclado y
+tacto; los efectos de movimiento respetan la preferencia del sistema.

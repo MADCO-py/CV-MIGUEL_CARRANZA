@@ -8,6 +8,7 @@
 (function () {
   'use strict';
   const L = (es, en) => (SITE.lang() === 'es' ? es : en);
+  const featuredTech = p => [...new Set([...['React', 'Node.js', 'PostgreSQL', 'Docker', 'Recharts', 'JavaScript', 'GitHub Pages', 'Cloudflare R2'].filter(t => p.tech.includes(t)), ...p.tech])].slice(0, 5);
 
   /* ── Total de proyectos ─────────────────────────────────── */
   document.querySelectorAll('[data-count="projects"]').forEach(el => { el.textContent = PROJECTS.length; });
@@ -24,6 +25,23 @@
     return out.join('');
   }
 
+  function featuredSummary(p) {
+    const summaries = {
+      'los-skeepers': ['Sitio oficial y panel de administración: contenido, juegos y analítica en una misma plataforma.', 'Official website and admin panel: content, games and analytics in a single platform.'],
+      'fleetcontrol': ['Un sistema para identificar al piloto de cada camión, registrar evidencia y consultar el mantenimiento.', 'A system to identify each truck’s driver, record evidence and track maintenance.'],
+      'sunset-sessions': ['Una experiencia digital para descubrir artistas y solicitar entradas a un evento de música, arte y café.', 'A digital experience to discover artists and request tickets for a music, art and coffee event.']
+    };
+    return summaries[p.id] ? L(...summaries[p.id]) : SITE.t(p.desc);
+  }
+  function featuredProof(p) {
+    const proof = {
+      'los-skeepers': [['18', L('tablas SQL', 'SQL tables')], ['11', L('gráficas', 'charts')], ['35', L('consultas', 'queries')]],
+      'fleetcontrol': [['09', L('pilotos', 'drivers')], ['QR', L('registro', 'registration')], ['R2', L('evidencia', 'evidence')]],
+      'sunset-sessions': [['React', L('interfaz', 'interface')], ['WA', L('entradas', 'tickets')], ['Live', L('sitio publicado', 'published site')]]
+    };
+    return `<div class="project-proof">${(proof[p.id] || []).map(([v,l]) => `<div><strong>${SITE.esc(v)}</strong><span>${SITE.esc(l)}</span></div>`).join('')}</div>`;
+  }
+
   function renderFeatured() {
     if (!featuredList) return;
     if (lazyVideoIO) featuredList.querySelectorAll("video").forEach(v => { v.pause(); lazyVideoIO.unobserve(v); });
@@ -37,8 +55,9 @@
           <div class="featured-num">0${i + 1}</div>
           <h3 class="featured-name">${SITE.esc(p.name)}</h3>
           <div class="featured-client"><i class="fa-solid fa-building"></i> ${SITE.esc(SITE.t(p.client))}</div>
-          <p class="featured-desc">${SITE.esc(SITE.t(p.desc))}</p>
-          <div class="featured-tech">${p.tech.map(t => `<span>${SITE.esc(t)}</span>`).join('')}</div>
+          <p class="featured-desc">${SITE.esc(featuredSummary(p))}</p>
+          ${featuredProof(p)}
+          <div class="featured-tech">${featuredTech(p).map(t => `<span>${SITE.esc(t)}</span>`).join('')}</div>
           <button type="button" class="featured-build-title" aria-expanded="false">${L('Cómo está hecho', 'How it is built')}</button>
           ${buildHTML(p)}
           <div class="featured-links">${linksHTML(p)}</div>

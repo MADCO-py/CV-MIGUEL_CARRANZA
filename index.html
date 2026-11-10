@@ -17,12 +17,13 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   <!-- Estilos propios (orden importante) -->
-  <link rel="stylesheet" href="css/variables.css?v=ubuntu-20261110">
-  <link rel="stylesheet" href="css/components.css?v=ubuntu-20261110">
-  <link rel="stylesheet" href="css/index.css?v=ubuntu-20261110">
-  <link rel="stylesheet" href="css/cv-extra.css?v=ubuntu-20261110">
-  <link rel="stylesheet" href="css/showcase.css?v=ubuntu-20261110">
-  <link rel="stylesheet" href="css/linux.css?v=ubuntu-20261110">
+  <link rel="stylesheet" href="css/variables.css?v=bento-20261110-r2">
+  <link rel="stylesheet" href="css/components.css?v=bento-20261110-r2">
+  <link rel="stylesheet" href="css/index.css?v=bento-20261110-r2">
+  <link rel="stylesheet" href="css/cv-extra.css?v=bento-20261110-r2">
+  <link rel="stylesheet" href="css/showcase.css?v=bento-20261110-r2">
+  <link rel="stylesheet" href="css/linux.css?v=bento-20261110-r2">
+  <link rel="stylesheet" href="css/experience.css?v=bento-20261110-r2">
 </head>
 <body>
   <a class="skip-link" href="#hero">Saltar al contenido</a>
@@ -41,6 +42,7 @@
       <a href="#featured" data-i18n="nav.featured">Proyectos</a>
       <a href="#about" data-i18n="nav.about">Perfil</a>
       <a href="#experience" data-i18n="nav.experience">Experiencia</a>
+      <a href="#education" data-i18n="nav.education">Formación</a>
       <a href="#lab" data-demo-text="nav">Laboratorio</a>
       <a href="#download" data-i18n="hero.cta.pdf">CV en PDF</a>
       <a href="#contact" data-i18n="nav.contact">Contacto</a>
@@ -134,6 +136,8 @@
         <p class="build-explanation" id="buildExplanation" aria-live="polite"></p>
         <div class="build-person"><img src="cv/foto.jpg" alt="Miguel Carranza" width="44" height="44"><div><strong>Miguel Carranza</strong><span data-demo-text="buildPerson">Desarrollo de principio a fin.</span></div><a href="#lab" aria-label="Explorar el laboratorio">↗</a></div>
       </div>
+      <div class="bento-mini bento-craft"><span class="clay-code" aria-hidden="true">&lt;/&gt;</span><div><span class="bento-kicker">BUILD / SHIP</span><strong data-experience="craft">De la interfaz al despliegue.</strong></div><a href="#featured" aria-label="Ver proyectos entregados">↗</a></div>
+      <a class="bento-mini bento-hours" href="#contact"><span class="bento-clock" aria-hidden="true">AM<span class="clock-hand"></span></span><div><span class="bento-kicker" data-experience="availability">DISPONIBILIDAD</span><strong data-experience="morning">Medio tiempo · Mañanas</strong><small data-experience="modes">Remoto · Híbrido · Presencial</small></div><span aria-hidden="true">↗</span></a>
       <span class="build-note" data-demo-text="buildNote">Interactúa con las capas. Esto también es código.</span>
     </div>
   </section>
@@ -317,6 +321,11 @@
         <div class="edu-badge"><i class="fa-solid fa-star"></i> <span data-i18n="edu.db.badge">Graduated CUM LAUDE</span></div>
       </div>
 
+    </div>
+    <div class="course-browser" aria-labelledby="courseTitle">
+      <div class="course-heading"><div><span class="mono-label" data-experience="courseEyebrow">DE LA UNIVERSIDAD AL PRODUCTO</span><h3 id="courseTitle" data-experience="courseTitle">Lo que estudio. Lo que aplico.</h3></div><p data-experience="courseIntro">Una selección de mi formación en UVG. Elige un curso para ver su relación con mi trabajo.</p></div>
+      <div class="course-grid" id="courseGrid"><p>Bases de Datos 1 · Sistemas y Tecnologías Web · Algoritmos y Estructuras de Datos · Ingeniería de Software · Programación Orientada a Objetos · Interacción Humano-Computadora.</p></div>
+      <div class="course-evidence" id="courseEvidence" aria-live="polite"></div>
     </div>
   </section>
 
@@ -522,29 +531,6 @@
         </div>
       </div>
 
-      <!-- Certificado HCI -->
-      <div class="cert-card reveal" style="transition-delay: 0.1s">
-        <img src="img/LOGOUVG.png" class="cert-icon" alt="UVG"
-             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-        <div class="cert-icon-ph" style="display:none"><i class="fa-solid fa-computer-mouse"></i></div>
-        <div>
-          <div class="cert-name"   data-i18n="cert2.name">HCI — Human-Computer Interaction</div>
-          <div class="cert-issuer">Universidad del Valle de Guatemala</div>
-          <div class="cert-date">
-            <i class="fa-solid fa-building-columns"></i>
-            <span data-i18n="cert2.date">UVG · University course</span>
-          </div>
-          <div class="cert-desc" data-i18n="cert2.desc">
-            Usability principles, user-centered design, interface evaluation and digital experience prototyping.
-          </div>
-        </div>
-        <div class="cert-tags">
-          <span class="cert-tag">UX/UI</span>
-          <span class="cert-tag">Usability</span>
-          <span class="cert-tag">Design</span>
-        </div>
-      </div>
-
       <!-- INTECAP -->
       <div class="cert-card reveal" style="transition-delay: 0.2s">
         <img src="img/intecap.png" class="cert-icon" alt="INTECAP"
@@ -679,12 +665,13 @@
   <!-- ================================================================
        SCRIPTS (al final para no bloquear el render)
   ================================================================ -->
-  <script src="js/cursor.js?v=ubuntu-20261110"></script>
-  <script src="js/observer.js?v=ubuntu-20261110"></script>
-  <script src="js/controls.js?v=ubuntu-20261110"></script>
-  <script src="js/projects-data.js?v=ubuntu-20261110"></script>
-  <script src="js/cv-sections.js?v=ubuntu-20261110"></script>
-  <script src="js/showcase.js?v=ubuntu-20261110"></script>
+  <script src="js/cursor.js?v=bento-20261110-r2"></script>
+  <script src="js/observer.js?v=bento-20261110-r2"></script>
+  <script src="js/controls.js?v=bento-20261110-r2"></script>
+  <script src="js/projects-data.js?v=bento-20261110-r2"></script>
+  <script src="js/cv-sections.js?v=bento-20261110-r2"></script>
+  <script src="js/showcase.js?v=bento-20261110-r2"></script>
+  <script src="js/experience.js?v=bento-20261110-r2"></script>
 
 </body>
 </html>

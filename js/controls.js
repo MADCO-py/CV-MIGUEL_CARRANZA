@@ -51,7 +51,7 @@
       'stack.explorer.hint': 'Tap a technology to see where I used it',
       'featured.eyebrow':    'Delivered to clients',
       'featured.title':      'Featured Projects',
-      'featured.lead': 'Three projects sold and in use. Each one explains how it is built: data, analysis, access, hosting and libraries.',
+      'featured.lead': "Three projects delivered to clients. Explore the result and the implementation.",
       'featured.more':       'See all projects',
       'download.eyebrow':    'Résumé',
       'download.title':      'Download my CV',
@@ -70,7 +70,7 @@
       // Hero
       'hero.eyebrow':       "Available · Part time · Mornings",
       'hero.role.suffix': "Junior · Computer Science Student",
-      'hero.desc': "I build web applications from interface to deployment. Real projects, real clients, and a hands-on approach to solving problems.",
+      'hero.desc': "I build web applications that connect interfaces, backend and data. Real projects, from idea to production.",
       'hero.cta.whatsapp':  'WhatsApp',
       'hero.cta.contact':   'Contact',
       'hero.cta.portfolio': 'View portfolio',
@@ -123,7 +123,7 @@
       'edu.title':      'Education',
       'edu.uvg.degree': 'Computer Science and IT Engineering',
       'edu.uvg.date':   "2024 – Present",
-      'edu.uvg.desc':   "Completing my third year. Databases, Algorithms and Data Structures, Object-Oriented Programming, Software Engineering and Web Technologies.",
+      'edu.uvg.desc':   "Completing my third year. Coursework focused on software development, databases and human–computer interaction.",
       'edu.db.degree':  'Bachelor in Sciences and Letters — Computing',
       'edu.db.desc':    'Computer fundamentals and introduction to programming.',
       'edu.db.badge':   'Graduated CUM LAUDE',
@@ -149,7 +149,7 @@
 
       // Certifications
       'certs.eyebrow': 'Certifications',
-      'certs.title':   'Courses &amp; Certificates',
+      'certs.title':   "Certifications",
       'cert1.name':    'Ethics in Research with Human Subjects',
       'cert1.issuer':  'Universidad del Valle de Guatemala — CCSS',
       'cert1.date':    'May 7, 2026 · Code CECCSSS 0343',
@@ -233,7 +233,7 @@
       'stack.explorer.hint': 'Toca una tecnología para ver dónde la usé',
       'featured.eyebrow':    'Entregados a clientes',
       'featured.title':      'Proyectos destacados',
-      'featured.lead': 'Tres proyectos vendidos y en uso. Cada uno explica cómo está hecho: datos, análisis, acceso, hosting y librerías.',
+      'featured.lead': "Tres proyectos entregados a clientes. Explora el resultado y su implementación.",
       'featured.more':       'Ver todos los proyectos',
       'download.eyebrow':    'Currículum',
       'download.title':      'Descarga mi CV',
@@ -252,7 +252,7 @@
       // Hero
       'hero.eyebrow':       "Disponible · Medio tiempo · Mañanas",
       'hero.role.suffix': "Junior · Estudiante de Computación",
-      'hero.desc': "Construyo aplicaciones web de la interfaz al despliegue. Proyectos reales, clientes reales y código que resuelve problemas.",
+      'hero.desc': "Construyo aplicaciones web que conectan interfaz, backend y datos. Proyectos reales, de la idea a producción.",
       'hero.cta.whatsapp':  'WhatsApp',
       'hero.cta.contact':   'Contactar',
       'hero.cta.portfolio': 'Ver portafolio',
@@ -305,7 +305,7 @@
       'edu.title':      'Educación',
       'edu.uvg.degree': 'Ingeniería en Ciencia de la Computación y TI',
       'edu.uvg.date':   "2024 – Presente",
-      'edu.uvg.desc':   "En cierre de tercer año. Bases de Datos, Algoritmos y Estructuras de Datos, Programación Orientada a Objetos, Ingeniería de Software y Tecnologías Web.",
+      'edu.uvg.desc':   "En cierre de tercer año. Formación en desarrollo de software, bases de datos e interacción humano-computadora.",
       'edu.db.degree':  'Bachiller en Ciencias y Letras — Computación',
       'edu.db.desc':    'Fundamentos de computación e introducción a la programación.',
       'edu.db.badge':   'Graduado CUM LAUDE',
@@ -331,7 +331,7 @@
 
       // Certifications
       'certs.eyebrow': 'Certificaciones',
-      'certs.title':   'Cursos &amp; Certificados',
+      'certs.title':   "Certificaciones",
       'cert1.name':    'Ética en Investigación con Sujetos Humanos',
       'cert1.issuer':  'Universidad del Valle de Guatemala — CCSS',
       'cert1.date':    '7 de mayo de 2026 · Cód. CECCSSS 0343',
