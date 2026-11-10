@@ -95,3 +95,15 @@ automáticamente con esa preferencia.
 Vista previa local: `python3 -m http.server 8765`, después abre
 `http://localhost:8765/`. El sitio sigue siendo estático y compatible con
 GitHub Pages, sin un paso de compilación.
+
+## Presentación para postulaciones
+
+El tema Linux se define en `css/linux.css`, sobre los componentes existentes.
+Incluye variante oscura por defecto y variante clara, con la selección del usuario
+guardada en su navegador. El orden prioriza proyectos, perfil y experiencia; el
+laboratorio conserva las demos y los detalles de datos se abren bajo demanda.
+
+Los enlaces de descarga usan el PDF limpio de `cv/Miguel_Carranza_CV.pdf`.
+Al reemplazar ese archivo, actualiza la clave `?v=` de los enlaces de `index.html`
+y del comando `cv` en `js/showcase.js` con los primeros 12 caracteres de su SHA-256.
+La vista previa también usa esa clave para evitar versiones anteriores en caché.

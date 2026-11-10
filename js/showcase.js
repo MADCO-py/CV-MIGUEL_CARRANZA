@@ -133,7 +133,7 @@
         case 'about':line(L('Miguel Carranza / Full Stack Junior / UVG, cierre de tercer año. Medio tiempo por las mañanas.','Miguel Carranza / Junior Full Stack / UVG, finishing year three. Part-time mornings.'));break;
         case 'stack':line('React · Node.js · Express · PostgreSQL · Docker · Git');break;
         case 'projects':line('Los Skeepers · FleetControl · The Sunset Sessions','pages/portafolio.html');break;
-        case 'cv':line(L('Abrir CV en PDF','Open PDF résumé'),'cv/Miguel_Carranza_CV.pdf');break;
+        case 'cv':line(L('Abrir CV en PDF','Open PDF résumé'),'cv/Miguel_Carranza_CV.pdf?v=a45138de0c13');break;
         case 'contact':line('madcarranzaosorio@gmail.com','mailto:madcarranzaosorio@gmail.com');break;
         case 'clear':output.replaceChildren();break;
         default:line(L('Comando no disponible. Escribe help.','Command unavailable. Type help.'));
@@ -153,7 +153,7 @@
     function paint() {
       ctx.clearRect(0,0,width,height);
       const dark=document.documentElement.dataset.theme==='dark';
-      const color=dark?'120,169,255':'24,99,236';
+      const color=dark?'183,229,155':'150,200,124';
       for(const p of points) {
         if(!paused) {
           p.x+=p.vx;p.y+=p.vy;

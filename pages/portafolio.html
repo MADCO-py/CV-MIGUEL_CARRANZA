@@ -7,7 +7,7 @@
   <link rel="icon" type="image/png" href="../img/Icono.png">
 
   <!-- Anti-FOUC: apply saved theme/lang before CSS renders -->
-  <script>(function(){var t=localStorage.getItem('theme')||'light',l=localStorage.getItem('lang')||'es';document.documentElement.setAttribute('data-theme',t);document.documentElement.setAttribute('data-lang',l);document.documentElement.lang=l})()</script>
+  <script>(function(){var t=localStorage.getItem('theme')||'dark',l=localStorage.getItem('lang')||'es';document.documentElement.setAttribute('data-theme',t);document.documentElement.setAttribute('data-lang',l);document.documentElement.lang=l})()</script>
 
   <!-- Fuentes -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -16,9 +16,10 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   <!-- Estilos propios (los paths suben un nivel con ../ porque estamos en pages/) -->
-  <link rel="stylesheet" href="../css/variables.css">
-  <link rel="stylesheet" href="../css/components.css">
-  <link rel="stylesheet" href="../css/portfolio.css">
+  <link rel="stylesheet" href="../css/variables.css?v=linux-20261110">
+  <link rel="stylesheet" href="../css/components.css?v=linux-20261110">
+  <link rel="stylesheet" href="../css/portfolio.css?v=linux-20261110">
+  <link rel="stylesheet" href="../css/linux.css?v=linux-20261110">
 </head>
 <body>
 
@@ -164,12 +165,12 @@
        observer.js necesita saber que está en pages/ para re-observar
        las cards que portfolio.js inserta dinámicamente.
   ================================================================ -->
-  <script src="../js/cursor.js"></script>
-  <script src="../js/controls.js"></script>
+  <script src="../js/cursor.js?v=linux-20261110"></script>
+  <script src="../js/controls.js?v=linux-20261110"></script>
 
   <!-- projects-data.js tiene los proyectos; portfolio.js los pinta -->
-  <script src="../js/projects-data.js"></script>
-  <script src="../js/portfolio.js"></script>
+  <script src="../js/projects-data.js?v=linux-20261110"></script>
+  <script src="../js/portfolio.js?v=linux-20261110"></script>
 
   <script>
     /* ── Observer adaptado para cards dinámicas ──

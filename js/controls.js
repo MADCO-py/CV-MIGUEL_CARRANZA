@@ -12,13 +12,20 @@
   /* ── TRANSLATIONS ──────────────────────────────────────────── */
   const i18n = {
     en: {
+      "exp.skeepers.date": "Jul. 2026 (approx.)",
+      "exp.skeepers.role": "Freelance Full Stack Developer",
+      "exp.skeepers.desc": "Public website and private admin panel built with React, Node.js and PostgreSQL. Modeled 18 tables, 11 charts and 35 SQL queries for analytics; automated event summaries and Excel reports.",
+      "exp.skeepers.link": "Explore the project and its implementation ↗",
+
       'hero.role.main': "Full Stack Developer",
       'hero.badge': "React · Node.js · PostgreSQL",
       'nav.data': 'Data',
+      'nav.experience': 'Experience',
+      'data.expand': 'Explore the technical work with data',
       'stack.cat.data': 'Data &amp; Analysis',
       'int.data.title': 'Data Analysis',
       'int.data.desc': 'SQL, dashboards, KPIs and data-driven decisions',
-      'data.eyebrow': 'Data Analyst',
+      'data.eyebrow': "Production backend",
       'data.title': 'Data Experience',
       'data.lead': 'Real evidence from a system in production: the Los Skeepers admin panel, which I designed and built end to end.',
       'data.stat.queries': 'SQL queries with COUNT, AVG, GROUP BY and date_trunc',
@@ -69,14 +76,14 @@
       'hero.cta.portfolio': 'View portfolio',
       'hero.stat.clients':  'Freelance Clients',
       'hero.stat.projects': 'Projects',
-      'hero.stat.impact':   'People Reached',
+      'hero.stat.impact':   'SQL tables · Los Skeepers',
 
       // About
       'about.eyebrow': 'Who I am',
       'about.title':   'About Me',
       'about.p1': "I am completing my third year of <strong>Computer Science and IT Engineering at UVG</strong>. I combine university training with software projects delivered to real clients.",
       'about.p2': 'My focus is <strong>Full Stack</strong> development: from modern interfaces to robust backend systems, relational and graph databases, Docker containers and microcontroller programming.',
-      'about.p3': 'I am deeply interested in <strong>cybersecurity</strong>, artificial intelligence and systems architecture. I work in a structured way using sprints and Jira management, prioritizing clean and maintainable code.',
+      'about.p3': "I work in sprints with Jira, taking projects from requirements through implementation and delivery. My experience with clients helps me explain technical decisions clearly.",
       'about.lang.es':              'Spanish',
       'about.lang.en':              'English',
       'about.card.age.label':       "Availability",
@@ -187,13 +194,20 @@
     },
 
     es: {
+      "exp.skeepers.date": "Jul. 2026 (aprox.)",
+      "exp.skeepers.role": "Desarrollador Full Stack Freelance",
+      "exp.skeepers.desc": "Sitio público y panel privado con React, Node.js y PostgreSQL. Modelado de 18 tablas, 11 gráficas y 35 consultas SQL para analítica; resumen automático de eventos y reportes a Excel.",
+      "exp.skeepers.link": "Ver el proyecto y su implementación ↗",
+
       'hero.role.main': "Desarrollador Full Stack",
       'hero.badge': "React · Node.js · PostgreSQL",
       'nav.data': 'Datos',
+      'nav.experience': 'Experiencia',
+      'data.expand': 'Explorar el trabajo técnico con datos',
       'stack.cat.data': 'Datos &amp; Análisis',
       'int.data.title': 'Análisis de Datos',
       'int.data.desc': 'SQL, dashboards, KPIs y decisiones basadas en datos',
-      'data.eyebrow': 'Analista de Datos',
+      'data.eyebrow': "Backend en producción",
       'data.title': 'Experiencia con datos',
       'data.lead': 'Evidencia real de un sistema en producción: el panel de administración de Los Skeepers, que diseñé y construí de principio a fin.',
       'data.stat.queries': 'consultas SQL con COUNT, AVG, GROUP BY y date_trunc',
@@ -244,14 +258,14 @@
       'hero.cta.portfolio': 'Ver portafolio',
       'hero.stat.clients':  'Clientes Freelance',
       'hero.stat.projects': 'Proyectos',
-      'hero.stat.impact':   'Personas Impactadas',
+      'hero.stat.impact':   'Tablas SQL · Los Skeepers',
 
       // About
       'about.eyebrow': 'Quién soy',
       'about.title':   'Sobre mí',
       'about.p1': "Estoy cerrando tercer año de <strong>Ingeniería en Ciencias de la Computación y TI en la UVG</strong>. Combino mi formación universitaria con proyectos de software entregados a clientes reales.",
       'about.p2': 'Mi enfoque es el desarrollo <strong>Full Stack</strong>: desde interfaces modernas hasta sistemas backend robustos, bases de datos relacionales y de grafos, contenedores Docker y programación de microcontroladores.',
-      'about.p3': 'Me interesa profundamente la <strong>ciberseguridad</strong>, la inteligencia artificial y la arquitectura de sistemas. Trabajo de forma estructurada en sprints con gestión Jira, priorizando código limpio y mantenible.',
+      'about.p3': "Trabajo por sprints con Jira, desde los requerimientos hasta la implementación y entrega. Mi experiencia con clientes me ayuda a explicar decisiones técnicas con claridad.",
       'about.lang.es':              'Español',
       'about.lang.en':              'Inglés',
       'about.card.age.label':       "Disponibilidad",
@@ -448,7 +462,7 @@
   }
 
   /* Init theme from localStorage (default light) */
-  var savedTheme = localStorage.getItem('theme') || 'light';
+  var savedTheme = localStorage.getItem('theme') || 'dark';
   applyTheme(savedTheme);
 
   if (themeBtn) {
