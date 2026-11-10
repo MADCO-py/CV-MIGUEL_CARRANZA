@@ -94,7 +94,7 @@ automáticamente con esa preferencia.
 
 Vista previa local: `python3 -m http.server 8765`, después abre
 `http://localhost:8765/`. El sitio sigue siendo estático y compatible con
-GitHub Pages, sin un paso de compilación.
+GitHub Pages. Los componentes JSX usan el build descrito al final de este archivo.
 
 ## Presentación para postulaciones
 
@@ -139,3 +139,33 @@ pasar el puntero o enfocar los controles de su tarjeta.
 
 Los textos, cursos seleccionados, evidencias y el PDF descargable mantienen
 su contenido profesional; el menú ofrece acceso directo a ellos.
+
+## Interfaz actual en React / JSX
+
+La ventana retro de la portada vive en `src/retro/RetroDesktop.jsx`; el globo
+SVG original está en `src/retro/PixelGlobe.jsx` y el sistema visual en
+`src/retro/retro-ui.css`. Usa React, React DOM e iconos Lucide. Las fuentes
+VT323 e IBM Plex Mono se sirven desde el propio repositorio mediante Fontsource.
+VT323 se reserva para títulos, menús y controles; el texto largo conserva IBM Plex Mono.
+
+```bash
+npm ci
+npm run build
+python3 -m http.server 8770
+```
+
+El build con esbuild genera `js/retro-ui.bundle.js`, su CSS y las fuentes
+en `js/retro-fonts/`, incluidas sus licencias. Estos archivos se versionan
+para conservar el despliegue estático actual de GitHub Pages. `node_modules/`
+se excluye. Al editar JSX o estilos, ejecuta de nuevo `npm run build` y
+recarga la página; `npm run dev` recompila al guardar.
+
+Controles: minimizar, restaurar, cerrar, volver a abrir y ampliar. La ventana
+ampliada mantiene el foco dentro del diálogo y se restaura con Escape. La
+consola admite comandos predefinidos (`help`, `whoami`, `stack`, `projects`,
+`education`, `experience`, `contact`, `cv`, `clear`) y teclado virtual. No
+ejecuta comandos del sistema ni evalúa código del usuario. El reloj muestra
+la hora real de Guatemala; pausa su intervalo cuando la pestaña está oculta.
+La navegación estática de respaldo conserva los enlaces si el bundle no carga.
+La consola obtiene la URL del PDF del botón de descarga de la página; así
+comparte siempre la misma versión.

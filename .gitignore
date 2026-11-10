@@ -5,3 +5,6 @@ tmp/
 .agents/
 .codex/
 .aws/
+# Local dependencies (compiled browser assets are checked in for GitHub Pages)
+node_modules/
+npm-debug.log*
