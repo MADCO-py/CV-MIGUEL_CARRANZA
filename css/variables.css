@@ -44,8 +44,8 @@
   --radius-pill:  2px;   /* botones y etiquetas: casi rectos */
 
   /* --- Tipografía --- */
-  --font-main:    'Inter', sans-serif;
-  --font-mono:    'JetBrains Mono', monospace;
+  --font-main:    'Ubuntu Mono', 'DejaVu Sans Mono', monospace;
+  --font-mono:    'Ubuntu Mono', 'DejaVu Sans Mono', monospace;
 
   /* --- Transiciones --- */
   --ease:         cubic-bezier(0.4, 0, 0.2, 1);

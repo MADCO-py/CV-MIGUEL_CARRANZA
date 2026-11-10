@@ -118,7 +118,7 @@
     draw();
   }
   function terminalDemo() {
-    panel.innerHTML=copy(4, `<div class="terminal-top">miguel@portfolio:~</div><div class="terminal-output" role="log" aria-live="polite"></div><form class="terminal-line"><span aria-hidden="true">❯</span><input aria-label="${L('Comando de terminal','Terminal command')}" autocomplete="off" autocapitalize="none" spellcheck="false" placeholder="help" maxlength="80"></form><div class="terminal-commands">${['help','about','stack','projects','cv'].map(c=>`<button type="button" data-command="${c}">${c}</button>`).join('')}</div>`);
+    panel.innerHTML=copy(4, `<div class="terminal-top">miguel@ubuntu:~</div><div class="terminal-output" role="log" aria-live="polite"></div><form class="terminal-line"><span aria-hidden="true">❯</span><input aria-label="${L('Comando de terminal','Terminal command')}" autocomplete="off" autocapitalize="none" spellcheck="false" placeholder="help" maxlength="80"></form><div class="terminal-commands">${['help','about','stack','projects','cv'].map(c=>`<button type="button" data-command="${c}">${c}</button>`).join('')}</div>`);
     const output=$('.terminal-output');
     function line(text, link) {
       const p=document.createElement('p'); p.textContent=text;
@@ -153,7 +153,7 @@
     function paint() {
       ctx.clearRect(0,0,width,height);
       const dark=document.documentElement.dataset.theme==='dark';
-      const color=dark?'183,229,155':'150,200,124';
+      const color=dark?'255,173,139':'238,134,91';
       for(const p of points) {
         if(!paused) {
           p.x+=p.vx;p.y+=p.vy;

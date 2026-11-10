@@ -107,3 +107,10 @@ Los enlaces de descarga usan el PDF limpio de `cv/Miguel_Carranza_CV.pdf`.
 Al reemplazar ese archivo, actualiza la clave `?v=` de los enlaces de `index.html`
 y del comando `cv` en `js/showcase.js` con los primeros 12 caracteres de su SHA-256.
 La vista previa también usa esa clave para evitar versiones anteriores en caché.
+
+### Variante Ubuntu
+
+Toda la web usa una sola familia: Ubuntu Mono (400 y 700), con respaldos
+monoespaciados. La paleta combina berenjena, naranja y el marco gris oscuro
+de la terminal de Ubuntu. Los iconos conservan su fuente para evitar perder
+sus símbolos. El PDF conserva su tipografía formal y su archivo original.
