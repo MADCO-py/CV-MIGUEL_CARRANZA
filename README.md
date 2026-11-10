@@ -126,3 +126,16 @@ certificados. Ingeniería de Software 2 se identifica como en curso.
 Los proyectos destacados resumen resultados y conservan los detalles técnicos
 en el control Cómo está hecho. Las interacciones funcionan por teclado y
 tacto; los efectos de movimiento respetan la preferencia del sistema.
+
+### Presentación actual: estación CRT
+
+`css/crt.css` define la presentación de fósforo verde y la fuente única IBM
+Plex Mono, sobre la estructura existente. `js/crt.js` controla el menú de la
+portada: flechas arriba/abajo, Inicio/Fin y Enter. La textura CRT es estática
+y opcional; su preferencia se guarda localmente como `mc-crt`. El directorio
+de proyectos respeta esa misma preferencia. No hay pantalla de arranque
+obligatoria ni animaciones de parpadeo. Las capturas recuperan su color al
+pasar el puntero o enfocar los controles de su tarjeta.
+
+Los textos, cursos seleccionados, evidencias y el PDF descargable mantienen
+su contenido profesional; el menú ofrece acceso directo a ellos.

@@ -118,7 +118,7 @@
     draw();
   }
   function terminalDemo() {
-    panel.innerHTML=copy(4, `<div class="terminal-top">miguel@ubuntu:~</div><div class="terminal-output" role="log" aria-live="polite"></div><form class="terminal-line"><span aria-hidden="true">❯</span><input aria-label="${L('Comando de terminal','Terminal command')}" autocomplete="off" autocapitalize="none" spellcheck="false" placeholder="help" maxlength="80"></form><div class="terminal-commands">${['help','about','stack','projects','cv'].map(c=>`<button type="button" data-command="${c}">${c}</button>`).join('')}</div>`);
+    panel.innerHTML=copy(4, `<div class="terminal-top">miguel@workstation:~</div><div class="terminal-output" role="log" aria-live="polite"></div><form class="terminal-line"><span aria-hidden="true">❯</span><input aria-label="${L('Comando de terminal','Terminal command')}" autocomplete="off" autocapitalize="none" spellcheck="false" placeholder="help" maxlength="80"></form><div class="terminal-commands">${['help','about','stack','projects','cv'].map(c=>`<button type="button" data-command="${c}">${c}</button>`).join('')}</div>`);
     const output=$('.terminal-output');
     function line(text, link) {
       const p=document.createElement('p'); p.textContent=text;
@@ -153,7 +153,7 @@
     function paint() {
       ctx.clearRect(0,0,width,height);
       const dark=document.documentElement.dataset.theme==='dark';
-      const color=dark?'255,173,139':'238,134,91';
+      const color=dark?'177,232,116':'144,204,109';
       for(const p of points) {
         if(!paused) {
           p.x+=p.vx;p.y+=p.vy;
@@ -202,6 +202,7 @@
     e.preventDefault();active=e.key==='Home'?0:e.key==='End'?5:(active+(e.key==='ArrowRight'?1:5))%6;render();document.getElementById(`demoTab${active}`).focus({preventScroll:true});
   };
   function updateLayer(){
+    if (!document.getElementById('buildExplanation')) return;
     const explanations=[
       ['La interfaz: componentes, estados y una experiencia que funciona en cualquier pantalla.','The interface: components, states and an experience that works on every screen.'],
       ['La lógica: reglas de negocio, APIs y procesos que conectan el producto.','The logic: business rules, APIs and processes that connect a product.'],

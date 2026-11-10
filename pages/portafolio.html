@@ -10,17 +10,18 @@
   <script>(function(){var t=localStorage.getItem('theme')||'dark',l=localStorage.getItem('lang')||'es';document.documentElement.setAttribute('data-theme',t);document.documentElement.setAttribute('data-lang',l);document.documentElement.lang=l})()</script>
 
   <!-- Fuentes -->
-  <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <!-- Iconos Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   <!-- Estilos propios (los paths suben un nivel con ../ porque estamos en pages/) -->
-  <link rel="stylesheet" href="../css/variables.css?v=bento-20261110-r2">
-  <link rel="stylesheet" href="../css/components.css?v=bento-20261110-r2">
-  <link rel="stylesheet" href="../css/portfolio.css?v=bento-20261110-r2">
-  <link rel="stylesheet" href="../css/linux.css?v=bento-20261110-r2">
-  <link rel="stylesheet" href="../css/experience.css?v=bento-20261110-r2">
+  <link rel="stylesheet" href="../css/variables.css?v=crt-20261110-r2">
+  <link rel="stylesheet" href="../css/components.css?v=crt-20261110-r2">
+  <link rel="stylesheet" href="../css/portfolio.css?v=crt-20261110-r2">
+  <link rel="stylesheet" href="../css/linux.css?v=crt-20261110-r2">
+  <link rel="stylesheet" href="../css/experience.css?v=crt-20261110-r2">
+  <link rel="stylesheet" href="../css/crt.css?v=crt-20261110-r2">
 </head>
 <body>
 
@@ -166,12 +167,12 @@
        observer.js necesita saber que está en pages/ para re-observar
        las cards que portfolio.js inserta dinámicamente.
   ================================================================ -->
-  <script src="../js/cursor.js?v=bento-20261110-r2"></script>
-  <script src="../js/controls.js?v=bento-20261110-r2"></script>
+  <script src="../js/cursor.js?v=crt-20261110-r2"></script>
+  <script src="../js/controls.js?v=crt-20261110-r2"></script>
 
   <!-- projects-data.js tiene los proyectos; portfolio.js los pinta -->
-  <script src="../js/projects-data.js?v=bento-20261110-r2"></script>
-  <script src="../js/portfolio.js?v=bento-20261110-r2"></script>
+  <script src="../js/projects-data.js?v=crt-20261110-r2"></script>
+  <script src="../js/portfolio.js?v=crt-20261110-r2"></script>
 
   <script>
     /* ── Observer adaptado para cards dinámicas ──
@@ -221,5 +222,6 @@
     })();
   </script>
 
+  <script src="../js/crt.js?v=crt-20261110-r2"></script>
 </body>
 </html>

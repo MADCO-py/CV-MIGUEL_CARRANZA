@@ -11,19 +11,20 @@
   <script>(function(){var t=localStorage.getItem('theme')||'dark',l=localStorage.getItem('lang')||'es';document.documentElement.setAttribute('data-theme',t);document.documentElement.setAttribute('data-lang',l);document.documentElement.lang=l})()</script>
 
   <!-- Fuentes -->
-  <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <!-- Iconos Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   <!-- Estilos propios (orden importante) -->
-  <link rel="stylesheet" href="css/variables.css?v=bento-20261110-r2">
-  <link rel="stylesheet" href="css/components.css?v=bento-20261110-r2">
-  <link rel="stylesheet" href="css/index.css?v=bento-20261110-r2">
-  <link rel="stylesheet" href="css/cv-extra.css?v=bento-20261110-r2">
-  <link rel="stylesheet" href="css/showcase.css?v=bento-20261110-r2">
-  <link rel="stylesheet" href="css/linux.css?v=bento-20261110-r2">
-  <link rel="stylesheet" href="css/experience.css?v=bento-20261110-r2">
+  <link rel="stylesheet" href="css/variables.css?v=crt-20261110-r2">
+  <link rel="stylesheet" href="css/components.css?v=crt-20261110-r2">
+  <link rel="stylesheet" href="css/index.css?v=crt-20261110-r2">
+  <link rel="stylesheet" href="css/cv-extra.css?v=crt-20261110-r2">
+  <link rel="stylesheet" href="css/showcase.css?v=crt-20261110-r2">
+  <link rel="stylesheet" href="css/linux.css?v=crt-20261110-r2">
+  <link rel="stylesheet" href="css/experience.css?v=crt-20261110-r2">
+  <link rel="stylesheet" href="css/crt.css?v=crt-20261110-r2">
 </head>
 <body>
   <a class="skip-link" href="#hero">Saltar al contenido</a>
@@ -74,7 +75,7 @@
   ================================================================ -->
   <section class="hero" id="hero">
     <div class="hero-content">
-      <div class="hero-index mono-label">miguel@ubuntu:~$ whoami <span>GUATEMALA / 2026</span></div>
+      <div class="hero-index mono-label">miguel@workstation:~$ whoami <span>GUATEMALA / 2026</span></div>
       <div class="hero-eyebrow">
         <div class="hero-dot"></div>
         <span data-i18n="hero.eyebrow">Available · Guatemala</span>
@@ -123,23 +124,25 @@
       </div>
     </div>
 
-    <div class="hero-visual build-visual">
-      <div class="build-orbit" aria-hidden="true"><span>IDEA</span><span>BUILD</span><span>SHIP</span></div>
-      <div class="build-window" id="buildWindow">
-        <div class="window-bar"><span class="window-dots" aria-hidden="true"><i></i><i></i><i></i></span><span>miguel@ubuntu: ~/portfolio/stack</span><span class="window-live">● LOCAL</span></div>
-        <div class="build-caption"><span class="mono-label" data-demo-text="buildLabel">DE LA IDEA AL PRODUCTO</span><span class="build-counter">01 — 03</span></div>
-        <div class="architecture" aria-label="Arquitectura de una aplicación">
-          <button class="arch-layer arch-layer--ui is-active" data-layer="0"><span>01</span><strong>INTERFACE</strong><small>React · TypeScript</small><i>↗</i></button>
-          <button class="arch-layer arch-layer--api" data-layer="1"><span>02</span><strong>LOGIC</strong><small>Node.js · Express</small><i>↗</i></button>
-          <button class="arch-layer arch-layer--data" data-layer="2"><span>03</span><strong>DATA</strong><small>PostgreSQL · SQL</small><i>↗</i></button>
-        </div>
-        <p class="build-explanation" id="buildExplanation" aria-live="polite"></p>
-        <div class="build-person"><img src="cv/foto.jpg" alt="Miguel Carranza" width="44" height="44"><div><strong>Miguel Carranza</strong><span data-demo-text="buildPerson">Desarrollo de principio a fin.</span></div><a href="#lab" aria-label="Explorar el laboratorio">↗</a></div>
+    <aside class="retro-workstation" aria-labelledby="workstationTitle">
+      <div class="monitor-bar"><span class="monitor-led" aria-hidden="true"></span><span>MC / PERSONAL COMPUTER</span><button type="button" id="crtToggle" aria-pressed="true">CRT: ON</button></div>
+      <div class="monitor-screen">
+        <div class="monitor-heading"><span id="workstationTitle">PORTFOLIO.EXE</span><span>2026 / GT</span></div>
+        <div class="terminal-profile"><div class="retro-portrait"><img src="cv/foto.jpg" alt="Miguel Carranza" width="90" height="105"><span aria-hidden="true"></span></div><div><span class="terminal-prompt">&gt; whoami</span><strong>Miguel Carranza</strong><p data-retro="profile">Full Stack Junior / UVG</p><span class="terminal-ready" data-retro="ready">DISPONIBLE · MAÑANAS</span></div></div>
+        <div class="terminal-divider" aria-hidden="true">────────── MENU ──────────</div>
+        <nav class="terminal-menu" aria-label="Menú de terminal" id="terminalMenu">
+          <a href="#featured"><span>01</span><strong data-retro="projects">EXPLORAR PROYECTOS</strong><span aria-hidden="true">↵</span></a>
+          <a href="#experience"><span>02</span><strong data-retro="experience">VER EXPERIENCIA</strong><span aria-hidden="true">↵</span></a>
+          <a href="#education"><span>03</span><strong data-retro="education">FORMACIÓN Y CURSOS</strong><span aria-hidden="true">↵</span></a>
+          <a href="#lab"><span>04</span><strong data-retro="lab">ABRIR LABORATORIO</strong><span aria-hidden="true">↵</span></a>
+          <a href="cv/Miguel_Carranza_CV.pdf?v=a45138de0c13" download="Miguel_Carranza_CV.pdf"><span>05</span><strong data-retro="cv">DESCARGAR CV.PDF</strong><span aria-hidden="true">↓</span></a>
+          <a href="#contact"><span>06</span><strong data-retro="contact">INICIAR CONTACTO</strong><span aria-hidden="true">↵</span></a>
+        </nav>
+        <div class="terminal-help" data-retro="keys">↑ ↓ ELEGIR · ENTER ABRIR · TAB NAVEGAR</div>
+        <div class="monitor-bottom"><svg viewBox="0 0 64 40" aria-hidden="true"><ellipse cx="32" cy="20" rx="29" ry="17"/><ellipse cx="32" cy="20" rx="14" ry="17"/><path d="M3 20h58M8 11h48M8 29h48M32 3v34"/></svg><span>GUATEMALA<br><span data-retro="mode">REMOTO / HÍBRIDO / PRESENCIAL</span></span><span class="retro-barcode" aria-hidden="true"></span></div>
       </div>
-      <div class="bento-mini bento-craft"><span class="clay-code" aria-hidden="true">&lt;/&gt;</span><div><span class="bento-kicker">BUILD / SHIP</span><strong data-experience="craft">De la interfaz al despliegue.</strong></div><a href="#featured" aria-label="Ver proyectos entregados">↗</a></div>
-      <a class="bento-mini bento-hours" href="#contact"><span class="bento-clock" aria-hidden="true">AM<span class="clock-hand"></span></span><div><span class="bento-kicker" data-experience="availability">DISPONIBILIDAD</span><strong data-experience="morning">Medio tiempo · Mañanas</strong><small data-experience="modes">Remoto · Híbrido · Presencial</small></div><span aria-hidden="true">↗</span></a>
-      <span class="build-note" data-demo-text="buildNote">Interactúa con las capas. Esto también es código.</span>
-    </div>
+      <div class="monitor-base"><span>MC-2026</span><span data-retro="system">SISTEMA LISTO</span><span aria-hidden="true">●</span></div>
+    </aside>
   </section>
 
   <section id="featured" style="background: var(--gray1);">
@@ -665,13 +668,14 @@
   <!-- ================================================================
        SCRIPTS (al final para no bloquear el render)
   ================================================================ -->
-  <script src="js/cursor.js?v=bento-20261110-r2"></script>
-  <script src="js/observer.js?v=bento-20261110-r2"></script>
-  <script src="js/controls.js?v=bento-20261110-r2"></script>
-  <script src="js/projects-data.js?v=bento-20261110-r2"></script>
-  <script src="js/cv-sections.js?v=bento-20261110-r2"></script>
-  <script src="js/showcase.js?v=bento-20261110-r2"></script>
-  <script src="js/experience.js?v=bento-20261110-r2"></script>
+  <script src="js/cursor.js?v=crt-20261110-r2"></script>
+  <script src="js/observer.js?v=crt-20261110-r2"></script>
+  <script src="js/controls.js?v=crt-20261110-r2"></script>
+  <script src="js/projects-data.js?v=crt-20261110-r2"></script>
+  <script src="js/cv-sections.js?v=crt-20261110-r2"></script>
+  <script src="js/showcase.js?v=crt-20261110-r2"></script>
+  <script src="js/experience.js?v=crt-20261110-r2"></script>
+  <script src="js/crt.js?v=crt-20261110-r2"></script>
 
 </body>
 </html>
