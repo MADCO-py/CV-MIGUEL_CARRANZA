@@ -47,11 +47,11 @@
       'nav.featured':        'Projects',
       'hero.cta.pdf':        'PDF résumé',
       'stack.cat.cloud':     'Cloud &amp; Deploy',
-      'stack.lead':          'Each technology is backed by real projects. Pick one to see the evidence.',
+      'stack.lead':          'My core web stack. Select a technology to explore the projects where I used it.',
       'stack.explorer.hint': 'Tap a technology to see where I used it',
       'featured.eyebrow':    'Delivered to clients',
       'featured.title':      'Featured Projects',
-      'featured.lead': "Three projects delivered to clients. Explore the result and the implementation.",
+      'featured.lead': 'Selected client work. The problem, my contribution and what I delivered.',
       'featured.more':       'See all projects',
       'download.eyebrow':    'Résumé',
       'download.title':      'Download my CV',
@@ -80,7 +80,7 @@
 
       // About
       'about.eyebrow': 'Who I am',
-      'about.title':   'About Me',
+      'about.title':   'Profile',
       'about.p1': "I am completing my third year of <strong>Computer Science and IT Engineering at UVG</strong>. I combine university training with software projects delivered to real clients.",
       'about.p2': 'My focus is <strong>Full Stack</strong> development: from modern interfaces to robust backend systems, relational and graph databases, Docker containers and microcontroller programming.',
       'about.p3': "I work in sprints with Jira, taking projects from requirements through implementation and delivery. My experience with clients helps me explain technical decisions clearly.",
@@ -130,7 +130,7 @@
 
       // Experience
       'exp.eyebrow':      'Background',
-      'exp.title':        'Professional Experience',
+      'exp.title':        'Experience',
       'exp.museo.date':   'Apr 2025 – Oct 2025',
       'exp.museo.role':   'Educational Guide',
       'exp.museo.desc':   'Attention to children and parents, effective communication, creation of digital educational content and dynamic activities. Development of presentation and pedagogy skills.',
@@ -142,7 +142,7 @@
       'exp.bershka.desc': 'Customer service, cashier support during high traffic, basic inventory control and store organization.',
       'exp.bershka.tag1': 'Customer Service',
       'exp.bershka.tag2': 'Inventory',
-      'exp.fleet.date':   'Apr 1–15, 2026 · 30h',
+      'exp.fleet.date':   'Apr 1–15, 2026 · 30 h',
       'exp.fleet.role':   'Freelance Software Developer',
       'exp.fleet.desc':   'Developed and delivered a full web system for truck fleet management. The system solves the problem of identifying which driver received a traffic fine on a given day. Drivers log in via username/password and access records through a QR-linked web interface. Includes photo evidence and maintenance history per vehicle.',
       'exp.fleet.sold':   'Sold · Delivered',
@@ -196,7 +196,7 @@
     es: {
       "exp.skeepers.date": "Jul. 2026 (aprox.)",
       "exp.skeepers.role": "Desarrollador Full Stack Freelance",
-      "exp.skeepers.desc": "Sitio público y panel privado con React, Node.js y PostgreSQL. Modelado de 18 tablas, 11 gráficas y 35 consultas SQL para analítica; resumen automático de eventos y reportes a Excel.",
+      "exp.skeepers.desc": "Desarrollo freelance del sitio público y panel de administración. Implementación de contenido editable, analítica y reportes con React, Node.js y PostgreSQL.",
       "exp.skeepers.link": "Ver el proyecto y su implementación ↗",
 
       'hero.role.main': "Desarrollador Full Stack",
@@ -229,11 +229,11 @@
       'nav.featured':        'Proyectos',
       'hero.cta.pdf':        'CV en PDF',
       'stack.cat.cloud':     'Nube &amp; Despliegue',
-      'stack.lead':          'Cada tecnología está respaldada por proyectos reales. Elige una para ver la evidencia.',
+      'stack.lead':          'Mi stack principal para desarrollo web. Selecciona una tecnología para explorar dónde la he usado.',
       'stack.explorer.hint': 'Toca una tecnología para ver dónde la usé',
       'featured.eyebrow':    'Entregados a clientes',
       'featured.title':      'Proyectos destacados',
-      'featured.lead': "Tres proyectos entregados a clientes. Explora el resultado y su implementación.",
+      'featured.lead': 'Trabajo para clientes. El problema, mi aporte y lo que entregué.',
       'featured.more':       'Ver todos los proyectos',
       'download.eyebrow':    'Currículum',
       'download.title':      'Descarga mi CV',
@@ -243,7 +243,7 @@
       'download.btn':        'Descargar PDF',
       'download.view':       'Ver en el navegador',
       // Nav
-      'nav.about':      'Sobre mí',
+      'nav.about':      'Perfil',
       'nav.stack':      'Stack',
       'nav.education':  'Formación',
       'nav.portfolio':  'Portafolio',
@@ -262,7 +262,7 @@
 
       // About
       'about.eyebrow': 'Quién soy',
-      'about.title':   'Sobre mí',
+      'about.title':   'Perfil',
       'about.p1': "Estoy cerrando tercer año de <strong>Ingeniería en Ciencias de la Computación y TI en la UVG</strong>. Combino mi formación universitaria con proyectos de software entregados a clientes reales.",
       'about.p2': 'Mi enfoque es el desarrollo <strong>Full Stack</strong>: desde interfaces modernas hasta sistemas backend robustos, bases de datos relacionales y de grafos, contenedores Docker y programación de microcontroladores.',
       'about.p3': "Trabajo por sprints con Jira, desde los requerimientos hasta la implementación y entrega. Mi experiencia con clientes me ayuda a explicar decisiones técnicas con claridad.",
@@ -312,7 +312,7 @@
 
       // Experience
       'exp.eyebrow':      'Trayectoria',
-      'exp.title':        'Experiencia Profesional',
+      'exp.title':        'Experiencia',
       'exp.museo.date':   'Abr 2025 – Oct 2025',
       'exp.museo.role':   'Guía Educativo',
       'exp.museo.desc':   'Atención a niños y padres, comunicación efectiva, creación de contenido educativo digital y actividades dinámicas. Desarrollo de habilidades de presentación y pedagogía.',
@@ -324,7 +324,7 @@
       'exp.bershka.desc': 'Atención al cliente, apoyo en caja durante alta afluencia, control básico de inventario y organización de tienda.',
       'exp.bershka.tag1': 'Atención al cliente',
       'exp.bershka.tag2': 'Inventario',
-      'exp.fleet.date':   '1–15 abr 2026 · 30h',
+      'exp.fleet.date':   '1–15 abr 2026 · 30 h',
       'exp.fleet.role':   'Desarrollador de Software Freelance',
       'exp.fleet.desc':   'Desarrollo y entrega de un sistema web completo para el control de flota de camiones. El sistema resuelve el problema de identificar qué piloto fue multado en determinado día. Los pilotos acceden mediante usuario y contraseña, con registro vinculado por QR. Incluye evidencia fotográfica e historial de mantenimiento por vehículo.',
       'exp.fleet.sold':   'Vendido · Entregado',

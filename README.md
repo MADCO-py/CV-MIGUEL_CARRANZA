@@ -169,3 +169,19 @@ la hora real de Guatemala; pausa su intervalo cuando la pestaña está oculta.
 La navegación estática de respaldo conserva los enlaces si el bundle no carga.
 La consola obtiene la URL del PDF del botón de descarga de la página; así
 comparte siempre la misma versión.
+
+### Presentación para candidaturas
+
+`src/retro/recruiting.css` (incluido en el build) ajusta la jerarquía y la
+legibilidad del CV; está limitado a `.cv-page`. El directorio de proyectos
+conserva su diseño. La portada prioriza rol, stack y disponibilidad; las
+capturas de los proyectos se muestran en color y cada caso diferencia reto,
+aporte y entrega. Los detalles de datos, otras herramientas y la experiencia
+adicional se pueden desplegar sin perder información.
+
+`js/recruiting.js` contiene los textos nuevos en español e inglés y el modo
+lectura, guardado como `cv-reading`. Este modo cambia la tipografía de los
+títulos y oculta la ventana decorativa de la portada, conservando los proyectos,
+formación, contacto y PDF. El apartado de IA describe únicamente el uso declarado
+de Codex y Claude para lógica de programación y la revisión detallada del autor.
+El panel móvil del stack es un diálogo con control de foco y cierre con Escape.

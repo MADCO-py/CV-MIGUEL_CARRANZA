@@ -25,13 +25,25 @@
     return out.join('');
   }
 
-  function featuredSummary(p) {
-    const summaries = {
-      'los-skeepers': ['Sitio oficial y panel de administración: contenido, juegos y analítica en una misma plataforma.', 'Official website and admin panel: content, games and analytics in a single platform.'],
-      'fleetcontrol': ['Un sistema para identificar al piloto de cada camión, registrar evidencia y consultar el mantenimiento.', 'A system to identify each truck’s driver, record evidence and track maintenance.'],
-      'sunset-sessions': ['Una experiencia digital para descubrir artistas y solicitar entradas a un evento de música, arte y café.', 'A digital experience to discover artists and request tickets for a music, art and coffee event.']
+  function caseHTML(p) {
+    const cases = {
+      'los-skeepers': [
+        [L('Reto','Challenge'), L('Reunir la presencia digital de una banda y la gestión de contenido.','Bring together a band’s digital presence and content management.')],
+        [L('Mi aporte','My contribution'), L('Desarrollo full stack del sitio público y panel privado con React, Node.js y PostgreSQL.','Full stack development of the public website and private dashboard with React, Node.js and PostgreSQL.')],
+        [L('Entrega','Delivery'), L('Plataforma publicada, analítica de eventos y reportes exportables a Excel.','Published platform, event analytics and exportable Excel reports.')]
+      ],
+      'fleetcontrol': [
+        [L('Reto','Challenge'), L('Identificar qué piloto tenía cada camión en una fecha concreta.','Identify which driver had each truck on a given date.')],
+        [L('Mi aporte','My contribution'), L('Desarrollo del sistema web con acceso por usuario, registro QR y evidencia fotográfica.','Web system development with user access, QR-linked records and photo evidence.')],
+        [L('Entrega','Delivery'), L('Sistema entregado a Llantas Ávila con historial de mantenimiento por vehículo.','System delivered to Llantas Ávila with maintenance history per vehicle.')]
+      ],
+      'sunset-sessions': [
+        [L('Reto','Challenge'), L('Presentar un evento de música, arte y café y facilitar las solicitudes de entradas.','Present a music, art and coffee event and make ticket requests easier.')],
+        [L('Mi aporte','My contribution'), L('Interfaz en React para artistas, información del evento y solicitudes por WhatsApp.','React interface for artists, event information and WhatsApp requests.')],
+        [L('Entrega','Delivery'), L('Sitio publicado en GitHub Pages, accesible desde celular y computadora.','Website published on GitHub Pages, accessible on phones and desktops.')]
+      ]
     };
-    return summaries[p.id] ? L(...summaries[p.id]) : SITE.t(p.desc);
+    return `<dl class="case-summary">${(cases[p.id]||[]).map(([label,text])=>`<div><dt>${SITE.esc(label)}</dt><dd>${SITE.esc(text)}</dd></div>`).join('')}</dl>`;
   }
   function featuredProof(p) {
     const proof = {
@@ -49,16 +61,16 @@
       <article class="featured-card reveal" data-card id="f-${p.id}">
         <div class="featured-media">
           ${mediaHTML(p, 'featured-img')}
-          <span class="featured-badge"><i class="fa-solid fa-circle-check"></i> ${L('Vendido', 'Sold')}</span>
+          <span class="featured-badge"><i class="fa-solid fa-circle-check"></i> ${L('Entregado a cliente', 'Delivered to client')}</span>
         </div>
         <div class="featured-body">
           <div class="featured-num">0${i + 1}</div>
           <h3 class="featured-name">${SITE.esc(p.name)}</h3>
           <div class="featured-client"><i class="fa-solid fa-building"></i> ${SITE.esc(SITE.t(p.client))}</div>
-          <p class="featured-desc">${SITE.esc(featuredSummary(p))}</p>
+          ${caseHTML(p)}
           ${featuredProof(p)}
           <div class="featured-tech">${featuredTech(p).map(t => `<span>${SITE.esc(t)}</span>`).join('')}</div>
-          <button type="button" class="featured-build-title" aria-expanded="false">${L('Cómo está hecho', 'How it is built')}</button>
+          <button type="button" class="featured-build-title" aria-expanded="false" aria-label="${SITE.esc(L('Ver implementación de ','View implementation of ')+p.name)}">${L('Ver implementación', 'View implementation')}</button>
           ${buildHTML(p)}
           <div class="featured-links">${linksHTML(p)}</div>
         </div>
@@ -81,14 +93,14 @@
   // Cada tecnología muestra cuántos proyectos la usan
   pills.forEach(btn => {
     const n = usedIn(btn.dataset.skill).length;
-    btn.insertAdjacentHTML('beforeend', `<span class="skill-count${n ? '' : ' is-zero'}">${n}</span>`);
+    if (n) btn.insertAdjacentHTML('beforeend', `<span class="skill-count">${n}</span>`);
     btn.setAttribute('aria-pressed', 'false');
   });
 
   function renderPanel() {
     if (!current || !panelBody) return;
     const btn = pills.find(b => b.dataset.skill === current);
-    const icon = btn ? btn.querySelector('i').className : 'fa-solid fa-code';
+    const icon = btn?.querySelector('i')?.className || 'fa-solid fa-code';
     const list = usedIn(current);
     const count = list.length === 1 ? L('1 proyecto', '1 project') : L(`${list.length} proyectos`, `${list.length} projects`);
     panelBody.innerHTML = `
@@ -126,10 +138,19 @@
 
   function openSheet() {
     panel.classList.add('open');
+    panel.setAttribute('role', 'dialog');
+    panel.setAttribute('aria-modal', 'true');
+    panel.setAttribute('aria-label', L('Proyectos con ', 'Projects using ') + current);
+    closeBtn?.focus({ preventScroll: true });
     document.documentElement.classList.add('sheet-open');
   }
   function closeSheet() {
+    const wasOpen = panel.classList.contains('open');
     panel.classList.remove('open');
+    panel.removeAttribute('role');
+    panel.removeAttribute('aria-modal');
+    panel.removeAttribute('aria-label');
+    if (wasOpen) pills.find(b => b.dataset.skill === current)?.focus({ preventScroll: true });
     document.documentElement.classList.remove('sheet-open');
   }
 
@@ -138,12 +159,21 @@
   document.addEventListener('click', e => {
     if (panel && panel.classList.contains('open') && !panel.contains(e.target)) closeSheet();
   });
-  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeSheet(); });
+  document.addEventListener('keydown', e => {
+    if (!panel?.classList.contains('open')) return;
+    if (e.key === 'Escape') { e.preventDefault(); closeSheet(); }
+    if (e.key === 'Tab') {
+      const nodes=[...panel.querySelectorAll('button, a[href]')].filter(el=>el.getClientRects().length);
+      const first=nodes[0], last=nodes[nodes.length-1];
+      if(e.shiftKey && document.activeElement===first){e.preventDefault();last?.focus();}
+      else if(!e.shiftKey && document.activeElement===last){e.preventDefault();first?.focus();}
+    }
+  });
   window.addEventListener('resize', () => { if (!isSheet()) closeSheet(); }, { passive: true });
 
   // En compu arranca mostrando la tecnología más usada
   if (pills.length) {
-    const top = pills.slice().sort((a, b) => usedIn(b.dataset.skill).length - usedIn(a.dataset.skill).length)[0];
+    const top = pills.find(b => b.dataset.skill === 'React') || pills[0];
     select(top.dataset.skill, false);
   }
 

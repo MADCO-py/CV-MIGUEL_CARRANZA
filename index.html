@@ -24,10 +24,10 @@
   <link rel="stylesheet" href="css/linux.css?v=crt-20261110-r2">
   <link rel="stylesheet" href="css/experience.css?v=crt-20261110-r2">
   <link rel="stylesheet" href="css/crt.css?v=crt-20261110-r2">
-  <link rel="stylesheet" href="js/retro-ui.bundle.css?v=jsx-20261110-r2">
+  <link rel="stylesheet" href="js/retro-ui.bundle.css?v=professional-20261110-r1">
 </head>
-<body>
-  <a class="skip-link" href="#hero">Saltar al contenido</a>
+<body class="cv-page">
+  <a class="skip-link" href="#mainContent">Saltar al contenido</a>
   <div class="reading-progress" aria-hidden="true"></div>
 
   <!-- ── CURSOR PERSONALIZADO ── -->
@@ -37,16 +37,15 @@
   <!-- ================================================================
        NAV FLOTANTE
   ================================================================ -->
-  <nav class="nav" id="mainNav">
+  <nav class="nav" id="mainNav" aria-label="Navegación principal">
     <a class="nav-logo" href="index.html">Miguel Carranza</a>
     <div class="nav-links" id="mainNavLinks">
       <a href="#featured" data-i18n="nav.featured">Proyectos</a>
-      <a href="#about" data-i18n="nav.about">Perfil</a>
       <a href="#experience" data-i18n="nav.experience">Experiencia</a>
+      <a href="#stack" data-i18n="nav.stack">Stack</a>
       <a href="#education" data-i18n="nav.education">Formación</a>
-      <a href="#lab" data-demo-text="nav">Laboratorio</a>
-      <a href="#download" data-i18n="hero.cta.pdf">CV en PDF</a>
       <a href="#contact" data-i18n="nav.contact">Contacto</a>
+      <a href="#download" class="nav-cv" data-i18n="hero.cta.pdf">CV en PDF</a>
     </div>
 
     <!-- Language + Theme controls -->
@@ -73,55 +72,21 @@
   <!-- ================================================================
        HERO — Presentación principal
   ================================================================ -->
+  <main id="mainContent">
   <section class="hero" id="hero">
     <div class="hero-content">
-      <div class="hero-index mono-label">miguel@workstation:~$ whoami <span>GUATEMALA / 2026</span></div>
-      <div class="hero-eyebrow">
-        <div class="hero-dot"></div>
-        <span data-i18n="hero.eyebrow">Available · Guatemala</span>
-      </div>
-
-      <h1>
-        Miguel
-        <span class="name-accent">Carranza</span>
-      </h1>
-
-      <p class="hero-manifesto" data-demo-text="manifesto">De una idea a algo que funciona.</p>
-      <p class="hero-role">
-        <strong data-i18n="hero.role.main">Desarrollador Full Stack</strong> · <span data-i18n="hero.role.suffix">Junior · Estudiante de Computación</span>
-      </p>
-
-      <p class="hero-desc" data-i18n="hero.desc">
-        Desarrollo aplicaciones web con React, Node.js y PostgreSQL, desde la interfaz hasta el despliegue. Proyectos entregados a clientes reales.
-      </p>
-
+      <div class="hero-index mono-label"><span>MC / SOFTWARE DEVELOPER</span><span>GUATEMALA</span></div>
+      <div class="hero-eyebrow"><div class="hero-dot"></div><span data-i18n="hero.eyebrow">Disponible · Medio tiempo · Mañanas</span></div>
+      <h1>Miguel Carranza<span class="identity-cursor" aria-hidden="true">_</span></h1>
+      <p class="hero-role"><strong data-recruit="heroRole">Desarrollador<br>Full Stack <span>Junior.</span></strong></p>
+      <p class="hero-desc" data-recruit="heroDesc">Construyo aplicaciones web para clientes reales: interfaces con React, backend con Node.js y datos con PostgreSQL.</p>
+      <div class="hero-stack" aria-label="Stack principal"><span>React</span><span>Node.js</span><span>PostgreSQL</span><span>Docker</span></div>
       <div class="hero-actions">
-        <a href="https://wa.me/50239688410?text=Hola%20Miguel%2C%20vi%20tu%20CV%20y%20me%20gustar%C3%ADa%20platicar" class="btn btn-whatsapp" target="_blank" rel="noopener">
-          <i class="fa-brands fa-whatsapp"></i> <span data-i18n="hero.cta.whatsapp">WhatsApp</span>
-        </a>
-        <a href="#contact" class="btn btn-dark">
-          <i class="fa-solid fa-arrow-right"></i> <span data-i18n="hero.cta.contact">Contact</span>
-        </a>
-        <a href="#lab" class="btn btn-outline lab-cta"><span data-demo-text="tryLab">Pruébalo en vivo</span><span aria-hidden="true">↗</span></a>
-        <a href="cv/Miguel_Carranza_CV.pdf?v=a45138de0c13" class="btn btn-outline" download="Miguel_Carranza_CV.pdf">
-          <i class="fa-solid fa-file-arrow-down"></i> <span data-i18n="hero.cta.pdf">PDF résumé</span>
-        </a>
+        <a href="#featured" class="btn btn-dark"><span data-recruit="viewWork">Ver proyectos</span><span aria-hidden="true">↗</span></a>
+        <a href="cv/Miguel_Carranza_CV.pdf?v=a45138de0c13" class="btn btn-outline" download="Miguel_Carranza_CV.pdf"><i class="fa-solid fa-file-arrow-down" aria-hidden="true"></i><span data-i18n="hero.cta.pdf">CV en PDF</span></a>
       </div>
-
-      <div class="hero-stats">
-        <div class="stat">
-          <span class="stat-n">3</span>
-          <span class="stat-l" data-i18n="hero.stat.clients">Freelance Clients</span>
-        </div>
-        <div class="stat">
-          <span class="stat-n" data-count="projects">15</span>
-          <span class="stat-l" data-i18n="hero.stat.projects">Projects</span>
-        </div>
-        <div class="stat">
-          <span class="stat-n">18</span>
-          <span class="stat-l" data-i18n="hero.stat.impact">Tablas SQL · Los Skeepers</span>
-        </div>
-      </div>
+      <div class="hero-direct"><a href="mailto:madcarranzaosorio@gmail.com" data-recruit="interview">Hablemos de una oportunidad ↗</a><a href="https://github.com/MADCO-py" target="_blank" rel="noopener">GitHub ↗</a></div>
+      <div class="hero-fit"><span data-recruit="heroFit">UVG · Cierre de tercer año</span><span data-recruit="heroModes">Remoto · Híbrido · Presencial</span></div>
     </div>
 
     <aside id="retroDesktop" class="retro-workstation" aria-labelledby="workstationTitle">
@@ -145,6 +110,14 @@
     </aside>
   </section>
 
+  <div class="recruit-summary" aria-label="Resumen profesional">
+    <div><strong>03</strong><span data-recruit="summaryProjects">Proyectos entregados a clientes</span></div>
+    <div><strong>UVG</strong><span data-recruit="summaryEducation">Ingeniería en Computación y TI</span></div>
+    <div><strong data-recruit="summaryMorning">Mañanas</strong><span data-recruit="summaryTime">Disponibilidad de medio tiempo</span></div>
+    <div><strong data-recruit="summaryEnglish">Inglés</strong><span data-recruit="summaryLanguage">Conversacional · Español nativo</span></div>
+  </div>
+  <div class="reading-tools"><span data-recruit="readingHint">Conoce mi trabajo. Explora los detalles a tu ritmo.</span><button type="button" id="readingToggle" aria-pressed="false"><i class="fa-solid fa-align-left" aria-hidden="true"></i><span data-recruit="readingMode">Modo lectura</span></button></div>
+
   <section id="featured" style="background: var(--gray1);">
     <div class="section-eyebrow" data-i18n="featured.eyebrow">Delivered to clients</div>
     <h2 class="section-title" data-i18n="featured.title">Featured Projects</h2>
@@ -153,64 +126,51 @@
     <a href="pages/portafolio.html" class="btn btn-dark featured-more">
       <i class="fa-solid fa-layer-group"></i> <span data-i18n="featured.more">See all projects</span>
     </a>
-  </section>
+<details id="data" class="technical-dive"><summary data-recruit="technicalDive">Caso técnico · Analítica y datos en Los Skeepers</summary><div class="technical-dive-body">
+    <div class="section-eyebrow" data-i18n="data.eyebrow">Data Analyst</div>
+    <h2 class="section-title" data-i18n="data.title">Data Experience</h2>
+    <p class="section-lead" data-i18n="data.lead">Real evidence from a system in production: the Los Skeepers admin panel, which I designed and built end to end.</p>
 
-  <section id="about" style="background: var(--white);">
-    <div class="section-eyebrow" data-i18n="about.eyebrow">Who I am</div>
-    <h2 class="section-title" data-i18n="about.title">About Me</h2>
-
-    <div class="about-grid">
-      <!-- Texto + barras de idioma -->
-      <div class="about-text reveal">
-        <p data-i18n="about.p1">I am a <strong>Computer Science Engineering</strong> student at Universidad del Valle de Guatemala, currently in my third year. I specialize in creating clean, scalable and visually appealing solutions.</p>
-        <p data-i18n="about.p2">My focus is <strong>Full Stack</strong> development: from modern interfaces to robust backend systems, relational and graph databases, Docker containers and microcontroller programming.</p>
-        <p data-i18n="about.p3">I am deeply interested in <strong>cybersecurity</strong>, artificial intelligence and systems architecture. I work in a structured way using sprints and Jira management, prioritizing clean and maintainable code.</p>
-
-        <div class="lang-section">
-          <div class="lang-label-row">
-            <span class="lang-name" data-i18n="about.lang.es">Spanish</span>
-            <span class="lang-pct" data-demo-text="native">Nativo</span>
-          </div>
-
-
-          <div class="lang-label-row">
-            <span class="lang-name" data-i18n="about.lang.en">English</span>
-            <span class="lang-pct" data-demo-text="conversational">Conversacional</span>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- Cards de datos personales -->
-      <div class="reveal" style="transition-delay: 0.12s">
-        <div class="about-cards">
-          <div class="about-card">
-            <div class="card-label" data-i18n="about.card.age.label">Disponibilidad</div>
-            <div class="card-value" data-i18n="about.card.age.value">Medio tiempo · Mañanas</div>
-          </div>
-          <div class="about-card">
-            <div class="card-label" data-i18n="about.card.location.label">Ubicación</div>
-            <div class="card-value" data-i18n="about.card.location.value">Zona 10, Guatemala</div>
-          </div>
-          <div class="about-card">
-            <div class="card-label" data-i18n="about.card.university.label">University</div>
-            <div class="card-value" data-i18n="about.card.university.value">UVG — CS Eng.</div>
-          </div>
-          <div class="about-card about-card--transport">
-            <div class="card-label" data-i18n="about.card.transport.label">Transport</div>
-            <div class="card-value" data-i18n="about.card.transport.value">Own vehicle</div>
-          </div>
-          <div class="about-card">
-            <div class="card-label" data-i18n="about.card.billing.label">Modalidad</div>
-            <div class="card-value" data-i18n="about.card.billing.value">Híbrido · Presencial · Remoto</div>
-          </div>
-          <div class="about-card">
-            <div class="card-label" data-i18n="about.card.method.label">Methodology</div>
-            <div class="card-value" data-i18n="about.card.method.value">Agile · Jira</div>
-          </div>
-        </div>
-      </div>
+    <div class="data-stats reveal">
+      <div class="data-stat"><span class="data-stat-n">35</span><span class="data-stat-l" data-i18n="data.stat.queries">SQL queries with COUNT, AVG, GROUP BY and date_trunc</span></div>
+      <div class="data-stat"><span class="data-stat-n">18</span><span class="data-stat-l" data-i18n="data.stat.tables">tables modeled in PostgreSQL</span></div>
+      <div class="data-stat"><span class="data-stat-n">11</span><span class="data-stat-l" data-i18n="data.stat.charts">dashboard charts + a day × hour heatmap</span></div>
+      <div class="data-stat"><span class="data-stat-n">90</span><span class="data-stat-l" data-i18n="data.stat.days">days of raw events, rolled up into daily totals</span></div>
     </div>
+
+    <details class="data-details"><summary data-i18n="data.expand">Explorar el trabajo técnico con datos</summary><div class="data-grid">
+      <article class="data-card reveal">
+        <div class="data-card-icon"><i class="fa-solid fa-database"></i></div>
+        <h3 data-i18n="data.c1.title">Modeling &amp; SQL</h3>
+        <p data-i18n="data.c1.desc">Relational database design in PostgreSQL for three systems (Los Skeepers, FleetControl, SecureGate) and graph databases with Neo4J at university.</p>
+      </article>
+      <article class="data-card reveal" style="transition-delay: 0.06s">
+        <div class="data-card-icon"><i class="fa-solid fa-filter"></i></div>
+        <h3 data-i18n="data.c2.title">Collection &amp; processing</h3>
+        <p data-i18n="data.c2.desc">Anonymous event tracking (visits, clicks, time per section) and an automatic daily job that summarizes raw data and purges old detail — a small ETL pipeline.</p>
+      </article>
+      <article class="data-card reveal" style="transition-delay: 0.12s">
+        <div class="data-card-icon"><i class="fa-solid fa-chart-column"></i></div>
+        <h3 data-i18n="data.c3.title">Dashboards &amp; KPIs</h3>
+        <p data-i18n="data.c3.desc">Active visitors and visits per day, week and month, conversion funnels, most-clicked elements, device and browser breakdown, and location grouping by country, region and city.</p>
+      </article>
+      <article class="data-card reveal" style="transition-delay: 0.18s">
+        <div class="data-card-icon"><i class="fa-solid fa-file-excel"></i></div>
+        <h3 data-i18n="data.c4.title">Reports</h3>
+        <p data-i18n="data.c4.desc">Excel exports generated from the database so the client can analyze and share the data without technical knowledge.</p>
+      </article>
+      <article class="data-card reveal" style="transition-delay: 0.24s">
+        <div class="data-card-icon"><i class="fa-solid fa-user-shield"></i></div>
+        <h3 data-i18n="data.c5.title">Data ethics &amp; privacy</h3>
+        <p data-i18n="data.c5.desc">Anonymous IDs, IP never stored, approximate location only. Certified in Ethics in Research with Human Subjects (UVG).</p>
+      </article>
+      <article class="data-card reveal" style="transition-delay: 0.30s">
+        <div class="data-card-icon"><i class="fa-solid fa-people-group"></i></div>
+        <h3 data-i18n="data.c6.title">Communicating results</h3>
+        <p data-i18n="data.c6.desc">Experience explaining to non-technical people (clients, children and parents at the museum) and agile work with Jira.</p>
+      </article>
+    </div></details>
+  </div></details>
   </section>
 
   <section id="experience" style="background: var(--white);">
@@ -257,7 +217,7 @@
         </div>
       </div>
 
-      <div class="t-item">
+      <details class="previous-experience"><summary data-recruit="previousExperience">Experiencia adicional · Comunicación y atención al cliente</summary><div class="previous-experience-list">      <div class="t-item">
         <div class="t-dot"></div>
         <div class="t-card">
           <div class="t-header">
@@ -293,8 +253,36 @@
           </div>
         </div>
       </div>
-
+</div></details>
     </div>
+  </section>
+
+  <section id="stack" style="background: var(--gray1);">
+    <div class="stack-layout">
+
+      <!-- ── Columna izquierda: pills del stack ── -->
+      <div class="stack-left">
+        <div class="section-eyebrow" data-i18n="stack.eyebrow">Tools</div>
+        <h2 class="section-title" data-i18n="stack.title">Tech Stack</h2>
+        <p class="section-lead" data-i18n="stack.lead">Each technology is backed by real projects. Pick one to see the evidence.</p>
+
+        <a href="#ai-workflow" class="ai-workflow-link" data-recruit="aiLink">Cómo trabajo con Codex y Claude ↗</a>
+        <div class="tech-grid"><div class="tech-cat"><div class="cat-label" data-recruit="catfront">Frontend</div><div class="pills"><button type="button" class="pill skill" data-skill="React">React</button><button type="button" class="pill skill" data-skill="JavaScript">JavaScript</button><button type="button" class="pill skill" data-skill="HTML5">HTML5</button><button type="button" class="pill skill" data-skill="CSS3">CSS3</button></div></div><div class="tech-cat"><div class="cat-label" data-recruit="catback">Backend y datos</div><div class="pills"><button type="button" class="pill skill" data-skill="Node.js">Node.js</button><button type="button" class="pill skill" data-skill="Express">Express</button><button type="button" class="pill skill" data-skill="PostgreSQL">PostgreSQL</button><button type="button" class="pill skill" data-skill="SQL">SQL</button></div></div><div class="tech-cat"><div class="cat-label" data-recruit="catdeploy">Despliegue</div><div class="pills"><button type="button" class="pill skill" data-skill="Docker">Docker</button><button type="button" class="pill skill" data-skill="Railway">Railway</button><button type="button" class="pill skill" data-skill="Cloudflare R2">Cloudflare R2</button><button type="button" class="pill skill" data-skill="GitHub Pages">GitHub Pages</button></div></div><div class="tech-cat"><div class="cat-label" data-recruit="catwork">Entorno y organización</div><div class="pills work-tools"><span>Git</span><span>Linux</span><span>VS Code</span><span>Jira</span></div></div></div><details class="additional-stack"><summary data-recruit="additionalStack">Más herramientas y formación técnica</summary><div class="additional-pills"><button type="button" class="pill skill" data-skill="TypeScript">TypeScript</button><button type="button" class="pill skill" data-skill="Vite">Vite</button><button type="button" class="pill skill" data-skill="Neo4J">Neo4J</button><button type="button" class="pill skill" data-skill="Python">Python</button><button type="button" class="pill skill" data-skill="Recharts">Recharts</button><button type="button" class="pill skill" data-skill="Excel">Excel</button><button type="button" class="pill skill" data-skill="Java">Java</button><button type="button" class="pill skill" data-skill="Kotlin">Kotlin</button><button type="button" class="pill skill" data-skill="C / C++">C / C++</button><button type="button" class="pill skill" data-skill="Android Studio">Android Studio</button><button type="button" class="pill skill" data-skill="Jetpack Compose">Jetpack Compose</button><button type="button" class="pill skill" data-skill="Arduino">Arduino</button><button type="button" class="pill skill" data-skill="ESP32">ESP32</button><button type="button" class="pill skill" data-skill="Sensores">Sensores</button><button type="button" class="pill skill" data-skill="Embebidos">Embebidos</button></div></details>
+      </div>
+
+      <!-- ── Columna derecha: explorador "¿dónde lo usé?" ── -->
+      <aside class="stack-right skill-panel" id="skillPanel" aria-live="polite">
+        <button type="button" class="skill-panel-close" id="skillPanelClose" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+        <div class="skill-panel-hint" data-i18n="stack.explorer.hint">Tap a technology to see where I used it</div>
+        <div id="skillPanelBody"></div>
+      </aside>
+
+    </div><!-- /.stack-layout -->
+  </section>
+
+  <section id="ai-workflow" class="ai-section" aria-labelledby="aiTitle">
+    <div class="ai-intro"><div class="section-eyebrow" data-recruit="aiEyebrow">Forma de trabajar</div><h2 class="section-title" id="aiTitle" data-recruit="aiTitle">IA como apoyo.<br>Criterio propio.</h2><p data-recruit="aiIntro">Uso Codex y Claude como apoyo para desarrollar lógica de programación y reviso detalladamente lo que generan.</p><div class="ai-tools"><span>Codex</span><span>Claude</span></div></div>
+    <div class="ai-steps"><article><span>01 /</span><h3 data-recruit="aiLogic">Lógica primero</h3><p data-recruit="aiLogicDesc">Trabajo sobre el problema y la lógica que necesita la solución.</p></article><article><span>02 /</span><h3 data-recruit="aiAssist">Apoyo con IA</h3><p data-recruit="aiAssistDesc">Me apoyo en Codex y Claude durante el desarrollo.</p></article><article><span>03 /</span><h3 data-recruit="aiReview">Revisión detallada</h3><p data-recruit="aiReviewDesc">Reviso lo generado y compruebo que responda a la lógica del proyecto.</p></article></div>
   </section>
 
   <section id="education" style="background: var(--gray1);">
@@ -330,179 +318,6 @@
       <div class="course-grid" id="courseGrid"><p>Bases de Datos 1 · Sistemas y Tecnologías Web · Algoritmos y Estructuras de Datos · Ingeniería de Software · Programación Orientada a Objetos · Interacción Humano-Computadora.</p></div>
       <div class="course-evidence" id="courseEvidence" aria-live="polite"></div>
     </div>
-  </section>
-
-  <section id="stack" style="background: var(--gray1);">
-    <div class="stack-layout">
-
-      <!-- ── Columna izquierda: pills del stack ── -->
-      <div class="stack-left">
-        <div class="section-eyebrow" data-i18n="stack.eyebrow">Tools</div>
-        <h2 class="section-title" data-i18n="stack.title">Tech Stack</h2>
-        <p class="section-lead" data-i18n="stack.lead">Each technology is backed by real projects. Pick one to see the evidence.</p>
-
-        <div class="tech-grid">
-
-          <div class="tech-cat tech-cat--data reveal">
-            <div class="cat-label"><i class="fa-solid fa-chart-line"></i> <span data-i18n="stack.cat.data">Data &amp; Analysis</span></div>
-            <div class="pills">
-              <button type="button" class="pill skill" data-skill="SQL"><i class="fa-solid fa-table"></i> SQL</button>
-              <button type="button" class="pill skill" data-skill="PostgreSQL"><i class="fa-solid fa-database"></i> PostgreSQL</button>
-              <button type="button" class="pill skill" data-skill="Neo4J"><i class="fa-solid fa-circle-nodes"></i> Neo4J</button>
-              <button type="button" class="pill skill" data-skill="Python"><i class="fa-brands fa-python"></i> Python</button>
-              <button type="button" class="pill skill" data-skill="Recharts"><i class="fa-solid fa-chart-pie"></i> Recharts</button>
-              <button type="button" class="pill skill" data-skill="Excel"><i class="fa-solid fa-file-excel"></i> Excel</button>
-            </div>
-          </div>
-
-          <div class="tech-cat reveal">
-            <div class="cat-label"><i class="fa-solid fa-display"></i> <span data-i18n="stack.cat.frontend">Frontend</span></div>
-            <div class="pills">
-              <button type="button" class="pill skill" data-skill="HTML5"><i class="fa-brands fa-html5"></i> HTML5</button>
-              <button type="button" class="pill skill" data-skill="CSS3"><i class="fa-brands fa-css3-alt"></i> CSS3</button>
-              <button type="button" class="pill skill" data-skill="JavaScript"><i class="fa-brands fa-js"></i> JavaScript</button>
-              <button type="button" class="pill skill" data-skill="TypeScript"><i class="fa-solid fa-code"></i> TypeScript</button>
-              <button type="button" class="pill skill" data-skill="React"><i class="fa-brands fa-react"></i> React</button>
-              <button type="button" class="pill skill" data-skill="Vite"><i class="fa-solid fa-bolt-lightning"></i> Vite</button>
-            </div>
-          </div>
-
-          <div class="tech-cat reveal" style="transition-delay: 0.06s">
-            <div class="cat-label"><i class="fa-solid fa-server"></i> <span data-i18n="stack.cat.backend">Backend &amp; Languages</span></div>
-            <div class="pills">
-              <button type="button" class="pill skill" data-skill="Node.js"><i class="fa-brands fa-node-js"></i> Node.js</button>
-              <button type="button" class="pill skill" data-skill="Express"><i class="fa-solid fa-route"></i> Express</button>
-              <button type="button" class="pill skill" data-skill="Java"><i class="fa-brands fa-java"></i> Java</button>
-              <button type="button" class="pill skill" data-skill="Kotlin"><i class="fa-solid fa-k"></i> Kotlin</button>
-              <button type="button" class="pill skill" data-skill="C / C++"><i class="fa-solid fa-c"></i> C / C++</button>
-            </div>
-          </div>
-
-          <div class="tech-cat reveal" style="transition-delay: 0.18s">
-            <div class="cat-label"><i class="fa-solid fa-cloud"></i> <span data-i18n="stack.cat.cloud">Cloud &amp; Deploy</span></div>
-            <div class="pills">
-              <button type="button" class="pill skill" data-skill="Docker"><i class="fa-brands fa-docker"></i> Docker</button>
-              <button type="button" class="pill skill" data-skill="GitHub Pages"><i class="fa-brands fa-github"></i> GitHub Pages</button>
-              <button type="button" class="pill skill" data-skill="Railway"><i class="fa-solid fa-train"></i> Railway</button>
-              <button type="button" class="pill skill" data-skill="Cloudflare R2"><i class="fa-brands fa-cloudflare"></i> Cloudflare R2</button>
-            </div>
-          </div>
-
-          <div class="tech-cat reveal" style="transition-delay: 0.24s">
-            <div class="cat-label"><i class="fa-solid fa-wrench"></i> <span data-i18n="stack.cat.devops">DevOps &amp; Tools</span></div>
-            <div class="pills">
-              <button type="button" class="pill skill" data-skill="Git"><i class="fa-brands fa-git-alt"></i> Git</button>
-              <button type="button" class="pill skill" data-skill="Linux"><i class="fa-brands fa-linux"></i> Linux</button>
-              <button type="button" class="pill skill" data-skill="VS Code"><i class="fa-solid fa-laptop-code"></i> VS Code</button>
-              <button type="button" class="pill skill" data-skill="Android Studio"><i class="fa-brands fa-android"></i> Android Studio</button>
-              <button type="button" class="pill skill" data-skill="Jetpack Compose"><i class="fa-solid fa-mobile-screen"></i> Jetpack Compose</button>
-              <button type="button" class="pill skill" data-skill="Jira"><i class="fa-brands fa-jira"></i> Jira</button>
-            </div>
-          </div>
-
-          <div class="tech-cat reveal" style="transition-delay: 0.30s">
-            <div class="cat-label"><i class="fa-solid fa-microchip"></i> <span data-i18n="stack.cat.iot">Hardware &amp; IoT</span></div>
-            <div class="pills">
-              <button type="button" class="pill skill" data-skill="Arduino"><i class="fa-solid fa-bolt"></i> Arduino</button>
-              <button type="button" class="pill skill" data-skill="ESP32"><i class="fa-solid fa-wifi"></i> ESP32</button>
-              <button type="button" class="pill skill" data-skill="Sensores"><i class="fa-solid fa-wave-square"></i> Sensores</button>
-              <button type="button" class="pill skill" data-skill="Embebidos"><i class="fa-solid fa-memory"></i> Embebidos</button>
-            </div>
-          </div>
-
-          <!-- Spotlight Docker con proyectos -->
-          <div class="docker-highlight reveal" style="transition-delay: 0.36s">
-            <div class="docker-top">
-              <div class="docker-icon-wrap"><i class="fa-brands fa-docker"></i></div>
-              <div>
-                <div class="docker-title" data-i18n="stack.docker.title">Docker — Deployed Projects</div>
-                <div class="docker-sub"   data-i18n="stack.docker.sub">Containers in production and development</div>
-              </div>
-            </div>
-            <div class="docker-projs">
-              <div class="docker-proj">
-                <div class="dp-name">CV-MIGUEL_CARRANZA</div>
-                <div class="dp-desc" data-i18n="stack.docker.proj1.desc">Containerized web portfolio for consistent deployment</div>
-              </div>
-              <div class="docker-proj">
-                <div class="dp-name">Los Skeepers</div>
-                <div class="dp-desc" data-i18n="stack.docker.proj2.desc">Node.js + PostgreSQL in production on Railway</div>
-              </div>
-              <div class="docker-proj">
-                <div class="dp-name">Proyecto Plataformas Móviles</div>
-                <div class="dp-desc" data-i18n="stack.docker.proj3.desc">Docker to replicate team environments exactly</div>
-              </div>
-            </div>
-          </div>
-
-        </div><!-- /.tech-grid -->
-      </div><!-- /.stack-left -->
-
-      <!-- ── Columna derecha: explorador "¿dónde lo usé?" ── -->
-      <aside class="stack-right skill-panel" id="skillPanel" aria-live="polite">
-        <button type="button" class="skill-panel-close" id="skillPanelClose" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
-        <div class="skill-panel-hint" data-i18n="stack.explorer.hint">Tap a technology to see where I used it</div>
-        <div id="skillPanelBody"></div>
-      </aside>
-
-    </div><!-- /.stack-layout -->
-  </section>
-
-  <section id="data" class="data-section">
-    <div class="section-eyebrow" data-i18n="data.eyebrow">Data Analyst</div>
-    <h2 class="section-title" data-i18n="data.title">Data Experience</h2>
-    <p class="section-lead" data-i18n="data.lead">Real evidence from a system in production: the Los Skeepers admin panel, which I designed and built end to end.</p>
-
-    <div class="data-stats reveal">
-      <div class="data-stat"><span class="data-stat-n">35</span><span class="data-stat-l" data-i18n="data.stat.queries">SQL queries with COUNT, AVG, GROUP BY and date_trunc</span></div>
-      <div class="data-stat"><span class="data-stat-n">18</span><span class="data-stat-l" data-i18n="data.stat.tables">tables modeled in PostgreSQL</span></div>
-      <div class="data-stat"><span class="data-stat-n">11</span><span class="data-stat-l" data-i18n="data.stat.charts">dashboard charts + a day × hour heatmap</span></div>
-      <div class="data-stat"><span class="data-stat-n">90</span><span class="data-stat-l" data-i18n="data.stat.days">days of raw events, rolled up into daily totals</span></div>
-    </div>
-
-    <details class="data-details"><summary data-i18n="data.expand">Explorar el trabajo técnico con datos</summary><div class="data-grid">
-      <article class="data-card reveal">
-        <div class="data-card-icon"><i class="fa-solid fa-database"></i></div>
-        <h3 data-i18n="data.c1.title">Modeling &amp; SQL</h3>
-        <p data-i18n="data.c1.desc">Relational database design in PostgreSQL for three systems (Los Skeepers, FleetControl, SecureGate) and graph databases with Neo4J at university.</p>
-      </article>
-      <article class="data-card reveal" style="transition-delay: 0.06s">
-        <div class="data-card-icon"><i class="fa-solid fa-filter"></i></div>
-        <h3 data-i18n="data.c2.title">Collection &amp; processing</h3>
-        <p data-i18n="data.c2.desc">Anonymous event tracking (visits, clicks, time per section) and an automatic daily job that summarizes raw data and purges old detail — a small ETL pipeline.</p>
-      </article>
-      <article class="data-card reveal" style="transition-delay: 0.12s">
-        <div class="data-card-icon"><i class="fa-solid fa-chart-column"></i></div>
-        <h3 data-i18n="data.c3.title">Dashboards &amp; KPIs</h3>
-        <p data-i18n="data.c3.desc">Active visitors and visits per day, week and month, conversion funnels, most-clicked elements, device and browser breakdown, and location grouping by country, region and city.</p>
-      </article>
-      <article class="data-card reveal" style="transition-delay: 0.18s">
-        <div class="data-card-icon"><i class="fa-solid fa-file-excel"></i></div>
-        <h3 data-i18n="data.c4.title">Reports</h3>
-        <p data-i18n="data.c4.desc">Excel exports generated from the database so the client can analyze and share the data without technical knowledge.</p>
-      </article>
-      <article class="data-card reveal" style="transition-delay: 0.24s">
-        <div class="data-card-icon"><i class="fa-solid fa-user-shield"></i></div>
-        <h3 data-i18n="data.c5.title">Data ethics &amp; privacy</h3>
-        <p data-i18n="data.c5.desc">Anonymous IDs, IP never stored, approximate location only. Certified in Ethics in Research with Human Subjects (UVG).</p>
-      </article>
-      <article class="data-card reveal" style="transition-delay: 0.30s">
-        <div class="data-card-icon"><i class="fa-solid fa-people-group"></i></div>
-        <h3 data-i18n="data.c6.title">Communicating results</h3>
-        <p data-i18n="data.c6.desc">Experience explaining to non-technical people (clients, children and parents at the museum) and agile work with Jira.</p>
-      </article>
-    </div></details>
-  </section>
-
-  <section class="lab-section" id="lab" aria-labelledby="labTitle">
-    <div class="lab-intro"><div><span class="section-eyebrow" data-demo-text="labEyebrow">EL CV TAMBIÉN PUEDE SER UNA EXPERIENCIA</span><h2 id="labTitle" class="section-title" data-demo-text="labTitle">No solo lo cuento.<br><span>También lo construyo.</span></h2></div><p data-demo-text="labIntro">Una web puede ser una herramienta, un sistema o un lugar para explorar. Estas pequeñas demos funcionan aquí mismo. Toca, cambia y prueba.</p></div>
-    <div class="lab-shell">
-      <div class="lab-toolbar"><div class="window-dots" aria-hidden="true"><i></i><i></i><i></i></div><span>playground.miguel / <span id="labPath">interface</span></span><span class="lab-local" data-demo-text="local">EN TU NAVEGADOR</span></div>
-      <div class="lab-tabs" role="tablist" aria-label="Demos interactivas" id="labTabs"></div>
-      <div class="lab-body" id="labPanel" role="tabpanel" tabindex="0"></div>
-      <div class="lab-footer"><span><i class="status-dot"></i><span data-demo-text="labFooter">Demos locales. Sin registros ni datos enviados.</span></span><span id="demoCount">01 / 06</span></div>
-    </div>
-    <a class="lab-source" href="https://madco-py.github.io/MADWEB/demo.html" target="_blank" rel="noopener"><span data-demo-text="madwebLink">Explora más experimentos en MADWEB</span> ↗</a>
   </section>
 
   <section id="certs" style="background: var(--gray1);">
@@ -560,6 +375,66 @@
     </div>
   </section>
 
+  <section id="about" style="background: var(--white);">
+    <div class="section-eyebrow" data-i18n="about.eyebrow">Who I am</div>
+    <h2 class="section-title" data-i18n="about.title">About Me</h2>
+
+    <div class="about-grid">
+      <!-- Texto + barras de idioma -->
+      <div class="about-text reveal">
+        <p data-i18n="about.p1">I am a <strong>Computer Science Engineering</strong> student at Universidad del Valle de Guatemala, currently in my third year. I specialize in creating clean, scalable and visually appealing solutions.</p>
+        <p data-i18n="about.p2">My focus is <strong>Full Stack</strong> development: from modern interfaces to robust backend systems, relational and graph databases, Docker containers and microcontroller programming.</p>
+        <p data-i18n="about.p3">I am deeply interested in <strong>cybersecurity</strong>, artificial intelligence and systems architecture. I work in a structured way using sprints and Jira management, prioritizing clean and maintainable code.</p>
+
+        <div class="lang-section">
+          <div class="lang-label-row">
+            <span class="lang-name" data-i18n="about.lang.es">Spanish</span>
+            <span class="lang-pct" data-demo-text="native">Nativo</span>
+          </div>
+
+
+          <div class="lang-label-row">
+            <span class="lang-name" data-i18n="about.lang.en">English</span>
+            <span class="lang-pct" data-demo-text="conversational">Conversacional</span>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Cards de datos personales -->
+      <div class="reveal" style="transition-delay: 0.12s">
+        <div class="about-cards">
+
+          <div class="about-card">
+            <div class="card-label" data-i18n="about.card.location.label">Ubicación</div>
+            <div class="card-value" data-i18n="about.card.location.value">Zona 10, Guatemala</div>
+          </div>
+
+          <div class="about-card about-card--transport">
+            <div class="card-label" data-i18n="about.card.transport.label">Transport</div>
+            <div class="card-value" data-i18n="about.card.transport.value">Own vehicle</div>
+          </div>
+
+          <div class="about-card">
+            <div class="card-label" data-i18n="about.card.method.label">Methodology</div>
+            <div class="card-value" data-i18n="about.card.method.value">Agile · Jira</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="lab-section" id="lab" aria-labelledby="labTitle">
+    <div class="lab-intro"><div><span class="section-eyebrow" data-demo-text="labEyebrow">EL CV TAMBIÉN PUEDE SER UNA EXPERIENCIA</span><h2 id="labTitle" class="section-title" data-demo-text="labTitle">No solo lo cuento.<br><span>También lo construyo.</span></h2></div><p data-demo-text="labIntro">Una web puede ser una herramienta, un sistema o un lugar para explorar. Estas pequeñas demos funcionan aquí mismo. Toca, cambia y prueba.</p></div>
+    <div class="lab-shell">
+      <div class="lab-toolbar"><div class="window-dots" aria-hidden="true"><i></i><i></i><i></i></div><span>playground.miguel / <span id="labPath">interface</span></span><span class="lab-local" data-demo-text="local">EN TU NAVEGADOR</span></div>
+      <div class="lab-tabs" role="tablist" aria-label="Demos interactivas" id="labTabs"></div>
+      <div class="lab-body" id="labPanel" role="tabpanel" tabindex="0"></div>
+      <div class="lab-footer"><span><i class="status-dot"></i><span data-demo-text="labFooter">Demos locales. Sin registros ni datos enviados.</span></span><span id="demoCount">01 / 06</span></div>
+    </div>
+    <a class="lab-source" href="https://madco-py.github.io/MADWEB/demo.html" target="_blank" rel="noopener"><span data-demo-text="madwebLink">Explora más experimentos en MADWEB</span> ↗</a>
+  </section>
+
   <section class="download-section" id="download">
     <div class="download-card reveal">
       <a class="download-preview" href="cv/Miguel_Carranza_CV.pdf?v=a45138de0c13" target="_blank" rel="noopener" aria-label="PDF">
@@ -613,14 +488,14 @@
             <span class="c-link-sub">madcarranzaosorio@gmail.com</span>
           </div>
         </a>
-        <a href="https://github.com/MADCO-py" class="c-link" target="_blank">
+        <a href="https://github.com/MADCO-py" class="c-link" target="_blank" rel="noopener">
           <i class="fa-brands fa-github"></i>
           <div>
             <span>GitHub</span>
             <span class="c-link-sub">MADCO-py</span>
           </div>
         </a>
-        <a href="https://www.linkedin.com/in/miguel-angel-david-co-3585142a2/" class="c-link" target="_blank">
+        <a href="https://www.linkedin.com/in/miguel-angel-david-co-3585142a2/" class="c-link" target="_blank" rel="noopener">
           <i class="fa-brands fa-linkedin"></i>
           <div>
             <span>LinkedIn</span>
@@ -641,6 +516,7 @@
       </div>
     </div>
   </section>
+  </main>
 
 
   <!-- ================================================================
@@ -649,13 +525,13 @@
   <footer class="footer">
     <span>&copy; 2026 Miguel Carranza — Full Stack Developer · Guatemala</span>
     <div class="footer-right">
-      <a href="https://wa.me/50239688410" target="_blank">
+      <a href="https://wa.me/50239688410" target="_blank" rel="noopener">
         <i class="fa-brands fa-whatsapp"></i> +502 3968-8410
       </a>
-      <a href="https://github.com/MADCO-py" target="_blank">
+      <a href="https://github.com/MADCO-py" target="_blank" rel="noopener">
         <i class="fa-brands fa-github"></i> GitHub
       </a>
-      <a href="https://www.linkedin.com/in/miguel-angel-david-co-3585142a2/" target="_blank">
+      <a href="https://www.linkedin.com/in/miguel-angel-david-co-3585142a2/" target="_blank" rel="noopener">
         <i class="fa-brands fa-linkedin"></i> LinkedIn
       </a>
       <a href="mailto:madcarranzaosorio@gmail.com">
@@ -670,12 +546,13 @@
   ================================================================ -->
   <script src="js/cursor.js?v=crt-20261110-r2"></script>
   <script src="js/observer.js?v=crt-20261110-r2"></script>
-  <script src="js/controls.js?v=crt-20261110-r2"></script>
+  <script src="js/controls.js?v=professional-20261110-r1"></script>
   <script src="js/projects-data.js?v=crt-20261110-r2"></script>
-  <script src="js/cv-sections.js?v=crt-20261110-r2"></script>
+  <script src="js/cv-sections.js?v=professional-20261110-r1"></script>
   <script src="js/showcase.js?v=crt-20261110-r2"></script>
   <script src="js/experience.js?v=crt-20261110-r2"></script>
-  <script src="js/retro-ui.bundle.js?v=jsx-20261110-r2" defer></script>
+  <script src="js/recruiting.js?v=professional-20261110-r1"></script>
+  <script src="js/retro-ui.bundle.js?v=professional-20261110-r1" defer></script>
 
 </body>
 </html>

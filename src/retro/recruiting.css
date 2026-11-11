@@ -1,0 +1,163 @@
+/* A professional reading hierarchy, retaining the personal terminal identity.
+   Scoped to the CV so the project directory keeps its independent layout. */
+.cv-page {
+  --pc-green:#b2e87f;
+  --pc-border:#789e59;
+  font-size:14px;
+}
+[data-theme="dark"] .cv-page {
+  --white:#0c110e;--paper:#121a15;--gray1:#121a15;--black:#e4ecdf;
+  --gray4:#a5b6a0;--gray5:#bccab7;--accent:#b2e87f;--accent-light:#25351d;
+  --border:#b2d99a20;--border-dark:#a8cb8d46;
+}
+.cv-page::after { opacity:.17;box-shadow:none; }
+.cv-page .nav { height:72px; }
+.cv-page .nav-logo { font-size:23px; }
+.cv-page .nav-links { gap:24px; }
+.cv-page .nav-links a { font-size:21px;padding:5px 0; }
+.cv-page .nav-links a:hover { background:none;color:var(--accent); }
+.cv-page .nav-links a.nav-cv { border:1px solid var(--border-dark);padding:7px 12px; }
+.cv-page .hero { min-height:750px;padding:125px 7% 58px;gap:7%;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);align-items:center; }
+.cv-page .hero-content { min-width:0; }
+.cv-page .hero-index { margin-bottom:27px;font-size:10px;letter-spacing:.04em;display:flex;justify-content:space-between;max-width:500px; }
+.cv-page .hero-eyebrow { font-size:10px;margin-bottom:19px;letter-spacing:0; }
+.cv-page .hero-dot { width:6px;height:6px;animation:none; }
+.cv-page .hero h1 { font:400 clamp(32px,3.1vw,44px)/1.15 var(--font-display);text-transform:none;letter-spacing:0;color:var(--black);margin:0 0 15px;text-shadow:none; }
+.identity-cursor { color:var(--accent); }
+.cv-page .hero-role { margin:0;max-width:none; }
+.cv-page .hero-role strong { display:block;font:400 clamp(52px,5.8vw,84px)/.96 var(--font-display);color:var(--black);letter-spacing:-.015em; }
+.cv-page .hero-role strong>span { color:var(--accent); }
+.cv-page .hero-desc { font-size:14px;line-height:1.85;max-width:500px;margin:25px 0 19px; }
+.hero-stack { display:flex;flex-wrap:wrap;gap:9px 17px;color:var(--black);font-size:11px;margin-bottom:25px; }
+.hero-stack span::before { content:'+';color:var(--accent);margin-right:7px; }
+.cv-page .hero-actions { margin:0 0 23px;gap:12px; }
+.cv-page .hero-actions .btn { font-size:23px;min-height:48px;padding:10px 19px;display:inline-flex;align-items:center;gap:13px; }
+.hero-direct { display:flex;flex-wrap:wrap;gap:16px 24px;font-size:11px; }
+.hero-direct a { color:var(--black);text-decoration:underline;text-decoration-color:var(--border-dark);text-underline-offset:5px; }
+.hero-direct a:hover { color:var(--accent); }
+.hero-fit { display:flex;flex-wrap:wrap;gap:6px 20px;border-top:1px solid var(--border-dark);padding-top:20px;margin-top:26px;font-size:10px;color:var(--gray4); }
+.cv-page .pc-window { box-shadow:4px 5px 0 #0003,inset 1px 1px 0 #d1f8b1;border-color:#465b37; }
+.cv-page .pc-screen { min-height:380px;padding:16px; }
+.cv-page .pc-identity { min-height:136px;padding:15px 0; }
+.cv-page .pc-identity h2 { font-size:43px; }
+.cv-page .pixel-globe { width:105px;height:105px; }
+.cv-page .pc-file-list a { padding:8px; }
+.cv-page .pc-file-list strong { font-size:21px; }
+.cv-page .pc-modal .pc-identity { min-height:190px; }
+.cv-page .pc-modal .pixel-globe { width:170px;height:170px; }
+.cv-page .pc-modal .pc-screen { min-height:520px; }
+.recruit-summary { margin:0 7%;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid var(--border-dark);border-bottom:1px solid var(--border-dark); }
+.recruit-summary>div { padding:25px 24px;display:flex;flex-direction:column;gap:6px;min-width:0;border-right:1px solid var(--border-dark); }
+.recruit-summary>div:first-child { padding-left:0; }.recruit-summary>div:last-child { border-right:0; }
+.recruit-summary strong { font:400 32px/1 var(--font-display);color:var(--accent); }
+.recruit-summary span { color:var(--gray4);font-size:10px;line-height:1.7;max-width:190px; }
+.reading-tools { margin:18px 7% 0;display:flex;align-items:center;justify-content:space-between;gap:20px;color:var(--gray4);font-size:10px; }
+.reading-tools button { display:flex;align-items:center;justify-content:center;gap:9px;border:1px solid var(--border-dark);color:var(--black);background:transparent;padding:9px 13px;min-height:40px;cursor:pointer;font:400 11px var(--font-mono);flex-shrink:0; }
+.reading-tools button:hover,.reading-tools button[aria-pressed="true"] { background:var(--accent-light);border-color:var(--accent); }
+.cv-page section { padding:80px 7%;scroll-margin-top:90px; }
+.cv-page section.hero { padding-top:125px;padding-bottom:58px; }
+.cv-page .section-eyebrow { font-size:10px;letter-spacing:.08em;margin-bottom:16px; }
+.cv-page .section-title { font-size:clamp(42px,4.3vw,61px);margin-bottom:28px;letter-spacing:0; }
+.cv-page .section-lead { margin:0 0 34px;max-width:660px;font-size:14px;line-height:1.85; }
+.cv-page .featured-list { gap:24px; }
+.cv-page .featured-card { align-items:stretch; }
+.cv-page .featured-card:first-child { grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr); }
+.cv-page .featured-media,.cv-page .featured-card:first-child .featured-media { margin:20px 20px 0;aspect-ratio:16/10; }
+.cv-page .featured-card:first-child .featured-media { margin:24px 0 24px 24px;align-self:center;aspect-ratio:4/3; }
+.cv-page .featured-img { filter:none;object-fit:contain;background:#101410; }
+.cv-page .featured-badge { font:400 9px var(--font-mono);padding:9px 11px; }
+.cv-page .featured-body { padding:27px;gap:10px; }
+.cv-page .featured-name { font-size:37px;letter-spacing:0;line-height:1.1; }
+.cv-page .featured-num { font-size:10px; }.cv-page .featured-client { font-size:11px; }
+.case-summary { display:grid;gap:14px;margin:10px 0 6px; }
+.case-summary>div { display:grid;grid-template-columns:72px minmax(0,1fr);gap:12px; }
+.case-summary dt { font-size:10px;color:var(--accent);line-height:1.9; }
+.case-summary dd { margin:0;font-size:12px;line-height:1.85;color:var(--gray5); }
+.cv-page .project-proof { margin:6px 0;padding-top:16px; }.cv-page .project-proof strong { font-size:31px; }.cv-page .project-proof span { font-size:10px; }
+.cv-page .featured-tech { gap:7px; }.cv-page .featured-tech span { font-size:10px; }
+.cv-page .featured-build-title { font-size:12px;padding:12px 0;min-height:44px; }
+.cv-page .featured-links { margin-top:0; }.cv-page .featured-links .btn { font-size:21px;min-height:44px; }
+.cv-page .featured-note { font-size:10px;line-height:1.8; }
+.cv-page .featured-links .is-disabled { border:0;padding-left:0;color:var(--gray4);font:400 10px var(--font-mono); }
+.cv-page .build { margin:0 0 12px; }.cv-page .build-value { font-size:12px; }
+.technical-dive { margin-top:32px;border-top:1px solid var(--border-dark);padding-top:8px; }
+.technical-dive>summary,.previous-experience>summary,.additional-stack>summary { padding:18px 2px;color:var(--black);cursor:pointer;font-size:12px;line-height:1.9;min-height:44px; }
+.technical-dive>summary::marker,.previous-experience>summary::marker,.additional-stack>summary::marker { color:var(--accent); }
+.technical-dive-body { padding-top:25px; }.cv-page .technical-dive-body .section-title { font-size:36px; }.cv-page .data-stats { margin-bottom:20px; }.cv-page .data-stat-n { font-size:38px; }.cv-page .data-stat-l { font-size:10px; }
+.cv-page .timeline { padding-left:0; }.cv-page .timeline::before { display:none; }.cv-page .t-item { padding-left:0;margin-bottom:18px; }.cv-page .t-dot { display:none; }
+.cv-page .t-card { padding:25px 28px;border-left:2px solid var(--accent); }
+.cv-page .t-title { font-size:17px;font-weight:700; }.cv-page .t-date { font-size:11px; }.cv-page .t-role { font-size:12px;margin:10px 0; }.cv-page .t-desc { font-size:13px;line-height:1.9;max-width:840px; }
+.cv-page .t-tags { gap:7px; }.cv-page .ttag { font-size:10px; }.cv-page .experience-evidence { font-size:12px; }.previous-experience { margin-top:20px;border-top:1px solid var(--border-dark); }.previous-experience-list { display:grid;grid-template-columns:1fr 1fr;gap:18px; }.previous-experience .t-card { border-left:1px solid var(--border-dark);height:100%; }.previous-experience .t-item { margin:0; }
+.cv-page .stack-layout { grid-template-columns:minmax(0,1.3fr) minmax(0,.7fr);gap:35px;align-items:start; }
+.cv-page .tech-grid { gap:14px;grid-template-columns:1fr 1fr; }.cv-page .tech-cat { padding:21px; }.cv-page .cat-label { font-size:10px;margin-bottom:16px;letter-spacing:.03em; }
+.cv-page .skill { font-size:11px;padding:9px 10px;min-height:42px;gap:8px; }.cv-page .skill-count { font-size:9px; }.cv-page .skill-panel { top:95px;max-height:580px;overflow:auto;padding:23px; }.cv-page .skill-name { font-size:20px; }.cv-page .skill-sub { font-size:11px; }.cv-page .skill-panel-hint { font-size:9px; }.cv-page .skill-proj strong { font-size:12px; }.cv-page .skill-proj small { font-size:10px;line-height:1.8; }.cv-page .skill-proj { padding:12px 0; }
+.work-tools { display:flex;gap:8px;flex-wrap:wrap; }.work-tools>span { border:1px solid var(--border-dark);font-size:11px;padding:9px 10px;color:var(--gray5); }
+.additional-stack { margin-top:17px;border-top:1px solid var(--border-dark); }.additional-pills { display:flex;flex-wrap:wrap;gap:8px;padding:5px 0 18px; }
+.cv-page .ai-section { display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:8%;background:var(--paper); }
+.ai-intro>p { font-size:14px;line-height:1.9;color:var(--gray5);max-width:470px; }.ai-tools { display:flex;gap:12px;margin-top:23px; }.ai-tools>span { border:1px solid var(--border-dark);padding:8px 13px;font-size:12px;color:var(--accent); }
+.ai-steps { display:grid;align-content:center; }.ai-steps article { display:grid;grid-template-columns:44px 1fr;gap:6px 16px;border-top:1px solid var(--border-dark);padding:24px 0; }.ai-steps article:last-child { border-bottom:1px solid var(--border-dark); }.ai-steps article>span { grid-row:1/3;font:400 26px var(--font-display);color:var(--accent); }.ai-steps h3 { font-size:15px;font-weight:400;margin:0; }.ai-steps p { font-size:12px;color:var(--gray4);line-height:1.9;margin:0; }
+.cv-page .edu-name { font-size:17px;line-height:1.7; }.cv-page .edu-degree { font-size:13px;line-height:1.9; }.cv-page .edu-desc { font-size:12px; }.cv-page .edu-date { font-size:11px; }
+.cv-page .course-heading h3 { font-size:34px; }.cv-page .course-button { padding:20px;grid-template-columns:35px 1fr; }.cv-page .course-button strong { font-size:12px; }.cv-page .course-button small { font-size:10px; }.cv-page .course-evidence p { font-size:13px; }
+.cv-page .cert-name { font-size:14px;line-height:1.8; }.cv-page .cert-desc { font-size:12px;line-height:1.9; }.cv-page .cert-issuer { font-size:11px; }.cv-page .cert-date { font-size:10px; }
+.cv-page .about-text p { font-size:14px;line-height:1.95; }.cv-page .card-label { font-size:10px; }.cv-page .card-value { font-size:13px; }.cv-page .about-cards { grid-template-columns:1fr; }.cv-page .lang-name,.cv-page .lang-pct { font-size:12px; }
+.cv-page .lab-section .section-title { font-size:45px; }.cv-page .lab-intro>p { font-size:13px; }.cv-page .lab-tabs button { min-height:48px;font-size:11px; }.cv-page .lab-shell { box-shadow:none; }
+.cv-page .download-card { max-width:960px;margin:auto; }.cv-page .download-info .section-title { font-size:48px; }.cv-page .download-desc { font-size:14px; }.cv-page .download-meta { font-size:12px; }
+.cv-page .contact-section .section-title { font-size:56px; }.cv-page .contact-subtitle { font-size:15px;max-width:670px;line-height:1.9; }.cv-page .contact-primary-value { color:var(--black);font:400 29px var(--font-display); }.cv-page .contact-primary-label { color:var(--gray5);font-size:10px; }.cv-page .c-link { min-height:74px; }.cv-page .c-link span:first-child { font-size:13px; }.cv-page .c-link-sub { font-size:10px; }.cv-page .philosophy { font-size:12px; }
+/* Reading mode is a presentation preference. No professional content is removed. */
+.cv-page[data-reading="true"]::after { display:none; }
+.cv-page[data-reading="true"] .hero { grid-template-columns:1fr;min-height:0; }
+.cv-page[data-reading="true"] .hero-content { max-width:840px; }.cv-page[data-reading="true"] #retroDesktop { display:none; }
+.cv-page[data-reading="true"] .hero h1 { font:700 30px/1.4 var(--font-mono); }.cv-page[data-reading="true"] .hero-role strong { font:400 clamp(30px,4vw,48px)/1.25 var(--font-mono); }
+.cv-page[data-reading="true"] .section-title,.cv-page[data-reading="true"] .lab-section .section-title,.cv-page[data-reading="true"] .contact-section .section-title,.cv-page[data-reading="true"] .download-info .section-title { font:700 28px/1.4 var(--font-mono);text-transform:none; }
+.cv-page[data-reading="true"] .featured-name,.cv-page[data-reading="true"] .course-heading h3 { font:700 22px/1.5 var(--font-mono); }
+.cv-page[data-reading="true"] .reveal,.cv-page[data-reading="true"] .t-item { opacity:1;transform:none;transition:none; }
+@media(min-width:1600px) { .cv-page section { padding-left:max(7%,calc((100vw - 1400px)/2));padding-right:max(7%,calc((100vw - 1400px)/2)); }.recruit-summary,.reading-tools { margin-left:max(7%,calc((100vw - 1400px)/2));margin-right:max(7%,calc((100vw - 1400px)/2)); } }
+@media(max-width:1150px) { .cv-page .nav-links { gap:15px; }.cv-page .nav-links a { font-size:20px; }.cv-page .hero { gap:5%; }.cv-page .pc-identity h2 { font-size:37px; }.cv-page .pixel-globe { width:85px;height:85px; }.cv-page .pc-title { font-size:18px; }.cv-page .hero-index { font-size:9px; } }
+@media(max-width:960px) { .cv-page .hero { grid-template-columns:1fr;gap:45px;padding-top:112px; }.cv-page .hero-content { max-width:640px; }.cv-page .hero-role strong { font-size:78px; }.cv-page #retroDesktop { max-width:570px;width:100%;margin:0; }.cv-page .nav-links a { font-size:25px; }.cv-page .nav-links { gap:7px; }.cv-page .nav-links a.nav-cv { border:0;padding:5px 0; }.cv-page .featured-card:first-child { grid-template-columns:1fr; }.cv-page .featured-card:first-child .featured-media { margin:20px 20px 0;aspect-ratio:16/9; }.cv-page .stack-layout { grid-template-columns:1fr; }.cv-page .skill-panel { max-height:75dvh;padding:24px 6%; }.cv-page .pc-screen { min-height:0; }.cv-page .pc-identity h2 { font-size:45px; }.cv-page .pixel-globe { width:120px;height:120px; }.cv-page .ai-section { gap:40px;grid-template-columns:1fr 1fr; }.recruit-summary>div { padding:22px 15px; } }
+@media(max-width:760px) {
+  .cv-page .nav { height:64px;padding:0 5%; }.cv-page .nav-logo { font-size:21px; }.cv-page .nav-links { top:64px; }.cv-page .nav-controls { gap:6px; }
+  .cv-page section { padding:58px 6%;scroll-margin-top:78px; }.cv-page section.hero { padding-top:100px;padding-bottom:40px;gap:33px; }
+  .cv-page .hero-index { margin-bottom:23px;font-size:8px; }.cv-page .hero-eyebrow { font-size:9px; }.cv-page .hero h1 { font-size:35px; }.cv-page .hero-role strong { font-size:clamp(51px,13vw,76px);line-height:1; }.cv-page .hero-desc { font-size:13px;margin:22px 0 18px;line-height:1.9; }.hero-stack { font-size:10px;gap:9px 13px;margin-bottom:23px; }
+  .cv-page .hero-actions .btn { font-size:22px;padding:10px 14px;gap:9px; }.hero-direct { font-size:10px;gap:13px 18px; }.hero-fit { font-size:9px;line-height:1.9;margin-top:24px;padding-top:17px; }
+  .recruit-summary { margin:0 6%;grid-template-columns:1fr 1fr; }.recruit-summary>div { padding:20px 15px!important; }.recruit-summary>div:nth-child(odd) { padding-left:0!important; }.recruit-summary>div:nth-child(2) { border-right:0; }.recruit-summary>div:nth-child(-n+2) { border-bottom:1px solid var(--border-dark); }.recruit-summary span { font-size:10px; }.recruit-summary strong { font-size:31px; }
+  .reading-tools { margin:16px 6% 0;font-size:9px;align-items:start; }.reading-tools>span { max-width:180px;line-height:1.9; }.reading-tools button { font-size:10px;padding:9px 10px; }
+  .cv-page .section-title { font-size:43px;margin-bottom:22px; }.cv-page .section-lead { font-size:13px;margin:0 0 28px; }.cv-page .featured-body { padding:24px 20px; }.cv-page .featured-media,.cv-page .featured-card:first-child .featured-media { margin:15px 15px 0;aspect-ratio:16/10; }.cv-page .featured-name { font-size:36px; }.cv-page .case-summary dd { font-size:12px; }.case-summary>div { grid-template-columns:65px minmax(0,1fr);gap:9px; }.case-summary dt { font-size:10px; }.cv-page .featured-client { font-size:10px; }.cv-page .project-proof span { font-size:9px; }.cv-page .featured-tech span { font-size:9px; }
+  .cv-page .t-card { padding:22px 20px; }.cv-page .t-title { font-size:16px; }.cv-page .t-header { gap:10px;align-items:start; }.cv-page .t-date { font-size:10px; }.cv-page .t-desc { font-size:12px; }.previous-experience-list { grid-template-columns:1fr; }.previous-experience>summary,.technical-dive>summary,.additional-stack>summary { font-size:11px; }
+  .cv-page .tech-grid { grid-template-columns:1fr;gap:12px; }.cv-page .tech-cat { padding:20px; }.cv-page .skill { padding:10px;min-height:44px; }.cv-page .ai-section { grid-template-columns:1fr;gap:32px; }.ai-intro>p { font-size:13px; }.ai-steps article { padding:22px 0; }.ai-steps p { font-size:12px; }
+  .cv-page .course-button { grid-template-columns:1fr;padding:17px 13px; }.cv-page .course-button strong { font-size:11px; }.cv-page .course-button small { font-size:9px; }.cv-page .course-heading h3 { font-size:31px; }.cv-page .course-evidence p { font-size:12px; }.cv-page .about-text p { font-size:13px; }.cv-page .lab-section .section-title { font-size:37px; }.cv-page .download-info .section-title { font-size:42px; }.cv-page .download-desc { font-size:13px; }.cv-page .contact-section .section-title { font-size:47px; }.cv-page .contact-subtitle { font-size:13px; }.cv-page .contact-primary-value { font-size:27px; }.cv-page .c-link-sub { font-size:10px;overflow-wrap:anywhere; }.cv-page .contact-links { max-width:100%; }
+  .cv-page .pc-identity h2 { font-size:41px; }.cv-page .pixel-globe { width:95px;height:95px; }.cv-page .pc-title { font-size:18px; }.cv-page .pc-system-line { font-size:7px; }.cv-page .pc-identity p { font-size:9px; }.cv-page .pc-identity small { font-size:8px; }.cv-page .pc-file-list strong { font-size:21px; }.cv-page .pc-file-list a { padding:10px 6px; }.cv-page .pc-modal .pixel-globe { width:95px;height:95px; }.cv-page .pc-modal .pc-screen { min-height:0; }.cv-page .pc-modal .pc-identity { min-height:155px; }
+}
+@media(max-width:380px) { .cv-page .nav-logo { font-size:17px; }.cv-page .hero h1 { font-size:32px; }.cv-page .hero-role strong { font-size:51px; }.cv-page .hero-actions .btn { font-size:20px;padding:10px 12px; }.cv-page .hero-index { font-size:7px; }.cv-page .pc-title { font-size:16px; }.cv-page .pc-screen { padding:12px; }.cv-page .pc-identity h2 { font-size:35px; }.cv-page .pixel-globe { width:70px;height:70px; }.cv-page .pc-identity p { font-size:7px; }.cv-page .pc-identity small { font-size:6px; }.cv-page .pc-file-list strong { font-size:19px; }.cv-page .featured-body { padding:21px 17px; }.case-summary>div { grid-template-columns:1fr;gap:2px; }.cv-page .section-title { font-size:39px; }.cv-page .reading-tools { gap:10px; }.cv-page .hero-eyebrow { font-size:8px; } }
+@media(prefers-reduced-motion:reduce) { .cv-page *,.cv-page *::before,.cv-page *::after { animation:none!important;transition:none!important;scroll-behavior:auto!important; } }
+@media print { .cv-page::after,.cv-page .nav,.cv-page #retroDesktop,.cv-page .reading-tools,.cv-page #lab { display:none!important; }.cv-page section { padding:20px 0;break-inside:avoid; }.cv-page .hero { display:block;min-height:0; }.cv-page .hero-role strong { font-size:32px; }.cv-page .reveal,.cv-page .t-item { opacity:1;transform:none; } }
+/* Keep the terminal secondary and within a typical laptop viewport. */
+@media(min-width:961px) {
+  .cv-page .hero,.cv-page section.hero { min-height:750px;padding-top:109px;padding-bottom:42px; }
+  .cv-page .pc-identity { padding:9px 0;min-height:0; }
+  .cv-page .pc-identity h2 { font-size:36px;margin:6px 0; }
+  .cv-page .pc-identity small { margin-top:5px; }
+  .cv-page .pc-file-list a { padding:7px 8px; }
+  .cv-page .pc-screen { padding:14px; }
+  .cv-page .case-summary dd { font-size:13px; }
+}
+.cv-page[data-reading="true"] .case-summary dd { font-size:14px; }
+.ai-workflow-link { display:inline-block;margin:0 0 25px;font-size:12px;color:var(--accent);text-decoration:underline;text-underline-offset:5px; }
+.cv-page .skill-projects { grid-template-columns:minmax(0,1fr); }
+.cv-page .skill-projects>li,.cv-page .skill-proj { min-width:0; }
+.cv-page .skill-proj-text strong { overflow-wrap:anywhere; }
+@media(max-width:960px) { .cv-page .skill-panel { top:auto;height:auto;max-height:75dvh;overflow-x:hidden; }.cv-page .skill-projects { max-height:50dvh; }.cv-page .skill-panel-close { min-height:44px;min-width:44px; } }
+@media(max-width:760px) { .cv-page .nav-whatsapp { display:none; } }
+@media(min-width:961px) {
+  .cv-page .hero,.cv-page section.hero { min-height:720px;padding-top:96px;padding-bottom:36px; }
+  .cv-page .pc-titlebar { min-height:33px;padding-top:2px;padding-bottom:3px; }
+  .cv-page .pc-menubar { padding-top:1px;padding-bottom:1px; }
+  .cv-page .pc-system-line { padding-bottom:8px; }
+  .cv-page .pc-identity { padding:7px 0;line-height:1.2; }
+  .cv-page .pc-identity h2 { font-size:34px;margin:5px 0; }
+  .cv-page .pc-directory-label { padding-top:7px;padding-bottom:7px; }
+  .cv-page .pc-file-list a { padding-top:6px;padding-bottom:6px; }
+  .cv-page .pc-file-list strong { font-size:20px; }
+  .cv-page .pc-taskbar { line-height:1.3; }
+  .cv-page .pc-taskbar button { line-height:1.3; }
+  .cv-page .pc-modal .pc-identity h2 { font-size:48px; }
+}

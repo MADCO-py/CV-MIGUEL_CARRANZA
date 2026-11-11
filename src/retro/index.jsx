@@ -4,6 +4,7 @@ import '@fontsource/vt323/latin-400.css';
 import '@fontsource/ibm-plex-mono/latin-400.css';
 import '@fontsource/ibm-plex-mono/latin-700.css';
 import './retro-ui.css';
+import './recruiting.css';
 import { RetroDesktop } from './RetroDesktop.jsx';
 
 class RetroBoundary extends Component {
