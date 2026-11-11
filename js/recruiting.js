@@ -1,9 +1,9 @@
-/* Recruiter-focused copy and a readable alternative to the CRT presentation. */
+/* Recruiter-focused copy and an optional presentation without decorative artwork. */
 (() => {
   const page = document.querySelector('.cv-page');
   if (!page) return;
   const copy = {
-    heroRole:['Desarrollador<br>Full Stack <span>Junior.</span>','Full Stack<br>Developer <span>Junior.</span>'],
+    heroRole:['Desarrollador Full Stack Junior','Junior Full Stack Developer'],
     heroDesc:['Construyo aplicaciones web para clientes reales: interfaces con React, backend con Node.js y datos con PostgreSQL.','I build web applications for real clients: React interfaces, Node.js backends and PostgreSQL databases.'],
     viewWork:['Ver proyectos','View projects'], interview:['Hablemos de una oportunidad ↗','Let’s discuss an opportunity ↗'], heroFit:['UVG · Cierre de tercer año','UVG · Completing my third year'],heroModes:['Remoto · Híbrido · Presencial','Remote · Hybrid · On-site'],
     summaryProjects:['Proyectos entregados a clientes','Projects delivered to clients'],summaryEducation:['Ingeniería en Computación y TI','Computer Science & IT Engineering'],summaryMorning:['Mañanas','Mornings'],summaryTime:['Disponibilidad de medio tiempo','Part-time availability'],summaryEnglish:['Inglés','English'],summaryLanguage:['Conversacional · Español nativo','Conversational · Native Spanish'],

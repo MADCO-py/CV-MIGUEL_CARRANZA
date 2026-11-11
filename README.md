@@ -185,3 +185,21 @@ títulos y oculta la ventana decorativa de la portada, conservando los proyectos
 formación, contacto y PDF. El apartado de IA describe únicamente el uso declarado
 de Codex y Claude para lógica de programación y la revisión detallada del autor.
 El panel móvil del stack es un diálogo con control de foco y cierre con Escape.
+
+
+## Presentación actual: grafito y vidrio
+
+La presentación principal y el directorio de proyectos usan `src/site/site.css`.
+La portada monta `src/site/SignatureScene.jsx`: una superficie vectorial original,
+sin imagen de archivo ni dependencias WebGL. La tipografía Inter se sirve localmente
+con su licencia. Los antiguos estilos CRT y el escritorio retro permanecen en el
+repositorio, pero estas páginas ya no los cargan.
+
+`npm run build` usa `scripts/build-site.mjs` y genera `js/site.bundle.js`,
+`js/site.bundle.css` y `js/site-fonts/`. Se versionan para mantener el despliegue
+estático en GitHub Pages. `npm run dev` observa cambios en los componentes y estilos.
+
+`js/premium.js` traduce los nuevos textos y marca la sección actual en la navegación.
+Las transiciones usan desplazamiento nativo y respetan movimiento reducido.
+Se conservan ambos idiomas, temas claro y oscuro, modo lectura, laboratorio,
+cursos, casos de proyectos y el mismo PDF descargable.
